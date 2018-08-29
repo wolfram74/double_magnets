@@ -1,0 +1,23 @@
+griffiths mentions magnetic dipoles
+  243-246
+  ampere model 258, 284
+  energy 281
+  interaction energy 282
+  field of 246, 253-254
+  oscillating 453
+  force on 257-259, 282-283
+  gilbert model 258, 284, 454
+  moment, 244, 254
+  electron 252
+  moving 544
+  perfect 245, 246
+  physical 245-246
+  potential of
+    static 244, 246
+    oscillating 453
+
+08/24 meeting
+  latex document
+  equilibria
+  limit matching on masses (at hamiltonian level)
+
