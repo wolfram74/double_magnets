@@ -6,12 +6,17 @@ def dot_prod(vec1, vec2):
         total += vec1[index]*vec2[index]
     return total
 
+def math_jaxify(string):
+    return string.replace('\\', '\\\\')
+
 def ham_equations(state_vec, hamiltonian):
     variables = len(state_vec)/2
     print('force-equivalents')
     for i in range(variables):
         sympy.pprint(state_vec[i+variables])
+        force = -hamiltonian.diff(state_vec[i])
         sympy.pprint(-hamiltonian.diff(state_vec[i]))
+        print(math_jaxify(sympy.latex(force)))
     print('velocity equivalents')
     for i in range(variables, variables*2):
         sympy.pprint(state_vec[i-variables])
@@ -65,6 +70,29 @@ def com_polar():
     # sympy.pprint(L1+L2+L3)
     # sympy.pprint((L1+L2+L3).simplify())
 
+def equilibrium_solutions():
+    tht, phi1, phi2 = sympy.symbols('theta phi1 phi2', real=True)
+    n, m = sympy.symbols('n m', integer=True)
+    constraints = sympy.Matrix([
+        [-2, 1, 1],
+        [0, 1, 1]
+        ])
+    variables = sympy.Matrix([tht, phi1, phi2])
+    out = sympy.Matrix([[n*sympy.pi],[m*sympy.pi]])
+    sympy.pprint(constraints)
+    sympy.pprint(constraints*variables)
+    sympy.pprint(constraints.solve(variables))
+    # sympy.pprint(out)
+    # sympy.pprint((constraints*variables).solve(out))
+
+def enumerate_equilibria():
+    for n in range(6):
+        # print [ ((n,m), ((n+m)/2., (n-m)/2.)) for m in range(6)]
+        print [ ((n+m)/2., (n-m)/2.) for m in range(6)]
+            # print()
+
 if __name__ == '__main__':
     # cartesian()
-    com_polar()
+    # com_polar()
+    # equilibrium_solutions()
+    enumerate_equilibria()
