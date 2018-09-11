@@ -21,3 +21,4 @@ griffiths mentions magnetic dipoles
   equilibria
   limit matching on masses (at hamiltonian level)
 
+since double system has 6 degrees in phase space, the hamiltonian approach will be a 6th order equation to find the normal modes, might explore the lagrangian approach described in taylors chp 11 pg 417 (pdf 432)
