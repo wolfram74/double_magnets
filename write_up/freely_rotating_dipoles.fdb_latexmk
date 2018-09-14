@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1536590695 "freely_rotating_dipoles.tex" "freely_rotating_dipoles.pdf" "freely_rotating_dipoles" 1536590696
+["pdflatex"] 1536695727 "freely_rotating_dipoles.tex" "freely_rotating_dipoles.pdf" "freely_rotating_dipoles" 1536695727
   "/usr/local/texlive/2014/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2014/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2014/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1246382020 916 f87d7c45f9c908e672703b83b72241a3 ""
@@ -37,11 +37,11 @@
   "/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1401025944 1445653 26a0aacf3d70032b1ec192e8c7792117 ""
   "/usr/local/texlive/2014/texmf-var/web2c/pdftex/pdflatex.fmt" 1401025990 3832012 904d82bdcc8abf2b1cd296990b82553b ""
   "/usr/local/texlive/2014/texmf.cnf" 1401025936 577 a59edbde8d3a8c549d0eeaab1739e2ff ""
-  "freely_rotating_dipoles.aux" 1536590696 1314 ed3ea058e9a2114cb764c189f399fe4d ""
-  "freely_rotating_dipoles.tex" 1536590694 863 d074adeca2bf84f2dce5a82c7a308c22 ""
-  "freely_rotating_dipoles.toc" 1536590696 926 071f92b16499165c63280cebaaa1f261 ""
+  "freely_rotating_dipoles.aux" 1536695727 1502 93c290b747fdc8faea7695d1f5b4587d ""
+  "freely_rotating_dipoles.tex" 1536590762 926 1dbd1853bd9d3624a4e77193001d73b1 ""
+  "freely_rotating_dipoles.toc" 1536695727 1078 49945e9be761026c718a26e7b4b534e1 ""
   (generated)
-  "freely_rotating_dipoles.toc"
-  "freely_rotating_dipoles.aux"
-  "freely_rotating_dipoles.pdf"
   "freely_rotating_dipoles.log"
+  "freely_rotating_dipoles.pdf"
+  "freely_rotating_dipoles.aux"
+  "freely_rotating_dipoles.toc"

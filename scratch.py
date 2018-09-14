@@ -93,6 +93,6 @@ def enumerate_equilibria():
 
 if __name__ == '__main__':
     # cartesian()
-    # com_polar()
+    com_polar()
     # equilibrium_solutions()
-    enumerate_equilibria()
+    # enumerate_equilibria()

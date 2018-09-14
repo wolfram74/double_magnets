@@ -49,9 +49,9 @@ def normal_modes():
         ])/10
     equi_curves = [
         [0,0],
-        [1,0],
+        # [1,0],
         [0,1],
-        [1,1],
+        # [1,1],
     ]
     for curve in equi_curves:
         gamma0 = equi_from_jk(curve[0], curve[1])
