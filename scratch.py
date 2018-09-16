@@ -91,8 +91,32 @@ def enumerate_equilibria():
         print [ ((n+m)/2., (n-m)/2.) for m in range(6)]
             # print()
 
+def new_angles():
+    r, tht, phi1, phi2 = sympy.symbols('r theta phi1 phi2', real=True)
+    vr, vtht, vphi1, vphi2 = sympy.symbols('r dot_theta dot_phi1 dot_phi2', real=True)
+    phid, phit, vphid, vphit = sympy.symbols('phi_d phi_t dot_phi_d dot_phi_t', real=True)
+    pr, ptht, pphi1, pphi2 = sympy.symbols('p_r p_theta p_phi1 p_phi2', real=True)
+    mt, mr, mu1, mu2, I1, I2, gamma= sympy.symbols('m_t m_r mu_1 mu_2 I_1 I_2 gamma', real=True, positive=True)
+
+    Ir = (I1*I2)/(I1+I2)
+    # vphit_sqr = ((I1*vphi1+I2*vphi2)/(I1+I2))**2
+    vphit_sqr = mu1*(vphi1+vphi2)**2
+    # vphid_sqr = Ir*(vphi1-vphi2)**2
+    vphid_sqr = mu2*(vphi1-vphi2)**2
+
+    newT = vphid_sqr+vphit_sqr
+    oldT = (I1*vphi1**2+I2*vphi2**2)/2
+    constraint = newT-oldT
+    sympy.pprint(constraint)
+    sympy.pprint(constraint.expand())
+    sympy.pprint(constraint.expand().simplify())
+    constraint = constraint.expand().simplify()
+    sympy.pprint(sympy.solve(constraint, mu1))
+
+
 if __name__ == '__main__':
     # cartesian()
-    com_polar()
+    # com_polar()
     # equilibrium_solutions()
     # enumerate_equilibria()
+    new_angles()

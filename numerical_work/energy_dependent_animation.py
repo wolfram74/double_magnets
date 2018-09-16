@@ -40,10 +40,14 @@ def frame_gen(energy):
     # axes.set_xlim(0, 170)
 
 def simulate_energy(energy):
-    p_phi1 = (energy/10.)**.5 #give half the KE to p_phi1
-    p_phi2 = -p_phi1
-    p_tht = 0.
-    T_long = 2*numpy.pi/((5./3.)**.5)
+    # p_phi1 = (energy/10.)**.5 #give half the KE to p_phi1
+    # p_phi2 = -p_phi1
+    # p_tht = 0.
+    # T_long = 2*numpy.pi/((5./3.)**.5)
+    p_phi1 = (energy/12.)**.5
+    p_phi2 = p_phi1
+    p_tht = -2*p_phi1
+    T_long = 2*numpy.pi/((6.)**.5)
     init_state = numpy.array([
         0,
         0,0,0,
@@ -62,11 +66,11 @@ if __name__=='__main__':
     field = axes.scatter(x_vals, y_vals)
     axes.set_ylim(-1, 1)
     axes.set_xlim(0, 1)
-    energies = [1./3*(i)/200 for i in range(1, 101)]
+    energies = [1./2*(i)/100 for i in range(1, 101)]
     print(energies[-1])
     movie = animation.FuncAnimation(
         fig,
         frame_gen,
         frames=energies
         )
-    movie.save('increasing_energy.mp4')
+    movie.save('orbital_increasing_energy.mp4')

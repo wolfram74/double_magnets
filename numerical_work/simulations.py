@@ -25,16 +25,17 @@ def double_dipole_eqs(state):
 
 def mag_oscillation(KE = .001):
     # print(KE)
-    p_phi1 = (KE/10.)**.5 #give half the KE to p_phi1
-    p_phi2 = -p_phi1
-    p_tht = 0.
-    T_long = 2*numpy.pi/((5./3.)**.5)
-    p_phi1 = (KE/12.)**.5 #give half the KE to p_phi1
+    # p_phi1 = (KE/10.)**.5 #give half the KE to p_phi1
+    # p_phi2 = -p_phi1
+    # p_tht = 0.
+    # T_long = 2*numpy.pi/((5./3.)**.5)
+    p_phi1 = (KE/12.)**.5
     p_phi2 = p_phi1
     p_tht = -2*p_phi1
     T_long = 2*numpy.pi/((6.)**.5)
 
     print(p_phi1**2*5+p_phi2**2*5+p_tht**2/2)
+    print(p_tht**2/2)
     print(T_long)
     init_state = numpy.array([
         0,
@@ -49,6 +50,7 @@ def mag_oscillation(KE = .001):
     phi1_vals = numpy.array(utils.read_column(sim_path, 1))
     phi2_vals = numpy.array(utils.read_column(sim_path, 2))
     tht_vals = numpy.array(utils.read_column(sim_path, 3))
+    print(phi1_vals[-1]-tht_vals[-1])
     pyplot.plot(t_vals ,phi1_vals)
     pyplot.plot(t_vals ,phi2_vals)
     pyplot.plot(t_vals ,tht_vals)
@@ -56,4 +58,4 @@ def mag_oscillation(KE = .001):
 
 if __name__ == '__main__':
     # sho_plots()
-    mag_oscillation()
+    mag_oscillation(1.5/3.)
