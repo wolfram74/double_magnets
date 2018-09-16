@@ -115,6 +115,27 @@ U(\phi_1, \phi_2, \theta, r) =
 )
 \end{equation}
 
+Having an expression for kinetic and potential energy, the lagrangian is as follows.
+
+\begin{equation}
+    L=T-U=
+    \frac{1}{2}(
+        m_t \dot R^2
+        +m_r \dot r^2
+        +m_r r^2 \dot \theta^2
+        + I_1 \dot \phi_1^2
+        + I_2 \dot \phi_2^2
+    )
+    +
+    \frac{\mu_0}{4\pi}
+    \frac{\mu_1 \mu_2}{2}
+    \frac{1}{r^3}(
+        \cos(\phi_1-\phi_2)
+        +3\cos(\phi_1+\phi_2 -2\theta)
+    )
+\end{equation}
+
+The first observation we make is that the potential energy is independent of the center of mass coordinates making the corresponding momenta a constant of motion and we will proceed assuming we are in the inertial frame where it is 0 and R is 0. Determining the other momenta we use the relationship $\partial_{\dot q_i} L =p_i$
 
 \subsubsection{Momenta}
 
