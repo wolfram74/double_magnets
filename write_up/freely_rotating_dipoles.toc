@@ -3,13 +3,13 @@
 \contentsline {subsection}{\tocsubsection {}{2.1}{Coordinates}}{1}
 \contentsline {subsubsection}{\tocsubsubsection {}{2.1.1}{Cartesian}}{1}
 \contentsline {subsubsection}{\tocsubsubsection {}{2.1.2}{Center Of Mass}}{1}
-\contentsline {subsection}{\tocsubsection {}{2.2}{Hamiltonian}}{1}
+\contentsline {subsection}{\tocsubsection {}{2.2}{Hamiltonian}}{2}
 \contentsline {subsubsection}{\tocsubsubsection {}{2.2.1}{Energies}}{2}
-\contentsline {subsubsection}{\tocsubsubsection {}{2.2.2}{Momenta}}{2}
-\contentsline {section}{\tocsection {}{3}{Analysis}}{2}
-\contentsline {subsection}{\tocsubsection {}{3.1}{Analytic Results}}{2}
-\contentsline {subsubsection}{\tocsubsubsection {}{3.1.1}{Equilibrium Analysis}}{2}
-\contentsline {subsubsection}{\tocsubsubsection {}{3.1.2}{Normal Mode Analysis}}{2}
-\contentsline {subsection}{\tocsubsection {}{3.2}{Numerical Results}}{2}
-\contentsline {subsubsection}{\tocsubsubsection {}{3.2.1}{Method}}{2}
-\contentsline {subsubsection}{\tocsubsubsection {}{3.2.2}{Periodic Solutions}}{2}
+\contentsline {subsubsection}{\tocsubsubsection {}{2.2.2}{Momenta}}{3}
+\contentsline {section}{\tocsection {}{3}{Analysis}}{3}
+\contentsline {subsection}{\tocsubsection {}{3.1}{Analytic Results}}{3}
+\contentsline {subsubsection}{\tocsubsubsection {}{3.1.1}{Equilibrium Analysis}}{3}
+\contentsline {subsubsection}{\tocsubsubsection {}{3.1.2}{Normal Mode Analysis}}{3}
+\contentsline {subsection}{\tocsubsection {}{3.2}{Numerical Results}}{3}
+\contentsline {subsubsection}{\tocsubsubsection {}{3.2.1}{Method}}{3}
+\contentsline {subsubsection}{\tocsubsubsection {}{3.2.2}{Periodic Solutions}}{3}
