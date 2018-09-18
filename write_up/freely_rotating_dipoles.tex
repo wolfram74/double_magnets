@@ -1,6 +1,7 @@
 
 \documentclass[12pt]{amsart}
 \usepackage{geometry} % see geometry.pdf on how to lay out the page. There's lots.
+\usepackage{mathtools}
 \geometry{a4paper} % or letter or a5paper or ... etc
 % \geometry{landscape} % rotated page geometry
 
@@ -118,6 +119,7 @@ U(\phi_1, \phi_2, \theta, r) =
 Having an expression for kinetic and potential energy, the lagrangian is as follows.
 
 \begin{equation}
+  \begin{multlined}
     L=T-U=
     \frac{1}{2}(
         m_t \dot R^2
@@ -126,6 +128,7 @@ Having an expression for kinetic and potential energy, the lagrangian is as foll
         + I_1 \dot \phi_1^2
         + I_2 \dot \phi_2^2
     )
+    \\
     +
     \frac{\mu_0}{4\pi}
     \frac{\mu_1 \mu_2}{2}
@@ -133,6 +136,7 @@ Having an expression for kinetic and potential energy, the lagrangian is as foll
         \cos(\phi_1-\phi_2)
         +3\cos(\phi_1+\phi_2 -2\theta)
     )
+  \end{multlined}
 \end{equation}
 
 \subsubsection{Momenta}
@@ -157,14 +161,98 @@ The first observation we make is that the potential energy is independent of the
 Allowing us to find the Hamiltonian with the expression of 
 
 \begin{equation}
-H=l+\Sigma_i p_i \dot q_i
+H=L+\Sigma_i p_i \dot q_i
+=
+\frac{1}{2}(
+	\frac{p_r^2}{m_r}
+	+\frac{p_\theta^2}{m_r r^2}
+	+\frac{p_{\phi_1}^2}{I_1}
+	+\frac{p_{\phi_2}^2}{I_2}
+)+U(\phi_1,\phi_2,\theta)
+\end{equation}
+\subsection{Dimensionless coordinates}
+To get at the essentials of the system we will examine in a natural system of coordinates. First we will characterize the second dipole in terms of the first such that 
+$m_2=\alpha m_1$,   
+$a_2=\beta a_1$,
+$\mu_2=\gamma \mu_1$. This lets us rewrite the energies as
+%I = 2/5 mr^2
+\begin{subequations}
+    \begin{equation}
+        T=\frac{1}{2}\left (
+	\frac{(1+\alpha)m_1}{\alpha m_1^2} p_r^2
+	+\frac{(1+\alpha)m_1}{\alpha m_1^2} \frac{p_\theta^2}{r^2}
+	+p_{\phi_1}^2 \frac{5}{2m_1a_1^2}
+	+p_{\phi_2}^2 \frac{1}{\alpha\beta^2} \frac{5}{2m_1a_1^2}      
+        \right )
+    \end{equation}
+    \begin{equation}
+        U=
+	    -\frac{\mu_0}{4\pi}
+	    \frac{\gamma \mu_1^2}{2}
+	    \frac{1}{r^3}(
+	        \cos(\phi_1-\phi_2)
+	        +3\cos(\phi_1+\phi_2 -2\theta)
+	    )
+    \end{equation}
+\end{subequations}
+
+If we go on to define our units as follows: 
+$L_0=2a_1$ for length,
+$F_0=3\mu_0 \mu_1^2/(2\pi L_0^4)$ for force,
+$F_0L_0$ for energy,
+$T_0=\sqrt{m_1L_0/F0}$ for time,
+$\mu_1$ for magnetic moment,
+$T_0^{-1},T_0^{-2}$ for angular velocities and accelerations,
+$m_1L_0/T_0$ for linear momentum and 
+$m_1L_0^2/T_0$ for angular momentum. This let's us rewrite the energies
+
+\begin{subequations}
+    \begin{equation}
+        T=\frac{1}{2}\left (
+	\frac{(1+\alpha)}{\alpha } p_r^2
+	+\frac{(1+\alpha)}{\alpha } \frac{p_\theta^2}{r^2}
+	+10 p_{\phi_1}^2 
+	+\frac{10}{\alpha\beta^2} p_{\phi_2}^2      
+        \right )
+    \end{equation}
+    \begin{equation}
+        U=
+	    -\frac{\gamma}{12}
+	    \frac{1}{r^3}(
+	        \cos(\phi_1-\phi_2)
+	        +3\cos(\phi_1+\phi_2 -2\theta)
+	    )
+    \end{equation}
+\end{subequations}
+
+Let us finally make two more assumptions. First, that the two spheres are identical, $\alpha=\beta=\gamma=1$. Second, that there is some contact potential preventing the two sphere's from overlapping that prohibits r from getting less than 1. These two assumptions produce the hamiltonian we'll be investigating for the remainder of our paper
+
+\begin{equation}
+  \begin{multlined}
+	H=T+U=
+	\frac{1}{2}\left (
+	2 p_r^2
+	+2 \frac{p_\theta^2}{r^2}
+	+10 p_{\phi_1}^2 
+	+10 p_{\phi_2}^2      
+        \right )
+        \\
+	-
+	\frac{1}{12}
+	\frac{1}{r^3}(
+	        \cos(\phi_1-\phi_2)
+	        +3\cos(\phi_1+\phi_2 -2\theta)
+	    )
+  \end{multlined}
 \end{equation}
 
 \section{Analysis}
 \subsection{Analytic Results}
 
 \subsubsection{Equilibrium Analysis}
+Let us first examine the equations of motion and see if there exist any equilibria between the spheres while they are in contact with each other ($r=1$).
 \subsubsection{Normal Mode Analysis}
+\subsubsection{Isomorphisms}
 
 \subsection{Numerical Results}
 \subsubsection{Method}
