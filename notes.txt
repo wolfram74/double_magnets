@@ -25,3 +25,11 @@ griffiths mentions magnetic dipoles
   write up stuff
   write down
 since double system has 6 degrees in phase space, the hamiltonian approach will be a 6th order equation to find the normal modes, might explore the lagrangian approach described in taylors chp 11 pg 417 (pdf 432)
+
+9/18 meeting
+  write up finite mode analysis
+  write up isomorphism analysis
+  run simulations to larger time scales to check for periodicity
+    write function for determining if returned to point
+  explore 0-angular momentum at different initial orientations
+  explore 0-angular momentum with 0 for one of the phis

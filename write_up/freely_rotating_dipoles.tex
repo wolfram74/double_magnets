@@ -242,7 +242,7 @@ Let us finally make two more assumptions. First, that the two spheres are identi
 	\frac{1}{r^3}(
 	        \cos(\phi_1-\phi_2)
 	        +3\cos(\phi_1+\phi_2 -2\theta)
-	    )
+	    )+U_C
   \end{multlined}
 \end{equation}
 
@@ -250,8 +250,65 @@ Let us finally make two more assumptions. First, that the two spheres are identi
 \subsection{Analytic Results}
 
 \subsubsection{Equilibrium Analysis}
-Let us first examine the equations of motion and see if there exist any equilibria between the spheres while they are in contact with each other ($r=1$).
+Let us first examine the equations of motion and see if there exist any equilibria between the spheres while they are in contact with each other ($r=1$). The hamiltonian equations of motion we find are
+
+\begin{subequations}
+    \begin{equation}\label{fphi1}
+        -\partial_{\phi_1} H = 
+	- \frac{1}{12} \sin{\left (\phi_{1} - \phi_{2} \right )} - \frac{1}{4} \sin{\left (\phi_{1} + \phi_{2} - 2 \theta \right )}
+    \end{equation}
+    \begin{equation}\label{fphi2}
+        -\partial_{\phi_2} H =
+	\frac{1}{12} \sin{\left (\phi_{1} - \phi_{2} \right )} - \frac{1}{4} \sin{\left (\phi_{1} + \phi_{2} - 2 \theta \right )}
+    \end{equation}
+    \begin{equation}\label{ftht}
+        -\partial_{\theta} H =
+        \frac{1}{2} \sin{\left (\phi_{1} + \phi_{2} - 2 \theta \right )}
+    \end{equation}
+    \begin{equation}\label{fr}
+        -\partial_{r} H = 
+        2 p_{\theta}^{2} - \frac{1}{4} \cos{\left (\phi_{1} - \phi_{2} \right )} - \frac{3}{4} \cos{\left (\phi_{1} + \phi_{2} - 2 \theta \right )}
+    \end{equation}
+\end{subequations}
+
+Inspecting equation \ref{ftht} we see immediately that orbital momentum is static if $\phi_{1} + \phi_{2} - 2 \theta = j \pi$ where j is any integer. Using that as a constraint we then see that spin momenta are both static if the previous equation holds and $\phi_{1} + \phi_{2} = k\pi$ where k is an integer independent of j. These two constraints produce a set of curves of equilibrium where
+
+\begin{subequations}
+	\begin{equation}
+		\phi_1 = \frac{j+k}{2}\pi +\theta
+	\end{equation}
+	\begin{equation}
+		\phi_2 = \frac{j-k}{2}\pi +\theta
+	\end{equation}
+\end{subequations}
+
+all the forces on angular momenta are 0. However since our hamiltonian is periodic over $2\pi$ we're interested in (j,k) permuting through 0 and 1. This leaves us with 4 curves, until we consider the constraint that \ref{fr} must be negative to maintain contact. If j is odd, then we're left with a resulting radial force f $1/2$, and we lose contact. So we've narrowed down from an infinite number of equilibrium curves to two, which, using the j-k notation are 0-0 and 0-1.
+
+
+
 \subsubsection{Normal Mode Analysis}
+Equilibria and equations of motion in hand we can do small angle perturbations. Noting that near an equilibrium point $\Gamma_i$ the changes in momenta are tiny we can do a multi-variable taylor expansion and produce the expression.
+
+\begin{equation}\label{taylor_force}
+	\dot p_n \approx \Sigma_m \partial_{q_m}(-\partial_{q_n} H)|_{\Gamma_i} q_m 
+\end{equation}
+
+If we define elements in a matrix 
+$K_{n,m}= \partial_{q_m}(-\partial_{q_n} H)|_{\Gamma_i}$
+
+We can rephrase \ref{taylor_force} as 
+
+\begin{equation}
+	\vec{ \dot{ p }} \approx \widehat K \vec q
+\end{equation}
+
+To get this amenable to periodic solutions, we would like to recast the momentum vector in terms of a time derivative of our position.
+
+\begin{equation}
+	\dot{ q_n } = \partial_{p_n} H
+\end{equation}
+
+
 \subsubsection{Isomorphisms}
 
 \subsection{Numerical Results}

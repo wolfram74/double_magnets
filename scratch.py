@@ -116,7 +116,7 @@ def new_angles():
 
 if __name__ == '__main__':
     # cartesian()
-    com_polar()
+    # com_polar()
     # equilibrium_solutions()
     # enumerate_equilibria()
-    #new_angles()
+    new_angles()
