@@ -298,16 +298,33 @@ $K_{n,m}= \partial_{q_m}(-\partial_{q_n} H)|_{\Gamma_i}$
 
 We can rephrase \ref{taylor_force} as 
 
-\begin{equation}
+\begin{equation} \label{matrix_force}
 	\vec{ \dot{ p }} \approx \widehat K \vec q
 \end{equation}
 
-To get this amenable to periodic solutions, we would like to recast the momentum vector in terms of a time derivative of our position.
+To get this amenable to simple periodic solutions, we would like to recast the momentum vector in terms of a time derivative of our position.
 
 \begin{equation}
 	\dot{ q_n } = \partial_{p_n} H
 \end{equation}
 
+If we define elements in a diagonal matrix as 
+$M_{n,n}=\frac{1}{\ddot q_n}\frac{d}{dt} \partial_{p_n} H$
+then we can rewrite \ref{matrix_force} as 
+
+\begin{equation}
+	\widehat M \vec{ \ddot{ q }} \approx \widehat K \vec q
+\end{equation}
+
+Assuming simple periodic solutions of the form $\vec q = \vec a e^{i\omega t}$ allows us to recast the above as
+
+\begin{equation}
+	( 
+	\widehat K - \omega^2 \widehat M
+	)  \vec{ a}e^{i\omega t} \approx 0
+\end{equation}
+
+If we treat the approximation as an equality, it will only hold for non-trivial motion if the determinant of the matrix $\widehat K - \omega^2 \widehat M$ is 0. The normal modes are the eigen vectors and values of the previous matrix.
 
 \subsubsection{Isomorphisms}
 
