@@ -10,7 +10,7 @@ def double_dipole_eqs(state):
     deltas[0] = 1. #dt
     deltas[1] = 10.*state[4] #dot phi1
     deltas[2] = 10.*state[5] #dot phi2
-    deltas[3] = state[6] #dot tht
+    deltas[3] = 2.*state[6] #dot tht
     deltas[4] = -(
         numpy.sin(del_phi)
         +3*numpy.sin(tot_phi-2*state[3])
@@ -29,12 +29,12 @@ def mag_oscillation(KE = .001):
     # p_phi2 = -p_phi1
     # p_tht = 0.
     # T_long = 2*numpy.pi/((5./3.)**.5)
-    p_phi1 = (KE/12.)**.5
+    p_phi1 = (KE/18.)**.5
     p_phi2 = p_phi1
     p_tht = -2*p_phi1
-    T_long = 2*numpy.pi/((6.)**.5)
-
-    print(p_phi1**2*5+p_phi2**2*5+p_tht**2/2)
+    T_long = 2*numpy.pi/((7.)**.5)
+    calced_KE = p_phi1**2*5+p_phi2**2*5+2*p_tht**2
+    print(calced_KE, KE)
     print(p_tht**2/2)
     print(T_long)
     init_state = numpy.array([
@@ -58,4 +58,4 @@ def mag_oscillation(KE = .001):
 
 if __name__ == '__main__':
     # sho_plots()
-    mag_oscillation(1.5/3.)
+    mag_oscillation(.001)

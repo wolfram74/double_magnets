@@ -12,6 +12,11 @@ def ham_equations():
         sympy.pprint(qi)
         sympy.pprint(-Ham.diff(qi))
         print(sympy.latex(-Ham.diff(qi).subs(positions[3], 1)))
+    for pi in momenta:
+        sympy.pprint(pi)
+        sympy.pprint(Ham.diff(pi))
+        print(sympy.latex(Ham.diff(pi).subs(positions[3], 1)))
+
 
 def equi_from_jk(j, k):
     return [
@@ -47,10 +52,14 @@ def M_mat_gen(H, p_vars):
 
 def mode_analysis():
     Gam00 = equi_from_jk(0,0)
+    sympy.pprint(Ham)
+    sympy.pprint(U)
     angles = positions[:3]
     p_angles = momenta[:3]
     w = sympy.symbols('omega')
     contact_ham = Ham.subs(positions[-1], 1)
+    sympy.pprint(contact_ham.diff(positions[0]))
+    sympy.pprint(contact_ham.diff(positions[0], positions[0]))
     k_mat = K_mat_gen(contact_ham, angles , Gam00)
     print('inspecting modes at')
     sympy.pprint(Gam00)
@@ -68,7 +77,6 @@ def mode_analysis():
         sympy.pprint(freq_sqr)
         eig_vecs = [[vi.subs(w**2, freq_sqr)] for vi in mode[2][0]]
         sympy.pprint(eig_vecs)
-
 
 op_codes=[
     ham_equations, mode_analysis
