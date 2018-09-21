@@ -34,7 +34,7 @@ def K_mat_gen(H, q_vars, equi_vals):
             ))
     return sympy.Matrix(
         [[
-            H.diff(col_ind, row_ind).subs(subs) for col_ind in q_vars
+            -H.diff(col_ind, row_ind).subs(subs) for col_ind in q_vars
         ] for row_ind in q_vars]
         )
 
@@ -66,7 +66,7 @@ def mode_analysis():
     sympy.pprint(k_mat)
     M_mat = M_mat_gen(contact_ham, p_angles)
     sympy.pprint(M_mat)
-    mode_mat = k_mat-w**2*M_mat
+    mode_mat = k_mat+w**2*M_mat
     sympy.pprint(mode_mat)
     modes = mode_mat.eigenvects()
     for mode in modes:

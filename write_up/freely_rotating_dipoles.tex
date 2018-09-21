@@ -287,10 +287,14 @@ all the forces on angular momenta are 0. However since our hamiltonian is period
 
 
 \subsubsection{Normal Mode Analysis}
-Equilibria and equations of motion in hand we can do small angle perturbations. Noting that near an equilibrium point $\Gamma_i$ the changes in momenta are tiny we can do a multi-variable taylor expansion and produce the expression.
+Equilibria and equations of motion in hand we can do small angle perturbations. Noting that near an equilibrium point $\Gamma_i$ the changes in momenta will be small we can do a multi-variable taylor expansion and produce the expression.
 
 \begin{equation}\label{taylor_force}
-	\dot p_n \approx \Sigma_m \partial_{q_m}(-\partial_{q_n} H)|_{\Gamma_i} q_m 
+	\dot p_n 
+	=
+	-\partial_{q_n}H
+	\approx 
+	\Sigma_m \partial_{q_m}(-\partial_{q_n} H)|_{\Gamma_i} q_m 
 \end{equation}
 
 If we define elements in a matrix 
@@ -309,7 +313,7 @@ To get this amenable to simple periodic solutions, we would like to recast the m
 \end{equation}
 
 If we define elements in a diagonal matrix as 
-$M_{n,n}=\frac{1}{\ddot q_n}\frac{d}{dt} \partial_{p_n} H$
+$M_{n,n}=1/(\frac{d}{dt} \partial_{p_n} H)$
 then we can rewrite \ref{matrix_force} as 
 
 \begin{equation}
@@ -320,7 +324,7 @@ Assuming simple periodic solutions of the form $\vec q = \vec a e^{i\omega t}$ a
 
 \begin{equation}
 	( 
-	\widehat K - \omega^2 \widehat M
+	\widehat K + \omega^2 \widehat M
 	)  \vec{ a}e^{i\omega t} \approx 0
 \end{equation}
 
