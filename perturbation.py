@@ -60,6 +60,7 @@ def normal_modes():
         normal_modes = characteristic.eigenvects()
         print('mode analysis for ', curve)
         sympy.pprint(gamma0)
+        sympy.pprint(characteristic)
         for mode in normal_modes:
             # sympy.pprint(mode)
             # sympy.pprint(mode)

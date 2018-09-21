@@ -1,3 +1,4 @@
+import sys
 import sympy
 from expressions import *
 ''' includes
@@ -12,5 +13,72 @@ def ham_equations():
         sympy.pprint(-Ham.diff(qi))
         print(sympy.latex(-Ham.diff(qi).subs(positions[3], 1)))
 
+def equi_from_jk(j, k):
+    return [
+        (j+k)*sympy.pi/2,
+        (j-k)*sympy.pi/2,
+        0
+    ]
+
+def K_mat_gen(H, q_vars, equi_vals):
+    subs = []
+    for index in range(len(q_vars)):
+        subs.append((
+            q_vars[index],
+            equi_vals[index]
+            ))
+    return sympy.Matrix(
+        [[
+            H.diff(col_ind, row_ind).subs(subs) for col_ind in q_vars
+        ] for row_ind in q_vars]
+        )
+
+def M_mat_gen(H, p_vars):
+    subs = []
+    for pi in p_vars:
+        subs.append((pi, 1))
+    def Mij(i,j):
+        if i==j:
+            return 1/H.diff(p_vars[i]).subs(subs)
+        else:
+            return 0
+    return sympy.Matrix(3,3, Mij)
+
+
+def mode_analysis():
+    Gam00 = equi_from_jk(0,0)
+    angles = positions[:3]
+    p_angles = momenta[:3]
+    w = sympy.symbols('omega')
+    contact_ham = Ham.subs(positions[-1], 1)
+    k_mat = K_mat_gen(contact_ham, angles , Gam00)
+    print('inspecting modes at')
+    sympy.pprint(Gam00)
+    sympy.pprint(k_mat)
+    M_mat = M_mat_gen(contact_ham, p_angles)
+    sympy.pprint(M_mat)
+    mode_mat = k_mat-w**2*M_mat
+    sympy.pprint(mode_mat)
+    modes = mode_mat.eigenvects()
+    for mode in modes:
+        sympy.pprint(mode[0])
+        freqs = sympy.solve(mode[0],w**2)
+        freq_sqr = freqs[0]
+        sympy.pprint(freqs)
+        sympy.pprint(freq_sqr)
+        eig_vecs = [[vi.subs(w**2, freq_sqr)] for vi in mode[2][0]]
+        sympy.pprint(eig_vecs)
+
+
+op_codes=[
+    ham_equations, mode_analysis
+]
+
 if __name__ == '__main__':
-    ham_equations()
+    if len(sys.argv)==1:
+        for i in range(len(op_codes)):
+            print(i, op_codes[i].__name__)
+    else:
+        op_code = int(sys.argv[1])
+        print(op_code)
+        op_codes[op_code]()
