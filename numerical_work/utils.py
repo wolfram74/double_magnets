@@ -72,7 +72,7 @@ def return_time(state0, stateN, stateNp1):
         delQ = stateNp1[i]-stateN[i]
         times[i-1] = (
             stateN[0]
-            +delT*(state0[i]-stateNp1[i])/delQ
+            +delT*(state0[i]-stateN[i])/delQ
             )
     return times
 
