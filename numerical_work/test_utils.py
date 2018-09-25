@@ -3,7 +3,7 @@
 
 import unittest
 import numpy
-
+import random
 import utils
 
 class AdaptiveRK4Test(unittest.TestCase):
@@ -19,7 +19,9 @@ class AdaptiveRK4Test(unittest.TestCase):
 
 class ReturnTimeTest(unittest.TestCase):
     def setUp(self):
-        self.stateI = numpy.array([0.,0.,1.])
+        x0 = random.random()
+        p0 = (1-x0**2)**.5
+        self.stateI = numpy.array([0.,x0,p0])
         self.path_out = utils.RK4_adapt(base_SHO, self.stateI, 2*numpy.pi, max_steps=2000, precision=10**-6)
 
 

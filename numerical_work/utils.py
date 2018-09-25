@@ -70,6 +70,9 @@ def return_time(state0, stateN, stateNp1):
     for i in range(1,len(times)+1):
         delT = stateNp1[0]-stateN[0]
         delQ = stateNp1[i]-stateN[i]
+        if delQ == 0:
+            times[i-1] = None
+            continue
         times[i-1] = (
             stateN[0]
             +delT*(state0[i]-stateN[i])/delQ
