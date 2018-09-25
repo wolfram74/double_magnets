@@ -20,7 +20,7 @@ class AdaptiveRK4Test(unittest.TestCase):
 class ReturnTimeTest(unittest.TestCase):
     def setUp(self):
         self.stateI = numpy.array([0.,0.,1.])
-        self.path_out = utils.RK4_adapt(base_SHO, self.stateI, 2*numpy.pi, max_steps=500, precision=10**-6)
+        self.path_out = utils.RK4_adapt(base_SHO, self.stateI, 2*numpy.pi, max_steps=2000, precision=10**-8)
 
 
     def test_meta(self):
@@ -69,13 +69,20 @@ class ReturnTimeTest(unittest.TestCase):
         time_diff = abs(return_times[0]-return_times[1])
         end_time = self.path_out[-1][0]
         avg_time =(return_times[0]+return_times[1])/2.
+        print(time_diff, avg_time-2*numpy.pi)
+        print((avg_time-2*numpy.pi)/2*numpy.pi)
+        print(gam1)
+        print(gam2)
         self.assertTrue(
             time_diff<10**-6
             )
         self.assertAlmostEqual(
             avg_time,2*numpy.pi
             )
-
+        #at E-6 precision off by -0.007835892759084473 1.2%err
+        #at E-6 precision time diff ~ 5E-8
+        #at E-8 precision off by -0.007035576511034591 1.1%err
+        #at E-8 precision time diff ~ 4.6E-10
 
 
 def base_SHO(state):
