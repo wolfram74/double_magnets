@@ -2,7 +2,7 @@ import sys
 import sympy
 from expressions import *
 ''' includes
-positions, velcoties, momenta
+positions, velocities, momenta
 Tp,Tl,U,
 Ham, Lag
 '''
@@ -51,7 +51,7 @@ def M_mat_gen(H, p_vars):
 
 
 def mode_analysis():
-    Gam00 = equi_from_jk(0,0)
+    Gam00 = equi_from_jk(0,1)
     sympy.pprint(Ham)
     sympy.pprint(U)
     angles = positions[:3]
@@ -68,6 +68,8 @@ def mode_analysis():
     sympy.pprint(M_mat)
     mode_mat = k_mat+w**2*M_mat
     sympy.pprint(mode_mat)
+    print( sympy.latex(mode_mat).replace('\\\\', '\\\\\n'))
+
     modes = mode_mat.eigenvects()
     for mode in modes:
         sympy.pprint(mode[0])
@@ -78,8 +80,21 @@ def mode_analysis():
         eig_vecs = [[vi.subs(w**2, freq_sqr)] for vi in mode[2][0]]
         sympy.pprint(eig_vecs)
 
+def isomorphism():
+    phid, phit = sympy.symbols('phi_d phi_t', real=True)
+    vd, vt = sympy.symbols('\dot{phi_d} \dot{phi_t}', real=True)
+    del_v = velocities[0]-velocities[1]
+    tot_v = velocities[0]+velocities[1]
+    # old_spin_sqr = velocities[0]**2+velocities[1]**2
+    new_spin_sqr = del_v**2+tot_v**2
+    sympy.pprint(new_spin_sqr.expand())
+    # newTl = Tl.collect(2*old_spin_sqr )
+    sympy.pprint(Tl)
+    # sympy.pprint(newTl)
+
 op_codes=[
-    ham_equations, mode_analysis
+    ham_equations, mode_analysis,
+    isomorphism
 ]
 
 if __name__ == '__main__':

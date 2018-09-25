@@ -17,6 +17,11 @@ class AdaptiveRK4Test(unittest.TestCase):
         self.assertTrue((path_out[-1][0]-2*numpy.pi) < 10**-5)
         self.assertTrue(abs(path_out[-1][1]) < 10**-5)
 
+class ReturnTimeTest(unittest.TestCase):
+    def test_meta(self):
+        self.assertTrue(True)
+
+
 def base_SHO(state):
     deltas = numpy.zeros(len(state))
     deltas[0] = 1.
