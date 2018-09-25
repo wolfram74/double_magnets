@@ -65,3 +65,6 @@ def max_relative_error(vec1, vec2):
     deltas = vec1 - vec2
     return numpy.amax(numpy.absolute(deltas))
 
+def return_time(state0, stateN, stateNp1):
+    return 4
+
