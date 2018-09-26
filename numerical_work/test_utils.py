@@ -71,23 +71,27 @@ class ReturnTimeTest(unittest.TestCase):
         time_diff = abs(return_times[0]-return_times[1])
         end_time = self.path_out[-1][0]
         avg_time =(return_times[0]+return_times[1])/2.
-        # print(time_diff, avg_time-2*numpy.pi)
-        # print((avg_time-2*numpy.pi)/2*numpy.pi)
-        # print(gam1)
-        # print(gam2)
-        # print(return_times)
-        # print(return_times[0]-gam1[0])
         self.assertTrue(
             time_diff<10**-6
             )
         self.assertAlmostEqual(
             avg_time,2*numpy.pi
             )
-        #at E-6 precision off by -0.007835892759084473 1.2%err
-        #at E-6 precision time diff ~ 5E-8
-        #at E-8 precision off by -0.007035576511034591 1.1%err
-        #at E-8 precision time diff ~ 4.6E-10
 
+class PeriodFinderTest(unittest.TestCase):
+    def test_meta(self):
+        self.assertTrue(True)
+
+    def test_return_times_finder(self):
+        x0 = random.random()
+        p0 = (1.-x0**2)**.5
+        stateI = numpy.array([0.,x0,p0])
+        return_times = utils.return_times_finder(base_SHO, stateI, precision=10**-10, max_time=100.0, max_steps=10**6)
+        print(return_times)
+        print([val/(2*numpy.pi) for val in return_times])
+        for i in range(len(return_times)):
+            self.assertAlmostEqual((i+1)*2*numpy.pi, return_times[i])
+        self.assertTrue(len(return_times)>10.0/2.1*numpy.pi)
 
 def base_SHO(state):
     deltas = numpy.zeros(len(state))

@@ -79,3 +79,65 @@ def return_time(state0, stateN, stateNp1):
             )
     return times
 
+def parse_returned_times(time_vals, tN, tNp1):
+    clean_vals = filter(lambda x: not x is None, time_vals)
+    for val in clean_vals:
+        if not(val>tN and val <tNp1):
+            return False
+    return sum(clean_vals)/len(clean_vals)
+
+def return_times_finder(
+    gradient_function,state0,
+    precision=10.**-4.,step_size=10.**-3,
+    max_time=10**2, max_steps=10**4
+    ):
+    returned_to_state0 = []
+    running = True
+    last_loop = False
+    time_left = max_time - state0[0]
+    steps = 0
+    last_state = state0
+    next_state = state0
+    while running:
+        if last_loop:
+            running = False
+        double_step = next_state + rk4_step(
+            gradient_function,next_state, 2.*step_size
+            )
+        mid_step = next_state + rk4_step(
+            gradient_function,next_state, step_size
+            )
+        two_single_step = mid_step + rk4_step(
+            gradient_function, mid_step, step_size
+            )
+        max_disagreement = max_relative_error(double_step, two_single_step)
+        if max_disagreement > precision:
+            step_size = step_size/1.25
+            continue
+
+        last_state = next_state
+        next_state = two_single_step
+        steps+=2
+
+        time_guesses = return_time(state0, last_state, next_state)
+        # print(last_state[0],time_guesses, next_state[0])
+        linear_results = parse_returned_times(
+            time_guesses, last_state[0], next_state[0])
+        if linear_results:
+            returned_to_state0.append(linear_results)
+
+        if max_disagreement < precision*(10.**-3):
+            step_size *= 1.25
+
+        time_left = max_time - next_state[0]
+        if time_left < 2.*step_size and running:
+            print('finishing early', steps+2)
+            step_size = time_left/2
+            last_loop = True
+        if steps == max_steps:
+            running = False
+            print('did not finish, remaining time')
+            print(time_left)
+            break
+
+    return returned_to_state0
