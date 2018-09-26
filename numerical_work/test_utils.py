@@ -89,6 +89,7 @@ class PeriodFinderTest(unittest.TestCase):
         return_times = utils.return_times_finder(base_SHO, stateI, precision=10**-10, max_time=100.0, max_steps=10**6)
         print(return_times)
         print([val/(2*numpy.pi) for val in return_times])
+        print(len(return_times))
         for i in range(len(return_times)):
             self.assertAlmostEqual((i+1)*2*numpy.pi, return_times[i])
         self.assertTrue(len(return_times)>10.0/2.1*numpy.pi)

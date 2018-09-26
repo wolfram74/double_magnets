@@ -80,21 +80,19 @@ def mode_analysis():
         eig_vecs = [[vi.subs(w**2, freq_sqr)] for vi in mode[2][0]]
         sympy.pprint(eig_vecs)
 
-def isomorphism():
-    phid, phit = sympy.symbols('phi_d phi_t', real=True)
-    vd, vt = sympy.symbols('\dot{phi_d} \dot{phi_t}', real=True)
-    del_v = velocities[0]-velocities[1]
-    tot_v = velocities[0]+velocities[1]
-    # old_spin_sqr = velocities[0]**2+velocities[1]**2
-    new_spin_sqr = del_v**2+tot_v**2
-    sympy.pprint(new_spin_sqr.expand())
-    # newTl = Tl.collect(2*old_spin_sqr )
-    sympy.pprint(Tl)
-    # sympy.pprint(newTl)
+def new_ham_equations():
+    for qi in new_positions:
+        sympy.pprint(qi)
+        sympy.pprint(-new_Ham.diff(qi))
+        print(sympy.latex(-new_Ham.diff(qi).subs(positions[3], 1)))
+    for pi in new_momenta:
+        sympy.pprint(pi)
+        sympy.pprint(new_Ham.diff(pi))
+        print(sympy.latex(new_Ham.diff(pi).subs(positions[3], 1)))
 
 op_codes=[
     ham_equations, mode_analysis,
-    isomorphism
+    new_ham_equations
 ]
 
 if __name__ == '__main__':
