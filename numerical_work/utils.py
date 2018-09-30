@@ -1,4 +1,5 @@
 import numpy
+import random
 
 def read_column(rank_2_tensor, col_num):
     return [row[col_num] for row in rank_2_tensor]
@@ -141,3 +142,31 @@ def return_times_finder(
             break
 
     return returned_to_state0
+
+def reduced_state_gen():
+    # t, phd, pht, tht, pd, pt, pth
+    state_outp = [0.,0.,0.,0.,0.,0.,0.]
+    state_outm = [0.,0.,0.,0.,0.,0.,0.]
+    bad = 0
+    good = 0
+    while True:
+        pht = (random.random()-.5)*numpy.pi
+        tht = (random.random()-.5)*numpy.pi/2.+pht/2.
+        U_0 = -(1+3*numpy.cos(pht-2*tht))/12.
+        T_0 = -random.random()*U_0
+        E_0 = T_0+U_0
+        # print(U_0, T_0, E_0)
+        L_0 = (-random.random()*4.5*E_0)**.5
+        # print(L_0)
+        radical = 56*T_0 - 40*L_0**2
+        if radical < 0:
+            continue
+        ptp = (4.*L_0+(56.*T_0-40*L_0**2)**.5)/28.
+        ptm = (4.*L_0-(56.*T_0-40*L_0**2)**.5)/28.
+        pthp = L_0-2*ptp
+        pthm = L_0-2*ptm
+        Tc = pthp**2 + 10*ptp**2
+        state_outp = [0.,0.,pht,tht,0.,ptp,pthp]
+        state_outm = [0.,0.,pht,tht,0.,ptm,pthm]
+        break
+    return state_outp, state_outm
