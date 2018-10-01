@@ -22,7 +22,9 @@ class ReturnTimeTest(unittest.TestCase):
         x0 = random.random()
         p0 = (1-x0**2)**.5
         self.stateI = numpy.array([0.,x0,p0])
-        self.path_out = utils.RK4_adapt(base_SHO, self.stateI, 2*numpy.pi, max_steps=2000, precision=10**-6)
+        self.path_out = utils.RK4_adapt(
+            base_SHO, self.stateI, 2*numpy.pi*(1.+10**-7),
+            max_steps=2000, precision=10**-8)
 
 
     def test_meta(self):
@@ -35,21 +37,22 @@ class ReturnTimeTest(unittest.TestCase):
         return_times = utils.return_time(gam0, gam1, gam2)
         self.assertTrue(len(return_times)==(len(gam0)-1))
 
-    def test_finds_previous_times(self):
+    def test_finds_future_times(self): #accounting for cyclic flips previous behavior
         gam0 = self.stateI
         gam1 = self.path_out[1]
         gam2 = self.path_out[2]
         return_times = utils.return_time(gam0, gam1, gam2)
-        self.assertTrue(return_times[0]<gam1[0])
-        self.assertTrue(return_times[1]<gam1[0])
+        self.assertTrue(return_times[0]>gam1[0])
+        self.assertTrue(return_times[1]>gam1[0])
 
-    def test_finds_future_times(self):
+    # @unittest.skip("cyclic coordinate fudging makes non-sandwiching times behave unexpectedly")
+    def test_finds_previous_times(self): #accounting for cyclic flips previous behavior
         gam0 = self.stateI
         gam1 = self.path_out[-3]
         gam2 = self.path_out[-2]
         return_times = utils.return_time(gam0, gam1, gam2)
-        self.assertTrue(return_times[0]>gam1[0])
-        self.assertTrue(return_times[1]>gam1[0])
+        self.assertTrue(return_times[0]<gam1[0])
+        self.assertTrue(return_times[1]<gam1[0])
 
     def test_depends_on_more_than_spatial(self):
         gam0 = self.stateI
@@ -62,7 +65,6 @@ class ReturnTimeTest(unittest.TestCase):
         self.assertTrue(
             time_diff>(end_time)/100.
             )
-
     def test_agrees_on_period(self):
         gam0 = self.stateI
         gam1 = self.path_out[-2]
@@ -71,6 +73,11 @@ class ReturnTimeTest(unittest.TestCase):
         time_diff = abs(return_times[0]-return_times[1])
         end_time = self.path_out[-1][0]
         avg_time =(return_times[0]+return_times[1])/2.
+        print(return_times,avg_time)
+        print(gam1)
+        print(gam0)
+        print(gam2)
+        # print(gam2[0]-2*numpy.pi, 'time difference')
         self.assertTrue(
             time_diff<10**-6
             )

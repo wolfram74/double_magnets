@@ -70,13 +70,25 @@ def return_time(state0, stateN, stateNp1):
     times = [0.0 for ti in range(len(state0)-1)]
     for i in range(1,len(times)+1):
         delT = stateNp1[0]-stateN[0]
-        delQ = stateNp1[i]-stateN[i]
+        en, enp1 = stateN[i], stateNp1[i]
+        e0 = state0[i]
+        pi2 = numpy.pi*2
+        if i in [1,2,3]: #cyclic coordinates
+            if  en > e0 and enp1 > e0: #possibly gained more than a full rotation
+                while en > e0 and enp1 > e0:
+                    en  -= pi2
+                    enp1-= pi2
+            elif en < e0 and enp1 < e0: # possibly lost more than a full rotation
+                while en < e0 and enp1 < e0:
+                    en  += pi2
+                    enp1+= pi2
+        delQ = enp1-en
         if delQ == 0:
             times[i-1] = None
             continue
         times[i-1] = (
             stateN[0]
-            +delT*(state0[i]-stateN[i])/delQ
+            +delT*(state0[i]-en)/delQ
             )
     return times
 
@@ -85,7 +97,8 @@ def parse_returned_times(time_vals, tN, tNp1):
     for val in clean_vals:
         if not(val>tN and val <tNp1):
             return False
-    return sum(clean_vals)/len(clean_vals)
+    average = sum(clean_vals)/len(clean_vals)
+    return average
 
 def return_times_finder(
     gradient_function,state0,
