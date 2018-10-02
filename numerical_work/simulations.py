@@ -1,6 +1,7 @@
 import numpy
 import utils
 from matplotlib import pyplot
+import time
 
 def double_dipole_eqs(state):
     #sliding equations of motion for double dipoles
@@ -111,23 +112,55 @@ def random_point_examine():
 
 def random_point_period():
     state0p, state0m = utils.reduced_state_gen()
-    state0p = [0.0, 0.0, 0.5166312725363087, 0.33848195776981216, 0.0, 0.10794186242929231, 0.10008255831561577]
+    # state0p = [0.0, 0.0, 0.5166312725363087, 0.33848195776981216, 0.0, 0.10794186242929231, 0.10008255831561577]
     states = [state0p, state0m]
-    for state0_ind in range(1):
+    for state0_ind in range(2):
         start = numpy.array(states[state0_ind])
+        print('initial momenta')
         print(start[-2:])
         return_times = utils.return_times_finder(
             reduced_double_dipole, start,
-            max_steps=10**6, precision=10**-7, max_time=2*2.8
+            max_steps=10**6, precision=10**-8, max_time=110
             )
-        print(return_times)
-        print([val/return_times[0] for val in return_times])
+        filtered_times = []
+        for index in range(len(return_times)):
+            if index%2 ==1:
+                filtered_times.append(return_times[index])
+        # print(filtered_times[0:4])
+        # print([val[0]/filtered_times[0][0] for val in filtered_times][0:4])
+        period_chisqr = utils.fit_slope_and_chisqr(filtered_times)
+        print('best fit period %f' % period_chisqr[0])
+        # print('chi sqr %f' % period_chisqr[1])
+        print('')
+    print('square root of 7 is %f' % 7**.5)
+
+def sample_space():
+    start = time.time()
+    data_out = open('./%d.txt' % time.time(), 'w')
+    for i in range(100):
+        state0p = utils.reduced_state_gen()[0]
+        start = numpy.array(state0p)
+        return_times = utils.return_times_finder(
+            reduced_double_dipole, start,
+            max_steps=10**6, precision=10**-8, max_time=50.0
+            )
+        filtered_times = []
+        for index in range(len(return_times)):
+            if index%2 ==1:
+                filtered_times.append(return_times[index])
+        period = utils.fit_slope_and_chisqr(filtered_times)
+        state0p.append(period[0])
+        data_out.write(('%f '*7) % tuple(state0p[1:]))
+        data_out.write('\n')
+    data_out.close()
+    print('took %d seconds' % (time.time()-start))
 
 if __name__ == '__main__':
     # sho_plots()
     # mag_oscillation(.001)
     # random_point_examine()
-    random_point_period()
+    # random_point_period()
+    sample_space()
 '''
 choosing a point in phase space:
     pick random phi_t and theta, set phi_d to 0

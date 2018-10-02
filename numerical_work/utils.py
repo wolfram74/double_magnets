@@ -67,28 +67,24 @@ def max_relative_error(vec1, vec2):
     return numpy.amax(numpy.absolute(deltas))
 
 def return_time(state0, stateN, stateNp1):
-    times = [0.0 for ti in range(len(state0)-1)]
-    for i in range(1,len(times)+1):
+    times = [None for ti in range(len(state0)-1)]
+    for i in range(3,len(times)+1):
         delT = stateNp1[0]-stateN[0]
         en, enp1 = stateN[i], stateNp1[i]
         e0 = state0[i]
         pi2 = numpy.pi*2
-        if i in [1,2,3]: #cyclic coordinates
-            if  en > e0 and enp1 > e0: #possibly gained more than a full rotation
-                while en > e0 and enp1 > e0:
-                    en  -= pi2
-                    enp1-= pi2
-            elif en < e0 and enp1 < e0: # possibly lost more than a full rotation
-                while en < e0 and enp1 < e0:
-                    en  += pi2
-                    enp1+= pi2
+        if i == 3 : #meta coord
+            e0 = numpy.cos(state0[2]-2*state0[3])
+            en = numpy.cos(stateN[2]-2*stateN[3])
+            enp1 = numpy.cos(stateNp1[2]-2*stateNp1[3])
+            # print(stateN[0], en, e0, enp1, delT)
         delQ = enp1-en
         if delQ == 0:
             times[i-1] = None
             continue
         times[i-1] = (
             stateN[0]
-            +delT*(state0[i]-en)/delQ
+            +delT*(e0-en)/delQ
             )
     return times
 
@@ -143,20 +139,20 @@ def return_times_finder(
         per1 = (last_state[0]>2.62 and last_state[0] < 2.63)
         per2 = (last_state[0]>5.05 and last_state[0] < 5.08)
         # if last_state[0]>5.05 and last_state[0] < 5.1:
-        if per1 or per2:
-            print(last_state[0],time_guesses, next_state[0])
-            print(last_state[:4])
-            print(last_state[:4]-numpy.pi)
-            print(state0[:4])
-            print(next_state[:4])
-            print(next_state[:4]-numpy.pi)
-            # print(numpy.cos(last_state[2]-2*last_state[3]))
-            # print(numpy.cos(state0[2]-2*state0[3]))
-            # print(numpy.cos(next_state[2]-2*next_state[3]))
-            print(last_state[2]-2*last_state[3])
-            print(state0[2]-2*state0[3])
-            print(next_state[2]-2*next_state[3])
-            print('')
+        # if per1 or per2:
+        #     print(last_state[0],time_guesses, next_state[0])
+        #     print(last_state[:4])
+        #     print(last_state[:4]-numpy.pi)
+        #     print(state0[:4])
+        #     print(next_state[:4])
+        #     print(next_state[:4]-numpy.pi)
+        #     # print(numpy.cos(last_state[2]-2*last_state[3]))
+        #     # print(numpy.cos(state0[2]-2*state0[3]))
+        #     # print(numpy.cos(next_state[2]-2*next_state[3]))
+        #     print(last_state[2]-2*last_state[3])
+        #     print(state0[2]-2*state0[3])
+        #     print(next_state[2]-2*next_state[3])
+        #     print('')
         linear_results = parse_returned_times(
             time_guesses, last_state[0], next_state[0])
         if linear_results:
@@ -205,6 +201,20 @@ def reduced_state_gen():
         state_outm = [0.,0.,pht,tht,0.,ptm,pthm]
         break
     return state_outp, state_outm
+
+def fit_slope_and_chisqr(data):
+    denom = 0
+    numer = 0
+    for i in range(len(data)):
+        # print(data[i])
+        denom += (i+1)**2
+        numer += data[i][0]*(i+1)
+    T_fit = float(numer)/float(denom)
+    chi_sqr = 0
+    for i in range(len(data)):
+        chi_sqr += (T_fit*(i+1)-data[i][0])**2/data[i][0]**2
+    return T_fit, chi_sqr
+
 '''
 2.62786
 
