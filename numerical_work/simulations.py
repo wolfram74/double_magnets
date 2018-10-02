@@ -83,9 +83,11 @@ def random_point_examine():
     state0p, state0m = utils.reduced_state_gen()
     figure, subplots = pyplot.subplots(2,2)
     states = [state0p, state0m]
+    print(state0p)
     for state0_ind in range(2):
         start = numpy.array(states[state0_ind])
         print(start[-2:])
+        # print(start[-2:])
         path = utils.RK4_adapt(
             reduced_double_dipole, start, 20.,
             max_steps=10**6, precision=10**-7
@@ -107,11 +109,25 @@ def random_point_examine():
         subplots[state0_ind,1].plot(t_vals ,ptht_vals)
     pyplot.show()
 
+def random_point_period():
+    state0p, state0m = utils.reduced_state_gen()
+    state0p = [0.0, 0.0, 0.5166312725363087, 0.33848195776981216, 0.0, 0.10794186242929231, 0.10008255831561577]
+    states = [state0p, state0m]
+    for state0_ind in range(1):
+        start = numpy.array(states[state0_ind])
+        print(start[-2:])
+        return_times = utils.return_times_finder(
+            reduced_double_dipole, start,
+            max_steps=10**6, precision=10**-7, max_time=2*2.8
+            )
+        print(return_times)
+        print([val/return_times[0] for val in return_times])
 
 if __name__ == '__main__':
     # sho_plots()
     # mag_oscillation(.001)
-    random_point_examine()
+    # random_point_examine()
+    random_point_period()
 '''
 choosing a point in phase space:
     pick random phi_t and theta, set phi_d to 0

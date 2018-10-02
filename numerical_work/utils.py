@@ -94,11 +94,17 @@ def return_time(state0, stateN, stateNp1):
 
 def parse_returned_times(time_vals, tN, tNp1):
     clean_vals = filter(lambda x: not x is None, time_vals)
+    # print(time_vals)
+    # print(clean_vals)
+    # print('')
     for val in clean_vals:
         if not(val>tN and val <tNp1):
             return False
     average = sum(clean_vals)/len(clean_vals)
-    return average
+    std_dev = 0
+    for val in clean_vals:
+        std_dev += (average-val)**2/(len(clean_vals)-1)
+    return (average, std_dev**.5)
 
 def return_times_finder(
     gradient_function,state0,
@@ -134,7 +140,23 @@ def return_times_finder(
         steps+=2
 
         time_guesses = return_time(state0, last_state, next_state)
-        # print(last_state[0],time_guesses, next_state[0])
+        per1 = (last_state[0]>2.62 and last_state[0] < 2.63)
+        per2 = (last_state[0]>5.05 and last_state[0] < 5.08)
+        # if last_state[0]>5.05 and last_state[0] < 5.1:
+        if per1 or per2:
+            print(last_state[0],time_guesses, next_state[0])
+            print(last_state[:4])
+            print(last_state[:4]-numpy.pi)
+            print(state0[:4])
+            print(next_state[:4])
+            print(next_state[:4]-numpy.pi)
+            # print(numpy.cos(last_state[2]-2*last_state[3]))
+            # print(numpy.cos(state0[2]-2*state0[3]))
+            # print(numpy.cos(next_state[2]-2*next_state[3]))
+            print(last_state[2]-2*last_state[3])
+            print(state0[2]-2*state0[3])
+            print(next_state[2]-2*next_state[3])
+            print('')
         linear_results = parse_returned_times(
             time_guesses, last_state[0], next_state[0])
         if linear_results:
@@ -183,3 +205,10 @@ def reduced_state_gen():
         state_outm = [0.,0.,pht,tht,0.,ptm,pthm]
         break
     return state_outp, state_outm
+'''
+2.62786
+
+5.076827
+
+
+'''
