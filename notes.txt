@@ -33,3 +33,8 @@ since double system has 6 degrees in phase space, the hamiltonian approach will 
     write function for determining if returned to point
   explore 0-angular momentum at different initial orientations
   explore 0-angular momentum with 0 for one of the phis
+
+10/02 meeting
+  large amplitude orbital mode simulations
+  simulations around other equilibrium
+

@@ -83,14 +83,17 @@ def random_point_examine():
     #phd, pht, tht, pd, pt, ptht
     state0p, state0m = utils.reduced_state_gen()
     figure, subplots = pyplot.subplots(2,2)
-    states = [state0p, state0m]
-    print(state0p)
-    for state0_ind in range(2):
+    # states = [state0p, state0m]
+    # pt = (3./84)**.5
+    pt = (1./28.)**.5
+    states = [[0.,0.,0.,0.,0.,pt, -2*pt]]
+    # print(state0p)
+    for state0_ind in range(1):
         start = numpy.array(states[state0_ind])
         print(start[-2:])
         # print(start[-2:])
         path = utils.RK4_adapt(
-            reduced_double_dipole, start, 20.,
+            reduced_double_dipole, start, 50.,
             max_steps=10**6, precision=10**-7
             )
         t_vals = utils.read_column(path, 0)
@@ -101,9 +104,9 @@ def random_point_examine():
         pphit_vals = numpy.array(utils.read_column(path, 5))
         ptht_vals = numpy.array(utils.read_column(path, 6))
         force_r = numpy.array(map(rf_red, path))
-        subplots[state0_ind,0].plot(t_vals ,phid_vals)
-        subplots[state0_ind,0].plot(t_vals ,phit_vals)
-        subplots[state0_ind,0].plot(t_vals ,tht_vals)
+        # subplots[state0_ind,0].plot(t_vals ,phid_vals)
+        # subplots[state0_ind,0].plot(t_vals ,phit_vals)
+        # subplots[state0_ind,0].plot(t_vals ,tht_vals)
         subplots[state0_ind,0].plot(t_vals ,force_r)
         subplots[state0_ind,1].plot(t_vals ,pphid_vals)
         subplots[state0_ind,1].plot(t_vals ,pphit_vals)
@@ -122,12 +125,14 @@ def random_point_period():
             reduced_double_dipole, start,
             max_steps=10**6, precision=10**-8, max_time=110
             )
+        print(return_times[:6])
+        print([val[0]/return_times[0][0] for val in return_times][0:6])
         filtered_times = []
         for index in range(len(return_times)):
             if index%2 ==1:
                 filtered_times.append(return_times[index])
-        # print(filtered_times[0:4])
-        # print([val[0]/filtered_times[0][0] for val in filtered_times][0:4])
+        print(filtered_times[0:3])
+        print([val[0]/filtered_times[0][0] for val in filtered_times][0:4])
         period_chisqr = utils.fit_slope_and_chisqr(filtered_times)
         print('best fit period %f' % period_chisqr[0])
         # print('chi sqr %f' % period_chisqr[1])
@@ -158,9 +163,9 @@ def sample_space():
 if __name__ == '__main__':
     # sho_plots()
     # mag_oscillation(.001)
-    # random_point_examine()
+    random_point_examine()
     # random_point_period()
-    sample_space()
+    # sample_space()
 '''
 choosing a point in phase space:
     pick random phi_t and theta, set phi_d to 0

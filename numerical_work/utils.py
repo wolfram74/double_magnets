@@ -219,6 +219,7 @@ def fit_slope_and_chisqr(data):
 2.62786
 
 5.076827
-
+http://www.shodor.org/cserd/Resources/Algorithms/NumericalDifferentiation/
+https://mathformeremortals.wordpress.com/2013/01/12/a-numerical-second-derivative-from-three-points/
 
 '''
