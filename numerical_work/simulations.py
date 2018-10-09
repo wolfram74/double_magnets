@@ -1,6 +1,7 @@
 import numpy
 import utils
 from matplotlib import pyplot
+import time
 
 def double_dipole_eqs(state):
     #sliding equations of motion for double dipoles
@@ -78,6 +79,31 @@ def rf_red(state):
         +numpy.cos(state[2]-2.*state[3])
         )/4.
 
+def plot_path_from_point(state0):
+    start = numpy.array(state0)
+    figure, subplots = pyplot.subplots(1,2)
+    # print(start[-2:])
+    path = utils.RK4_adapt(
+        reduced_double_dipole, start, 20.,
+        max_steps=10**6, precision=10**-7
+        )
+    t_vals = utils.read_column(path, 0)
+    phid_vals = numpy.array(utils.read_column(path, 1))
+    phit_vals = numpy.array(utils.read_column(path, 2))
+    tht_vals = numpy.array(utils.read_column(path, 3))
+    pphid_vals = numpy.array(utils.read_column(path, 4))
+    pphit_vals = numpy.array(utils.read_column(path, 5))
+    ptht_vals = numpy.array(utils.read_column(path, 6))
+    force_r = numpy.array(map(rf_red, path))
+    subplots[0].plot(t_vals ,phid_vals)
+    subplots[0].plot(t_vals ,phit_vals)
+    subplots[0].plot(t_vals ,tht_vals)
+    subplots[0].plot(t_vals ,force_r)
+    subplots[1].plot(t_vals ,pphid_vals)
+    subplots[1].plot(t_vals ,pphit_vals)
+    subplots[1].plot(t_vals ,ptht_vals)
+    pyplot.show()
+
 def random_point_examine():
     #phd, pht, tht, pd, pt, ptht
     state0p, state0m = utils.reduced_state_gen()
@@ -125,9 +151,13 @@ def random_point_period():
 
 def orbital_period_sim():
     samples = 150
-    maxT = 1.5
-    for frac in range(1, 3):
+    maxT = .5
+    data_out = open('./%d.txt' % time.time(), 'w')
+    start = time.time()
+    for frac in range(1, samples):
         T_0 = (maxT/samples)*frac
+        # T_0 = .5
+        print(T_0)
         P_tht = (2.*T_0/7.)**.5
         init = numpy.array([0.0,0.0,0.0,0.0,0.0,-P_tht/2.,P_tht])
         sim_path = utils.RK4_adapt(
@@ -136,13 +166,22 @@ def orbital_period_sim():
             )
         S_0 = sim_path[-1]
         S_0[0] = 0.0
-        print(S_0)
+        # print(S_0)
         return_times = utils.return_times_finder(
             reduced_double_dipole, S_0,
             max_steps=10**6, precision=10**-7, max_time=50*2.8
             )
-        print(return_times)
-        # print(len(sim_path), T_0)
+        # print(return_times)
+        # print([val[0]/return_times[0][0] for val in return_times])
+        period = utils.fit_slope_and_chisqr(return_times)
+        print(period)
+        S_0 = list(S_0)
+        S_0.append(period[0])
+        data_out.write(('%f '*7) % tuple(S_0[1:]))
+        data_out.write('\n')
+        print(' ')
+    data_out.close()
+    print('took %d seconds' % (time.time()-start))        # print(len(sim_path), T_0)
 
 
 if __name__ == '__main__':
@@ -151,6 +190,11 @@ if __name__ == '__main__':
     # random_point_examine()
     # random_point_period()
     orbital_period_sim()
+    # T_0 = .5
+    # P_tht = (2.*T_0/7.)**.5
+    # init = [0.0,0.0,0.0,0.0,0.0,-P_tht/2.,P_tht]
+    # plot_path_from_point(init)
+
 '''
 choosing a point in phase space:
     pick random phi_t and theta, set phi_d to 0
@@ -165,4 +209,7 @@ choosing a point in phase space:
         -> P_t = -P_o/2
         -> T = P_o^2+5/2P_o^2= 7/2P_o^2
         -> (2/7T)^.5 = P_0
+period notes
+w = 7^.5
+period = 2*pi/w = 2.37482
 '''

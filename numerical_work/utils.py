@@ -181,6 +181,10 @@ def return_times_finder(
 def fit_slope_and_chisqr(data):
     denom = 0
     numer = 0
+    print('in fitter')
+    print(len(data))
+    if len(data) == 0:
+        return -1, -1
     for i in range(len(data)):
         # print(data[i])
         denom += (i+1)**2
