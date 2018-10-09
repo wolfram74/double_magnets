@@ -2,6 +2,7 @@ import matplotlib.pyplot as pyplot
 import utils
 import numpy
 
+
 def parse_file():
     data_in = open('./clean_orbital_periods.txt', 'r')
     output = []
@@ -26,6 +27,13 @@ def plot_period_vs_energy():
     pyplot.errorbar(E_vals, p_vals, yerr= sig_vals)
     pyplot.show()
 
+def pendu_integrand_gen(tht_m):
+    max_term = numpy.sin(tht_m/2)**2
+    def pendu_integrand(tht):
+        return (
+            max_term-numpy.sin(tht/2)**2
+            )**(-.5)
+    return pendu_integrand
 
 if __name__ =='__main__':
     plot_period_vs_energy()
