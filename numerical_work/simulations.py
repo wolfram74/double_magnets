@@ -186,6 +186,7 @@ def orbital_period_sim():
     print('took %d seconds' % (time.time()-start))        # print(len(sim_path), T_0)
 
 
+
 if __name__ == '__main__':
     # sho_plots()
     # mag_oscillation(.001)

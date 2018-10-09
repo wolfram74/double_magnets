@@ -25,15 +25,36 @@ def plot_period_vs_energy():
     E_vals = utils.read_column(data, 2)
     pyplot.plot(E_vals, p_vals)
     pyplot.errorbar(E_vals, p_vals, yerr= sig_vals)
+    E_p_vals_spin = spin_periods()
+    print(E_p_vals_spin[0][:5])
+    print(E_p_vals_spin[1][:5])
+    pyplot.plot(E_p_vals_spin[0], E_p_vals_spin[1])
     pyplot.show()
 
 def pendu_integrand_gen(tht_m):
     max_term = numpy.sin(tht_m/2)**2
     def pendu_integrand(tht):
+        #from rubin chp 5, pdf page 131
         return (
             max_term-numpy.sin(tht/2)**2
             )**(-.5)
     return pendu_integrand
+
+def spin_periods():
+    samples = 150
+    Emax = 1./12.
+    T0 = numpy.pi*2*(5./3.)**(-.5)
+    E_vals = []
+    T_vals = []
+    for i in range(1, samples):
+        E_val = i*Emax/samples
+        tht_max = numpy.arccos(-12.*E_val)
+        integrand = pendu_integrand_gen(tht_max)
+        T_val = T0*utils.gaussian_leg(integrand, 10, [0, tht_max])/numpy.pi
+        E_vals.append((E_val-Emax))
+        T_vals.append(T_val)
+    return [E_vals, T_vals]
+
 
 if __name__ =='__main__':
     plot_period_vs_energy()
