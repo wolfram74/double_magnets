@@ -95,10 +95,12 @@ def plot_path_from_point(state0):
     pphit_vals = numpy.array(utils.read_column(path, 5))
     ptht_vals = numpy.array(utils.read_column(path, 6))
     force_r = numpy.array(map(rf_red, path))
+    ratio = numpy.array(map(lambda arr: arr[2]/arr[3], path))
     subplots[0].plot(t_vals ,phid_vals)
     subplots[0].plot(t_vals ,phit_vals)
     subplots[0].plot(t_vals ,tht_vals)
-    subplots[0].plot(t_vals ,force_r)
+    # subplots[0].plot(t_vals ,force_r)
+    subplots[0].plot(t_vals ,ratio)
     subplots[1].plot(t_vals ,pphid_vals)
     subplots[1].plot(t_vals ,pphit_vals)
     subplots[1].plot(t_vals ,ptht_vals)
@@ -185,6 +187,42 @@ def orbital_period_sim():
     data_out.close()
     print('took %d seconds' % (time.time()-start))        # print(len(sim_path), T_0)
 
+def spinning_period_sim():
+    samples = 150
+    maxT = 2./12.
+    data_out = open('./%d.txt' % time.time(), 'w')
+    start = time.time()
+    for frac in range(1, samples):
+        T_0 = (maxT/samples)*frac
+        # T_0 = .5
+        print(T_0)
+        Pd = (T_0/10.)**.5
+        init = numpy.array([0.0,0.0,0.0,0.0,Pd,0.,0.0])
+        sim_path = utils.RK4_adapt(
+            reduced_double_dipole, init, .05,
+            max_steps=10**6,precision=10**-10
+            )
+        S_0 = sim_path[-1]
+        S_0[0] = 0.0
+        # S_0 = init
+        # print(S_0)
+        return_times = utils.return_times_finder(
+            reduced_double_dipole, S_0,
+            max_steps=10**6, precision=10**-10, max_time=75
+            )
+        # print(return_times)
+        # print([val[0]/return_times[0][0] for val in return_times])
+        period = utils.fit_slope_and_chisqr(return_times)
+        print(period)
+        S_0 = list(S_0)
+        S_0.append(period[0])
+        S_0.append(period[1])
+        data_out.write(('%f '*8) % tuple(S_0[1:]))
+        data_out.write('\n')
+        print(' ')
+    data_out.close()
+    print('took %d seconds' % (time.time()-start))        # print(len(sim_path), T_0)
+
 
 
 if __name__ == '__main__':
@@ -192,11 +230,12 @@ if __name__ == '__main__':
     # mag_oscillation(.001)
     # random_point_examine()
     # random_point_period()
-    orbital_period_sim()
-    # T_0 = .25
-    # P_tht = (2.*T_0/7.)**.5
-    # init = [0.0,0.0,0.0,0.0,0.0,-P_tht/2.,P_tht]
-    # plot_path_from_point(init)
+    # orbital_period_sim()
+    # spinning_period_sim()
+    T_0 = .25
+    P_tht = (2.*T_0/7.)**.5
+    init = [0.0,0.0,0.0,0.0,0.0,-P_tht/2.,P_tht]
+    plot_path_from_point(init)
 
 '''
 choosing a point in phase space:
@@ -215,4 +254,6 @@ choosing a point in phase space:
 period notes
 w = 7^.5
 period = 2*pi/w = 2.37482
+w = (5/3)^.5
+period = 2*pi/w = 4.86693
 '''
