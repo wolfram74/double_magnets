@@ -178,6 +178,19 @@ def return_times_finder(
 
     return returned_to_state0
 
+def fit_slope_and_chisqr(data):
+    denom = 0
+    numer = 0
+    for i in range(len(data)):
+        # print(data[i])
+        denom += (i+1)**2
+        numer += data[i][0]*(i+1)
+    T_fit = float(numer)/float(denom)
+    chi_sqr = 0
+    for i in range(len(data)):
+        chi_sqr += (T_fit*(i+1)-data[i][0])**2/data[i][0]**2
+    return T_fit, chi_sqr
+
 def reduced_state_gen():
     # t, phd, pht, tht, pd, pt, pth
     state_outp = [0.,0.,0.,0.,0.,0.,0.]
