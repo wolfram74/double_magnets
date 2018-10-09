@@ -162,14 +162,15 @@ def orbital_period_sim():
         init = numpy.array([0.0,0.0,0.0,0.0,0.0,-P_tht/2.,P_tht])
         sim_path = utils.RK4_adapt(
             reduced_double_dipole, init, .01,
-            max_steps=10**6,precision=10**-6
+            max_steps=10**6,precision=10**-10
             )
         S_0 = sim_path[-1]
         S_0[0] = 0.0
+        # S_0 = init
         # print(S_0)
         return_times = utils.return_times_finder(
             reduced_double_dipole, S_0,
-            max_steps=10**6, precision=10**-7, max_time=50*2.8
+            max_steps=10**6, precision=10**-9, max_time=75
             )
         # print(return_times)
         # print([val[0]/return_times[0][0] for val in return_times])
@@ -177,7 +178,8 @@ def orbital_period_sim():
         print(period)
         S_0 = list(S_0)
         S_0.append(period[0])
-        data_out.write(('%f '*7) % tuple(S_0[1:]))
+        S_0.append(period[1])
+        data_out.write(('%f '*8) % tuple(S_0[1:]))
         data_out.write('\n')
         print(' ')
     data_out.close()
@@ -190,7 +192,7 @@ if __name__ == '__main__':
     # random_point_examine()
     # random_point_period()
     orbital_period_sim()
-    # T_0 = .5
+    # T_0 = .25
     # P_tht = (2.*T_0/7.)**.5
     # init = [0.0,0.0,0.0,0.0,0.0,-P_tht/2.,P_tht]
     # plot_path_from_point(init)

@@ -195,6 +195,30 @@ def fit_slope_and_chisqr(data):
         chi_sqr += (T_fit*(i+1)-data[i][0])**2/data[i][0]**2
     return T_fit, chi_sqr
 
+def gaussian_leg(func, samples, interval):
+    '''
+    unlike other methods doesn't use evenly spaced inputs
+    for n evaluation points, you would use the n solutions for the nth order legendre polynomial
+    '''
+    poly_coeffs = numpy.zeros(samples+1)
+    poly_coeffs[-1]=1
+    legendre = numpy.polynomial.legendre
+    roots = legendre.legroots(poly_coeffs)
+    poly_der_coeffs = legendre.legder(poly_coeffs)
+    poly_der_vals = legendre.legval(roots, poly_der_coeffs)
+    weights = []
+    for index in range(len(roots)):
+        weights.append(
+            2.0/((1-roots[index]**2)*(poly_der_vals[index]**2))
+            )
+    slope = (interval[1]-interval[0])/2.0
+    const = (interval[1]+interval[0])/2.0
+    sample_points = map(lambda y: slope*y+const, roots)
+    total = 0
+    for index in range(len(sample_points)):
+        total += func(sample_points[index])*slope*weights[index]
+    return total
+
 def reduced_state_gen():
     # t, phd, pht, tht, pd, pt, pth
     state_outp = [0.,0.,0.,0.,0.,0.,0.]
