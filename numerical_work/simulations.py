@@ -123,11 +123,34 @@ def random_point_period():
         print(return_times)
         print([val/return_times[0] for val in return_times])
 
+def orbital_period_sim():
+    samples = 150
+    maxT = 1.5
+    for frac in range(1, 3):
+        T_0 = (maxT/samples)*frac
+        P_tht = (2.*T_0/7.)**.5
+        init = numpy.array([0.0,0.0,0.0,0.0,0.0,-P_tht/2.,P_tht])
+        sim_path = utils.RK4_adapt(
+            reduced_double_dipole, init, .01,
+            max_steps=10**6,precision=10**-6
+            )
+        S_0 = sim_path[-1]
+        S_0[0] = 0.0
+        print(S_0)
+        return_times = utils.return_times_finder(
+            reduced_double_dipole, S_0,
+            max_steps=10**6, precision=10**-7, max_time=50*2.8
+            )
+        print(return_times)
+        # print(len(sim_path), T_0)
+
+
 if __name__ == '__main__':
     # sho_plots()
     # mag_oscillation(.001)
     # random_point_examine()
-    random_point_period()
+    # random_point_period()
+    orbital_period_sim()
 '''
 choosing a point in phase space:
     pick random phi_t and theta, set phi_d to 0
@@ -135,4 +158,11 @@ choosing a point in phase space:
     pick random T_0 such that E_0 < 0
     pick L_0 such that L_0^2 < -9/2 E_0
     determine P_t and P_theta
+    ---
+    L_0 = P_o + 2P_t
+    T = P_o^2 + 10P_t^2
+    L_0 = 0
+        -> P_t = -P_o/2
+        -> T = P_o^2+5/2P_o^2= 7/2P_o^2
+        -> (2/7T)^.5 = P_0
 '''

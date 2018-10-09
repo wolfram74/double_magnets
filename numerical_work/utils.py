@@ -140,23 +140,23 @@ def return_times_finder(
         steps+=2
 
         time_guesses = return_time(state0, last_state, next_state)
-        per1 = (last_state[0]>2.62 and last_state[0] < 2.63)
-        per2 = (last_state[0]>5.05 and last_state[0] < 5.08)
-        # if last_state[0]>5.05 and last_state[0] < 5.1:
-        if per1 or per2:
-            print(last_state[0],time_guesses, next_state[0])
-            print(last_state[:4])
-            print(last_state[:4]-numpy.pi)
-            print(state0[:4])
-            print(next_state[:4])
-            print(next_state[:4]-numpy.pi)
-            # print(numpy.cos(last_state[2]-2*last_state[3]))
-            # print(numpy.cos(state0[2]-2*state0[3]))
-            # print(numpy.cos(next_state[2]-2*next_state[3]))
-            print(last_state[2]-2*last_state[3])
-            print(state0[2]-2*state0[3])
-            print(next_state[2]-2*next_state[3])
-            print('')
+        # per1 = (last_state[0]>2.62 and last_state[0] < 2.63)
+        # per2 = (last_state[0]>5.05 and last_state[0] < 5.08)
+        # # if last_state[0]>5.05 and last_state[0] < 5.1:
+        # if per1 or per2:
+        #     print(last_state[0],time_guesses, next_state[0])
+        #     print(last_state[:4])
+        #     print(last_state[:4]-numpy.pi)
+        #     print(state0[:4])
+        #     print(next_state[:4])
+        #     print(next_state[:4]-numpy.pi)
+        #     # print(numpy.cos(last_state[2]-2*last_state[3]))
+        #     # print(numpy.cos(state0[2]-2*state0[3]))
+        #     # print(numpy.cos(next_state[2]-2*next_state[3]))
+        #     print(last_state[2]-2*last_state[3])
+        #     print(state0[2]-2*state0[3])
+        #     print(next_state[2]-2*next_state[3])
+        #     print('')
         linear_results = parse_returned_times(
             time_guesses, last_state[0], next_state[0])
         if linear_results:
