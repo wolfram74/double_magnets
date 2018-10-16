@@ -401,7 +401,7 @@ Which would mean that $p_{\phi_d}=\dot\phi_d/20$ and $p_{\phi_t}=\dot\phi_t/20$ 
 considering just the spinning mode where we begin with $\phi_t=\theta=p_{\phi_t}=p_\theta=0$ with this hamiltonian it becomes clear they all start at 0 and stay at 0, reducing this phase space from 6 dimensions to 2.
 
 \begin{equation}
-	H_{reduced}=
+	H_{\phi_d}=
 	10 p_{\phi_d}^2 
 	-
 	\frac{1}{12}
@@ -409,6 +409,74 @@ considering just the spinning mode where we begin with $\phi_t=\theta=p_{\phi_t}
 \end{equation}
 
 Which is isomorphic with the hamiltonian to a simple pendulum. As expected, the hamilton equations lead us to  a 2nd order differential $\ddot \phi_d = - \frac{5}{3}\sin(\phi_d)$ providing a 2nd check that the frequency is correct.
+
+\subsubsection{Coupling}
+
+Considering now the Hamiltonian for the other two angles we have
+
+\begin{equation}
+	H_{\phi_t, \theta}=
+	\frac{1}{2}\left (
+	+2 \frac{p_\theta^2}{r^2}
+	+20 p_{\phi_t}^2 
+        \right )
+	-
+	\frac{1}{12}
+	\frac{1}{r^3}(
+	        3\cos(\phi_t-2\theta)
+	    )
+\end{equation}
+
+We are leaving r in the expression now to specify conditions at a later time.
+
+\begin{subequations}
+	\begin{equation}
+		-\partial_{\phi_t}H= \dot p_{\phi_t} 
+		= - \frac{1}{4 r^{3}} \sin{\left (\phi_{t} - 2 \theta \right )}
+	\end{equation}
+	\begin{equation}
+		-\partial_{\theta}H= \dot p_{\theta}  
+		= \frac{1}{2 r^{3}} \sin{\left (\phi_{t} - 2 \theta \right )}=-2\dot p_{\phi_t}
+	\end{equation}
+	\begin{equation}
+		\partial_{p_{\phi_t}}H= \dot \phi_t 
+		= 20 p_{\phi_t}
+	\end{equation}
+	\begin{equation}
+		\partial_{p_{\theta}}H= \dot \theta 
+		= \frac{2 p_{\theta}}{r^{2}}
+	\end{equation}
+\end{subequations}
+
+The rates of change for the momenta clearly denote a conserved quantity we'll denote as $L_0 = p_\theta + 2p_{\phi_t}$. With this we can produce the expression
+
+\begin{equation}
+  \begin{multlined}
+	\phi_t(t) 
+	= \phi_{t0} + \int_0^t  \dot \phi_t  dt
+	= \phi_{t0} + \int_0^t  20 p_{ \phi_t } dt
+	= \phi_{t0} + \int_0^t  10 (L_0-p_{ \theta }) dt
+	\\
+	= \phi_{t0} + 10L_0t -10 \int_0^t  p_{ \theta } dt
+  \end{multlined}
+\end{equation}
+
+Which we'll rearrange to get
+
+\begin{equation}
+	\int_0^t  p_{ \theta } dt
+	= L_0t + (\phi_{t0}  - \phi_t(t))/10
+\end{equation}
+
+similarly
+
+\begin{equation}
+  \begin{multlined}
+	\theta(t) 
+	= \theta_{ 0} + \int_0^t  \dot \theta  dt
+	= \theta_{ 0} + \int_0^t   \frac{2 p_{\theta}}{r^{2}} dt
+  \end{multlined}
+\end{equation}
 
 \subsection{Numerical Results}
 \subsubsection{Method}

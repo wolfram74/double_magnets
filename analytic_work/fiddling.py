@@ -11,11 +11,13 @@ def ham_equations():
     for qi in positions:
         sympy.pprint(qi)
         sympy.pprint(-Ham.diff(qi))
-        print(sympy.latex(-Ham.diff(qi).subs(positions[3], 1)))
+        # print(sympy.latex(-Ham.diff(qi).subs(positions[3], 1)))
+        print(sympy.latex(-Ham.diff(qi)))
     for pi in momenta:
         sympy.pprint(pi)
         sympy.pprint(Ham.diff(pi))
-        print(sympy.latex(Ham.diff(pi).subs(positions[3], 1)))
+        # print(sympy.latex(Ham.diff(pi).subs(positions[3], 1)))
+        print(sympy.latex(Ham.diff(pi)))
 
 
 def equi_from_jk(j, k):
@@ -85,10 +87,12 @@ def new_ham_equations():
         sympy.pprint(qi)
         sympy.pprint(-new_Ham.diff(qi))
         print(sympy.latex(-new_Ham.diff(qi).subs(positions[3], 1)))
+        # print(sympy.latex(-new_Ham.diff(qi)))
     for pi in new_momenta:
         sympy.pprint(pi)
         sympy.pprint(new_Ham.diff(pi))
         print(sympy.latex(new_Ham.diff(pi).subs(positions[3], 1)))
+        # print(sympy.latex(new_Ham.diff(pi)))
 
 op_codes=[
     ham_equations, mode_analysis,
