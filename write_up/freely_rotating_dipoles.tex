@@ -417,7 +417,7 @@ Considering now the Hamiltonian for the other two angles we have
 \begin{equation}
 	H_{\phi_t, \theta}=
 	\frac{1}{2}\left (
-	+2 \frac{p_\theta^2}{r^2}
+	+2 p_\theta^2
 	+20 p_{\phi_t}^2 
         \right )
 	-
@@ -427,16 +427,17 @@ Considering now the Hamiltonian for the other two angles we have
 	    )
 \end{equation}
 
-We are leaving r in the expression now to specify conditions at a later time.
+Which holds while the contact criterion is observed.
 
 \begin{subequations}
 	\begin{equation}
 		-\partial_{\phi_t}H= \dot p_{\phi_t} 
-		= - \frac{1}{4 r^{3}} \sin{\left (\phi_{t} - 2 \theta \right )}
+		= - \frac{1}{4} \sin{\left (\phi_{t} - 2 \theta \right )}
 	\end{equation}
 	\begin{equation}
 		-\partial_{\theta}H= \dot p_{\theta}  
-		= \frac{1}{2 r^{3}} \sin{\left (\phi_{t} - 2 \theta \right )}=-2\dot p_{\phi_t}
+		= \frac{1}{2} \sin{\left (\phi_{t} - 2 \theta \right )}
+		=-2\dot p_{\phi_t}
 	\end{equation}
 	\begin{equation}
 		\partial_{p_{\phi_t}}H= \dot \phi_t 
@@ -444,7 +445,7 @@ We are leaving r in the expression now to specify conditions at a later time.
 	\end{equation}
 	\begin{equation}
 		\partial_{p_{\theta}}H= \dot \theta 
-		= \frac{2 p_{\theta}}{r^{2}}
+		= 2 p_{\theta}
 	\end{equation}
 \end{subequations}
 
@@ -463,23 +464,36 @@ The rates of change for the momenta clearly denote a conserved quantity we'll de
 
 Which we'll rearrange to get
 
-\begin{equation}
+\begin{equation}\label{phi_int}
 	\int_0^t  p_{ \theta } dt
 	= L_0t + (\phi_{t0}  - \phi_t(t))/10
 \end{equation}
 
 similarly
 
-\begin{equation}
+\begin{equation}\label{tht_int}
   \begin{multlined}
 	\theta(t) 
 	= \theta_{ 0} + \int_0^t  \dot \theta  dt
-	= \theta_{ 0} + \int_0^t   \frac{2 p_{\theta}}{r^{2}} dt
+	= \theta_{ 0} + \int_0^t  2 p_{\theta} dt
+	\\
+	\int_0^t  p_{\theta} dt = (\theta(t)-\theta_{0})/2
   \end{multlined}
 \end{equation}
+
+While the integral of $p_\theta$ is not generally analytic, the equality between the two holds which allows us to algebraically rearrange \ref{phi_int} and \ref{tht_int} to get
+
+\begin{equation}
+	\phi_t(t)=  -5(\theta(t)-\theta_{0}-\phi_{t0}/5) + 10L_0 t 
+\end{equation}
+
 
 \subsection{Numerical Results}
 \subsubsection{Method}
 \subsubsection{Periodic Solutions}
-
+%needed diagrams;
+%numerical values of period vs energy
+%geometry layout/labels
+%animatique of basic modes
+%revtek4.1
 \end{document}

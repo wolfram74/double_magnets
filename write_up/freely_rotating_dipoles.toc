@@ -15,4 +15,4 @@
 \contentsline {subsubsection}{\tocsubsubsection {}{3.1.4}{Coupling}}{7}
 \contentsline {subsection}{\tocsubsection {}{3.2}{Numerical Results}}{7}
 \contentsline {subsubsection}{\tocsubsubsection {}{3.2.1}{Method}}{7}
-\contentsline {subsubsection}{\tocsubsubsection {}{3.2.2}{Periodic Solutions}}{7}
+\contentsline {subsubsection}{\tocsubsubsection {}{3.2.2}{Periodic Solutions}}{8}

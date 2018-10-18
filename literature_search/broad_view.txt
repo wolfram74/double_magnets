@@ -23,3 +23,12 @@ library website
 
 google scholar
 
+search.proquest.com
+
+https://www-scopus-com.
+
+targets:
+  https://journals.aps.org/pre/about
+
+look this up and see how it's citing dr. edwards paper
+https://journals.aps.org/prb/abstract/10.1103/PhysRevB.98.054401
