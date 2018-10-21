@@ -1,5 +1,6 @@
-
-\documentclass[12pt]{amsart}
+%\documentclass[12pt]{amsart}
+\documentclass[prb,preprint]{revtex4-1} 
+%Manuscripts that demonstrate new relations between apparently unrelated areas of physics are appropriate.
 \usepackage{geometry} % see geometry.pdf on how to lay out the page. There's lots.
 \usepackage{mathtools}
 \geometry{a4paper} % or letter or a5paper or ... etc
@@ -7,27 +8,31 @@
 
 % See the ``Article customise'' template for come common customisations
 
-\title{Dynamics of Two Freely Rotating Dipoles}
-\author{Peter Haugen}
 %\date{} % delete this line to display the current date
 
 %%% BEGIN DOCUMENT
 \begin{document}
 
-\maketitle
-\tableofcontents
+\title{Dynamics of Two Freely Rotating Dipoles}
+\author{Peter Haugen}
 
+\maketitle
+%\tableofcontents
+
+\section{Abstract}
+	The equations of motion for two spherical dipoles moving freely in a plane are arrived at. Special consideration is given to the contact state. Their equilibria determined, small amplitude motion examined and large amplitude motion investigated to reveal exclusively quasi-periodic motion is possible.
+	
 \section{Introduction}
-A system comprised of two unrestricted spherical magnetic dipoles presents an interesting and fundamental set of phenomenon as two magnetic dipoles is amongst the simplest non-trivial macroscopic magnetic systems. Understanding their dynamics could prove useful in contexts such as the large dipole field proposed to provide a solar wind umbrella for mars.
+A system comprised of two unrestricted spherical magnetic dipoles presents an interesting and fundamental set of phenomenon as two magnetic dipoles is amongst the simplest non-trivial macroscopic magnetic systems. Understanding their dynamics could prove useful in contexts such as the large dipole field proposed to provide a solar wind umbrella for mars or small magnetic toothless-gears.
 
 \section{Describing the System}
 Intrinsic properties of the two dipoles are: their respective radii, which we shall label as $a_1$ and $a_2$, their masses, $m_1$ and $m_2$, and magnitudes of their dipole moments, $\mu_1$ and $\mu_2$.
 \subsection{Coordinates}
 \subsubsection{Cartesian}
 
-Each of the dipoles has a location $\vec r_1$ and $\vec r_1$ along with an orientation for the dipole $\phi_1$ and $\phi_2$, measured from the x-axis.
+Each of the dipoles has a location constrained to the x-y plane $\vec r_1$ and $\vec r_1$ along with an orientation for the dipole $\phi_1$ and $\phi_2$ which we will also constrain to the x-y plane, measured from the x-axis.
 \subsubsection{Center Of Mass}
-We can define a more appropriate set of coordinates and quantities using these fundamental descriptors. 
+We can define a set of composite coordinates and quantities more appropriate for analyzing two-body system using the aforementioned independent coordinates a la Taylor's mechanics. 
 
 The total and reduced mass
 
@@ -51,6 +56,7 @@ And the displacement of dipole 2 from dipole 1
 
 
 \subsection{Hamiltonian}
+To take advantage of the numerous analytic techniques that can be applied to a system's Hamiltonian, it must first be calculated. Which in turn requires that we find it's kinetic and potential energy in terms of it's coordinates.
 \subsubsection{Energies}
 The kinetic energy, T, in the center of mass coordinates can be found to be
 %citing taylor mechanics for the reduced kinetic
@@ -68,7 +74,7 @@ The potential energy for dipole 1 is merely it's dot product with the local fiel
 U_1 = -\vec \mu_1 \cdot \vec B_2
 \end{equation}
 
-With the magnetic field for a dipole at some point of interest $\vec r_i$ begin given by
+With the magnetic field for a dipole at some point of interest $\vec r_i$ being given by
 
 \begin{equation}
 \vec B_2 = 
@@ -95,6 +101,7 @@ U_1 =
 )
 \end{equation}
 
+The $\vec \mu_1 \cdot \vec \mu_2$ term accounts for the obvious relation the dipole orientation of the two dipoles has with $U$, and the $\vec \mu_i \cdot \hat r$ term accounts for the less obvious relationship that their geometric orientation with each other has on $U$ .
 This is obviously symmetric under substitution of 1 for 2 and vice versa so we have a total interaction potential of
 
 \begin{equation}
@@ -107,6 +114,10 @@ U_1+U_2
 Which when expanding the dot products out in terms of all three respective angles leaves us with
 
 \begin{equation}
+  \begin{multlined}
+\hat \mu_i =  \cos(\phi_i)\hat x + \sin(\phi_i)\hat y,
+\hat r =  \cos(\theta)\hat x + \sin(\theta)\hat y
+\\
 U(\phi_1, \phi_2, \theta, r) =
 -\frac{\mu_0}{4\pi}
 \frac{\mu_1 \mu_2}{2}
@@ -114,9 +125,10 @@ U(\phi_1, \phi_2, \theta, r) =
 	\cos(\phi_1-\phi_2)
 	+3\cos(\phi_1+\phi_2 -2\theta)
 )
+  \end{multlined}
 \end{equation}
 
-Having an expression for kinetic and potential energy, the lagrangian is as follows.
+Having an expression for kinetic and potential energy, the Lagrangian is as follows.
 
 \begin{equation}
   \begin{multlined}
@@ -141,7 +153,7 @@ Having an expression for kinetic and potential energy, the lagrangian is as foll
 
 \subsubsection{Momenta}
 
-The first observation we make is that the potential energy is independent of the center of mass coordinates making the corresponding momenta a constant of motion and we will proceed assuming we are in the inertial frame where it is 0 and R is 0. Determining the other momenta we use the relationship $\partial_{\dot q_i} L =p_i$ to arrive at
+The first observation we make is that the Lagrangian is independent of the center of mass position making the corresponding momenta a constant of motion and we will proceed assuming we are in the inertial frame where it is 0 and R is 0. Determining the other momenta we use the relationship $\partial_{\dot q_i} L =p_i$ to arrive at
 
 \begin{subequations}
     \begin{equation}
@@ -161,17 +173,17 @@ The first observation we make is that the potential energy is independent of the
 Allowing us to find the Hamiltonian with the expression of 
 
 \begin{equation}
-H=L+\Sigma_i p_i \dot q_i
+H=\Sigma_i p_i \dot q_i - L
 =
 \frac{1}{2}(
 	\frac{p_r^2}{m_r}
 	+\frac{p_\theta^2}{m_r r^2}
 	+\frac{p_{\phi_1}^2}{I_1}
 	+\frac{p_{\phi_2}^2}{I_2}
-)+U(\phi_1,\phi_2,\theta)
+)+U(\phi_1,\phi_2,\theta, r)
 \end{equation}
 \subsection{Dimensionless coordinates}
-To get at the essentials of the system we will examine in a natural system of coordinates. First we will characterize the second dipole in terms of the first such that 
+To get at the essentials of the system we will examine it in a natural set of dimensions. First we will characterize the second dipole in terms of the first such that 
 $m_2=\alpha m_1$,   
 $a_2=\beta a_1$,
 $\mu_2=\gamma \mu_1$. This lets us rewrite the energies as
