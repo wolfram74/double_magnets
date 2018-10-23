@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  22 OCT 2018 12:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  23 OCT 2018 10:55
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -374,14 +374,14 @@ e
 Class revtex4-1 Warning: Assuming \noaffiliation for authors.
 
 [1{/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-[2] [3] [4] [5] [6] [7] [8] [9] [10]
+[2] [3] [4] [5] [6] [7] [8] [9] [10] [11]
 No file freely_rotating_dipoles.bbl.
-[11] (./freely_rotating_dipoles.aux) ) 
+[12] (./freely_rotating_dipoles.aux) ) 
 Here is how much of TeX's memory you used:
- 5102 strings out of 493117
- 70907 string characters out of 6135433
- 163868 words of memory out of 5000000
- 8512 multiletter control sequences out of 15000+600000
+ 5104 strings out of 493117
+ 70922 string characters out of 6135433
+ 163902 words of memory out of 5000000
+ 8514 multiletter control sequences out of 15000+600000
  8956 words of font info for 32 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  51i,8n,27p,689b,174s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -398,10 +398,10 @@ lic/amsfonts/cm/cmr6.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public
 sfonts/cm/cmsy10.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/ams
 fonts/cm/cmsy8.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfo
 nts/cm/cmti10.pfb>
-Output written on freely_rotating_dipoles.pdf (11 pages, 157684 bytes).
+Output written on freely_rotating_dipoles.pdf (12 pages, 159168 bytes).
 PDF statistics:
- 88 PDF objects out of 1000 (max. 8388607)
- 62 compressed objects within 1 object stream
+ 91 PDF objects out of 1000 (max. 8388607)
+ 64 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -20,17 +20,17 @@
 %\tableofcontents
 
 \section{Abstract}
-	The equations of motion for two spherical dipoles moving freely in a plane are arrived at. Special consideration is given to the contact state. Their equilibria determined, small amplitude motion examined and large amplitude motion investigated to reveal exclusively quasi-periodic motion is possible.
+	The equations of motion for two spherical dipoles moving freely in a plane are arrived at. Special consideration is given to the contact state. Their equilibria are determined, small amplitude motion examined and large amplitude motion investigated to reveal that possible motions are exclusively quasi-periodic.
 	
 \section{Introduction}
-A system comprised of two unrestricted spherical magnetic dipoles presents an interesting and fundamental set of phenomenon as two magnetic dipoles is amongst the simplest non-trivial macroscopic magnetic systems. Understanding their dynamics could prove useful in contexts such as the large dipole field proposed to provide a solar wind umbrella for mars or small magnetic toothless-gears.
+A system composed of two unrestricted spherical magnetic dipoles presents an interesting and fundamental set of phenomenon as two magnetic dipoles is amongst the simplest non-trivial macroscopic magnetic systems. Understanding their dynamics could prove useful in contexts such as the large dipole field proposed to provide a solar wind umbrella for mars or small magnetic toothless-gears.
 
 \section{Describing the System}
 Intrinsic properties of the two dipoles are: their respective radii, which we shall label as $a_1$ and $a_2$, their masses, $m_1$ and $m_2$, and magnitudes of their dipole moments, $\mu_1$ and $\mu_2$.
 \subsection{Coordinates}
 \subsubsection{Cartesian}
 
-Each of the dipoles has a location constrained to the x-y plane $\vec r_1$ and $\vec r_1$ along with an orientation for the dipole $\phi_1$ and $\phi_2$ which we will also constrain to the x-y plane, measured from the x-axis.
+Each of the dipoles has a location constrained to the x-y plane $\vec r_1$ and $\vec r_2$ along with an orientation for the dipole $\phi_1$ and $\phi_2$ which we will also constrain to the x-y plane, measured from the x-axis.
 \subsubsection{Center Of Mass}
 We can define a set of composite coordinates and quantities more appropriate for analyzing two-body system using the aforementioned independent coordinates a la Taylor's mechanics. 
 
@@ -56,7 +56,7 @@ And the displacement of dipole 2 from dipole 1
 
 
 \subsection{Hamiltonian}
-To take advantage of the numerous analytic techniques that can be applied to a system's Hamiltonian, it must first be calculated. Which in turn requires that we find it's kinetic and potential energy in terms of it's coordinates.
+To take advantage of the numerous analytic techniques that can be applied to a system's Hamiltonian, it must first be calculated. Which in turn requires that we find its kinetic and potential energy in terms of its coordinates.
 \subsubsection{Energies}
 The kinetic energy, T, in the center of mass coordinates can be found to be
 %citing taylor mechanics for the reduced kinetic
@@ -69,7 +69,7 @@ T = \frac{1}{2}(
 	+ I_2 \dot \phi_2^2
 )
 \end{equation}
-The potential energy for dipole 1 is merely it's dot product with the local field, which in this case is caused entirely by dipole 2.
+The potential energy for dipole 1 is merely its dot product with the local field, which in this case is caused entirely by dipole 2.
 \begin{equation}
 U_1 = -\vec \mu_1 \cdot \vec B_2
 \end{equation}
@@ -358,7 +358,7 @@ For the 0,0 equilibrium we find the perturbation matrix to be
 	\frac{1}{2} & \frac{1}{2} & \frac{\omega^{2}}{2} - 1\end{matrix}\right]
 \end{equation}
 
-Which only has 2 non-zero eigen modes corresponding to when $\omega^2$ is equal to 5/3 and 7. The lower frequency mode has an eigenvector of [1, -1, 0], indicating it has no motion in the orbital angle, $\theta$, for this reason I refer to it as the spinning mode for it's sole form of motion. It possesses an interesting isomorphism we shall examine more later. The higher frequency's eigenvector is [5/2, 5/2,-1] indicating it does possess orbital motion and thus earns the moniker of orbital mode. Brief algebra will reveal that both modes have net-0 angular momentum. This likely stems from the result that net angular momentum for the system is constant.
+Which only has 2 non-zero eigen modes corresponding to when $\omega^2$ is equal to 5/3 and 7. The lower frequency mode has an eigenvector of [1, -1, 0], indicating it has no motion in the orbital angle, $\theta$, for this reason I refer to it as the spinning mode for its sole form of motion. It possesses an interesting isomorphism we shall examine more later. The higher frequency's eigenvector is [5/2, 5/2,-1] indicating it does possess orbital motion and thus earns the moniker of orbital mode. Brief algebra will reveal that both modes have net-0 angular momentum. This likely stems from the result that net angular momentum for the system is constant.
 
 For the 0,1 equilibrium the perturbation matrix is 
 \begin{equation}
@@ -389,7 +389,7 @@ Both the 0,0 and 0,1 equilibria points have an $\omega^2=0$ mode where all the a
 \end{subequations}
 
 Squaring and summing these new velocities we see find 
-$\frac{1}{2}(\dot\phi_d^2 + \dot\phi_t^2) = \dot\phi_1^2+\dot\phi_2^2$
+$\frac{1}{2}(\dot\phi_d^2 + \dot\phi_t^2) = \dot\phi_1^2+\dot\phi_2^2$ and similarly $\frac{1}{20}(\dot\phi_d^2 + \dot\phi_t^2) = \frac{1}{10}(\dot\phi_1^2+\dot\phi_2^2)$.
 Which would mean that $p_{\phi_d}=\dot\phi_d/20$ and $p_{\phi_t}=\dot\phi_t/20$ which leads the contact hamiltonian in these coordinates to be
 
 \begin{equation}
@@ -442,11 +442,11 @@ Considering now the Hamiltonian for the other two angles we have
 Which holds while the contact criterion is observed.
 
 \begin{subequations}
-	\begin{equation}
+	\begin{equation}\label{f_phit}
 		-\partial_{\phi_t}H= \dot p_{\phi_t} 
 		= - \frac{1}{4} \sin{\left (\phi_{t} - 2 \theta \right )}
 	\end{equation}
-	\begin{equation}
+	\begin{equation}\label{f_tht}
 		-\partial_{\theta}H= \dot p_{\theta}  
 		= \frac{1}{2} \sin{\left (\phi_{t} - 2 \theta \right )}
 		=-2\dot p_{\phi_t}
@@ -499,10 +499,25 @@ While the integral of $p_\theta$ is not generally analytic, the equality between
 	\phi_t(t)=  -5(\theta(t)-\theta_{0}-\phi_{t0}/5) + 10L_0 t 
 \end{equation}
 
+Considering the force on $p_\theta$ from \ref{f_tht} and making this new substitution starting from equilibrium and a zero momentum starting condition we have
+
+\begin{equation}
+	\ddot \theta = \sin(-5\theta -2\theta) = -\sin(7\theta)\approx -7\theta
+\end{equation}
+
+And doing the same with $p_{\phi_t}$ from \ref{f_phit} produces
+
+\begin{equation}
+	\ddot \phi_t = -\frac{20}{4}\sin(\phi_t +2/5\phi_t) =  -5\sin(\frac{7}{5}\phi_t)\approx -7\phi_t
+\end{equation}
+
+Showing that while the contact constraint holds, the orbital state is also isomorphic with the simple pendulum.
 
 \subsection{Numerical Results}
 \subsubsection{Method}
-\subsubsection{Periodic Solutions}
+An adaptive Runge-Kutta 4 method was implemented to calculate the trajectory of the system using two different sized time steps, both made smaller until they agreed within a specified precision. To determine if a trajectory 
+
+\subsubsection{Period vs Energy curves}
 %needed diagrams;
 %numerical values of period vs energy
 %geometry layout/labels
