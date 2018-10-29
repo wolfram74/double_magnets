@@ -216,7 +216,7 @@ $T_0=\sqrt{m_1L_0/F0}$ for time,
 $\mu_1$ for magnetic moment,
 $T_0^{-1},T_0^{-2}$ for angular velocities and accelerations,
 $m_1L_0/T_0$ for linear momentum and 
-$m_1L_0^2/T_0$ for angular momentum. This let's us rewrite the energies
+$m_1L_0^2/T_0$ for angular momentum. This lets us rewrite the energies
 
 \begin{subequations}
     \begin{equation}
@@ -237,7 +237,7 @@ $m_1L_0^2/T_0$ for angular momentum. This let's us rewrite the energies
     \end{equation}
 \end{subequations}
 
-Let us finally make two more assumptions. First, that the two spheres are identical, $\alpha=\beta=\gamma=1$. Second, that there is some contact potential preventing the two sphere's from overlapping that prohibits r from getting less than 1. These two assumptions produce the hamiltonian we'll be investigating for the remainder of our paper
+Let us finally make two more assumptions. First, that the two spheres are identical, $\alpha=\beta=\gamma=1$. Second, that there is some contact potential preventing the two spheres from overlapping that prohibits r from getting less than 1. These two assumptions produce the Hamiltonian we'll be investigating for the remainder of our paper
 
 \begin{equation}
   \begin{multlined}
@@ -262,7 +262,7 @@ Let us finally make two more assumptions. First, that the two spheres are identi
 \subsection{Analytic Results}
 
 \subsubsection{Equilibrium Analysis}
-Let us first examine the equations of motion and see if there exist any equilibria between the spheres while they are in contact with each other ($r=1$). The hamiltonian equations of motion we find are
+Let us first examine the equations of motion and see if there exist any equilibria between the spheres while they are in contact with each other ($r=1$). The Hamiltonian equations of motion we find are
 
 \begin{subequations}
     \begin{equation}\label{fphi1}
@@ -294,7 +294,7 @@ Inspecting equation \ref{ftht} we see immediately that the orbital momentum, $p_
 	\end{equation}
 \end{subequations}
 
-all the forces on the three angular momenta are 0. However since our hamiltonian is periodic over $2\pi$ we're interested in (j,k) permuting through 0 and 1. This leaves us with 4 curves, until we consider the constraint that \ref{fr} must be negative to maintain contact. If j is odd, then we're left with a resulting positive radial force of $1/2$, and we lose contact. So we've narrowed down from an infinite number of equilibrium curves to two, which, using the j-k notation are 0-0 and 0-1.
+all the forces on the three angular momenta are 0. However since our Hamiltonian is periodic over $2\pi$ we're interested in (j,k) permuting through 0 and 1. This leaves us with 4 curves, until we consider the constraint that \ref{fr} must be negative to maintain contact. If j is odd, then we're left with a resulting positive radial force of $1/2$, and we lose contact. So we've narrowed down from an infinite number of equilibrium curves to two, which, using the j-k notation are 0-0 and 0-1.
 
 
 
@@ -308,7 +308,7 @@ p_{\phi_{1i}},p_{\phi_{2i}},p_{\theta_{i}}
 =
 (\phi_{1i},\phi_{2i},\theta_{i},0,0,0)
 $ 
-the changes in momenta will be small we can do a multi-variable taylor expansion and produce the expression.
+the changes in momenta will be small we can do a multi-variable Taylor expansion and produce the expression.
 
 \begin{equation}\label{taylor_force}
 	\dot p_n 
@@ -358,7 +358,7 @@ For the 0,0 equilibrium we find the perturbation matrix to be
 	\frac{1}{2} & \frac{1}{2} & \frac{\omega^{2}}{2} - 1\end{matrix}\right]
 \end{equation}
 
-Which only has 2 non-zero eigen modes corresponding to when $\omega^2$ is equal to 5/3 and 7. The lower frequency mode has an eigenvector of [1, -1, 0], indicating it has no motion in the orbital angle, $\theta$, for this reason I refer to it as the spinning mode for its sole form of motion. It possesses an interesting isomorphism we shall examine more later. The higher frequency's eigenvector is [5/2, 5/2,-1] indicating it does possess orbital motion and thus earns the moniker of orbital mode. Brief algebra will reveal that both modes have net-0 angular momentum. This likely stems from the result that net angular momentum for the system is constant.
+Which only has 2 non-zero eigen modes corresponding to when $\omega^2$ is equal to 5/3 and 7. The lower frequency mode has an eigenvector of [1, -1, 0], indicating it has no motion in the orbital angle, $\theta$. For this reason I refer to it as the spinning mode for its sole form of motion. It possesses an interesting isomorphism we shall examine more later. The second, higher, frequency's eigenvector is [5/2, 5/2,-1] indicating it does possess orbital motion and thus earns the moniker of orbital mode. Brief algebra will reveal that both modes have net-0 angular momentum. This likely stems from the result that net angular momentum for the system is constant.
 
 For the 0,1 equilibrium the perturbation matrix is 
 \begin{equation}
@@ -388,9 +388,9 @@ Both the 0,0 and 0,1 equilibria points have an $\omega^2=0$ mode where all the a
 	\end{equation}
 \end{subequations}
 
-Squaring and summing these new velocities we see find 
+Squaring and summing these new velocities we find 
 $\frac{1}{2}(\dot\phi_d^2 + \dot\phi_t^2) = \dot\phi_1^2+\dot\phi_2^2$ and similarly $\frac{1}{20}(\dot\phi_d^2 + \dot\phi_t^2) = \frac{1}{10}(\dot\phi_1^2+\dot\phi_2^2)$.
-Which would mean that $p_{\phi_d}=\dot\phi_d/20$ and $p_{\phi_t}=\dot\phi_t/20$ which leads the contact hamiltonian in these coordinates to be
+This means $p_{\phi_d}=\dot\phi_d/20$ and $p_{\phi_t}=\dot\phi_t/20$ which leads the contact Hamiltonian in these coordinates to be
 
 \begin{equation}
   \begin{multlined}
@@ -410,7 +410,7 @@ Which would mean that $p_{\phi_d}=\dot\phi_d/20$ and $p_{\phi_t}=\dot\phi_t/20$ 
   \end{multlined}
 \end{equation}
 
-considering just the spinning mode where we begin with $\phi_t=\theta=p_{\phi_t}=p_\theta=0$ with this hamiltonian it becomes clear they all start at 0 and stay at 0, reducing this phase space from 6 dimensions to 2.
+Considering just the spinning mode where we begin with $\phi_t=\theta=p_{\phi_t}=p_\theta=0$. Using this Hamiltonian it becomes clear they all start at 0 and stay at 0, reducing this phase space from 6 dimensions to 2.
 
 \begin{equation}
 	H_{\phi_d}=
@@ -420,7 +420,7 @@ considering just the spinning mode where we begin with $\phi_t=\theta=p_{\phi_t}
         \cos(\phi_d)
 \end{equation}
 
-Which is isomorphic with the hamiltonian to a simple pendulum. As expected, the hamilton equations lead us to  a 2nd order differential $\ddot \phi_d = - \frac{5}{3}\sin(\phi_d)$ providing a 2nd check that the frequency is correct.
+Which is isomorphic with the Hamiltonian to a simple pendulum. As expected, the Hamilton equations lead us to  a 2nd order differential $\ddot \phi_d = - \frac{5}{3}\sin(\phi_d)$ providing a 2nd check that the frequency is correct.
 
 \subsubsection{Coupling}
 

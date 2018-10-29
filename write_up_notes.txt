@@ -1,0 +1,14 @@
+http://web.mit.edu/rhprice/www/Contributors/manFormat.html
+
+The manuscript should be arranged in the following order:
+  √Title
+  ~Authors and affiliations
+  ?Abstract (optional for the Notes and Discussions section)
+    The abstract should serve as an index (including all subjects, major and minor, about which new information is given) and as a summary (presenting the conclusions and all results of general interest in the article). It should be one paragraph with approximately 250 words. The abstract should not contain displayed mathematical equations, footnotes, references, graphics, or tabular material.
+  Introductory section
+  Main body, divided into sections and subsections as appropriate
+  Concluding section (optional)
+  Appendices, if necessary
+  Acknowledgments
+  Endnotes
+title, author(s), affiliation(s), abstract, text, acknowledgments, appendixes, and references. Figures, with figure captions, may be embedded within the manuscript to assist the reviewers.
