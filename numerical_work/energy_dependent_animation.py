@@ -59,7 +59,6 @@ def simulate_energy(energy):
         )
 
 if __name__=='__main__':
-    # data = load_data('../produced_data/tht_0.6666_w_137/t_0.txt')
     fig, axes = pyplot.subplots()
     x_vals = [.5]
     y_vals = [.2]
