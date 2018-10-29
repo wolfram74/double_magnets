@@ -26,8 +26,11 @@ def reduced_double_dipole(state):
 def frame_gen(state):
     axes.clear()
     phi1 = (state[2]+state[1])/2.
+    w1 = 10*(state[5]+state[4])
     phi2 = (state[2]-state[1])/2.
+    w2 = 10*(state[5]-state[4])
     tht = state[3]
+    wtht = 2*state[6]
     c1 = numpy.array([.5*numpy.cos(tht), .5*numpy.sin(tht)])
     c2 = -c1
     mu1 = c1+numpy.array([numpy.cos(phi1), numpy.sin(phi1)])*.5
@@ -55,24 +58,9 @@ def frame_gen(state):
     axes.set_title('t=%f, t/T0=%f' % (state[0], t_T0))
 
     # pyplot.show()
-    # pyplot.plot(t_vals ,phi1_vals)
-    # pyplot.plot(t_vals ,phi2_vals)
-    # pyplot.plot(t_vals ,tht_vals)
 
 def simulate_initial(init_state):
-    # p_phi1 = (energy/10.)**.5 #give half the KE to p_phi1
-    # p_phi2 = -p_phi1
-    # p_tht = 0.
-    # T_long = 2*numpy.pi/((5./3.)**.5)
-    # p_phi1 = (energy/12.)**.5
-    # p_phi2 = p_phi1
-    # p_tht = -2*p_phi1
     T_long = 12*numpy.pi/((7.)**.5)
-    # init_state = numpy.array([
-    #     0,
-    #     0,0,0,
-    #     p_phi1,p_phi2,p_tht
-    #     ])
     return utils.RK4_adapt(
         reduced_double_dipole, init_state, T_long*2,
         max_steps=10**6,precision=10**-6
@@ -98,7 +86,24 @@ def animation():
     movie.save('s0=%f_%f_%f_%f_%f_%f.mp4' % tuple(state[1:]))
 
 def animatique():
-    pass
+    fig, axes = pyplot.subplots()
+    axes.set_ylim(-1, 1)
+    axes.set_xlim(-1, 1)
+    axes.set_aspect(aspect='equal')
+    # frame_gen([0.,0.,.5,-0.25,0.,0.,0.])
+    # pt = (3./84-.002)**.5
+    pt = (1./28.-.001)**.5
+    state = numpy.array([0.,0.,0.,0.,0.,pt,-2.*pt])
+    path = simulate_initial(state)
+    every4th = path[::4]
+    print('s0=%f_%f_%f_%f_%f_%f.mp4' % tuple(state[1:]))
+
+    # movie = animation.FuncAnimation(
+    #     fig,
+    #     frame_gen,
+    #     frames=every4th
+    #     )
+    # movie.save('s0=%f_%f_%f_%f_%f_%f.mp4' % tuple(state[1:]))
 
 if __name__=='__main__':
     # animation()
