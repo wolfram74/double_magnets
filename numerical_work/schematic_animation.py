@@ -141,7 +141,7 @@ if __name__=='__main__':
     fig, axes = pyplot.subplots()
 
     # custom_animation()
-    animatique()
+    animatique(4)
 
 '''
 L = pth + 2pt
