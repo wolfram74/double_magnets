@@ -86,7 +86,8 @@ def frame_gen(state, axes):
         )
     axes.add_collection(shapes)
     t_T0 = state[0]/(2*numpy.pi/7**.5)
-    axes.set_title('t=%f, t/T0=%f' % (state[0], t_T0))
+    # axes.set_title('t=%.3f, t/T0=%.3f' % (state[0], t_T0))
+    axes.set_title('t=%.3f' % (state[0]))
 
     # pyplot.show()
 
@@ -120,19 +121,27 @@ def animatique(frames=5):
     E_0 = .123
     # frame_gen([0.,0.,.5,-0.25,0.,-.25,.5])
     # pt = (3./84-.002)**.5
-    pt = ((1./3.-E_0)/14.)**.5
+    pt = ((1./3.+E_0)/14.)**.5
     state = numpy.array([0.,0.,0.,0.,0.,pt,-2.*pt]) # orbital mode
     path = simulate_initial(state,T_0)
     total_frames = len(path)
-    for i in range(frames):
-        print(i, frames)
+    tique_count = 0
+    frame_num = 0
+    while tique_count<frames:
+        state_i = path[frame_num]
+        if(state_i[0] < tique_count*(T_0/frames)):
+            frame_num+=1
+            continue
+        i = tique_count
         axes[i].set_ylim(-1, 1)
         axes[i].set_xlim(-1, 1)
+        axes[i].get_xaxis().set_visible(False)
+        axes[i].get_yaxis().set_visible(False)
+        axes[i].set_axis_off()
         axes[i].set_aspect(aspect='equal')
-        frame_num = i*(total_frames/5)
-        state_i = path[frame_num]
-        print(frame_num, state_i)
-        frame_gen(state, axes[i])
+        print(tique_count, frame_num, state_i)
+        frame_gen(state_i, axes[i])
+        tique_count+=1
     # every4th = path[::4]
     pyplot.show()
     print('s0=%f_%f_%f_%f_%f_%f.mp4' % tuple(state[1:]))
@@ -141,7 +150,7 @@ if __name__=='__main__':
     fig, axes = pyplot.subplots()
 
     # custom_animation()
-    animatique(4)
+    animatique(5)
 
 '''
 L = pth + 2pt
