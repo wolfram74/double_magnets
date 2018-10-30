@@ -23,7 +23,7 @@ def reduced_double_dipole(state):
     deltas[6] = numpy.sin(state[2]-2*state[3])/2 #dot p_tht
     return deltas
 
-def frame_gen(state):
+def frame_gen(state, axes):
     axes.clear()
     phi1 = (state[2]+state[1])/2.
     w1 = 10*(state[5]+state[4])
@@ -60,30 +60,21 @@ def frame_gen(state):
     vel_scale = .28
     wtht_terminus = [cos(tht+wtht)/2., sin(tht+wtht)/2.]
 
-    # wtht_arrow = mpatches.FancyArrowPatch(
-    #     (cos(phi1)*.5, -sin(phi1)*.5),
-    #     (cos(phi1+wtht)*.5, -sin(phi1-wtht)*.5),
-    #     # linewidth=.01,
-    #     connectionstyle='arc3,rad=%f'%(vel_scale*wtht), **kw
-    #     )
     wtht_arrow = mpatches.FancyArrowPatch(
         c1,
         wtht_terminus,
-        # linewidth=.01,
         connectionstyle='arc3,rad=%f'%(vel_scale*wtht), **kw
         )
     colors.append(vel_color)
     w1_arrow = mpatches.FancyArrowPatch(
         mu1_terminus,
         w1_terminus,
-        # linewidth=.01,
         connectionstyle='arc3,rad=%f'%(vel_scale*w1), **kw
         )
     colors.append(vel_color)
     w2_arrow = mpatches.FancyArrowPatch(
         mu2_terminus,
         w2_terminus,
-        # linewidth=.01,
         connectionstyle='arc3,rad=%f'%(vel_scale*w2), **kw
         )
     colors.append(vel_color)
@@ -99,7 +90,7 @@ def frame_gen(state):
 
     # pyplot.show()
 
-def simulate_initial(init_state T_long=24*numpy.pi/((7.)**.5)):
+def simulate_initial(init_state, T_long=(24*numpy.pi/((7.)**.5))):
     return utils.RK4_adapt(
         reduced_double_dipole, init_state, T_long,
         max_steps=10**6,precision=10**-6
@@ -123,23 +114,34 @@ def custom_animation():
         )
     movie.save('s0=%f_%f_%f_%f_%f_%f.mp4' % tuple(state[1:]))
 
-def animatique():
-    axes.set_ylim(-1, 1)
-    axes.set_xlim(-1, 1)
-    axes.set_aspect(aspect='equal')
+def animatique(frames=5):
+    fig, axes = pyplot.subplots(frames,1)
+    T_0 = 4.0 #orbital period
+    E_0 = .123
     # frame_gen([0.,0.,.5,-0.25,0.,-.25,.5])
     # pt = (3./84-.002)**.5
-    pt = (1./28.-.001)**.5
-    state = numpy.array([0.,0.,0.,0.,0.,pt,-2.*pt])
-    path = simulate_initial(state,4.0)
-    every4th = path[::4]
+    pt = ((1./3.-E_0)/14.)**.5
+    state = numpy.array([0.,0.,0.,0.,0.,pt,-2.*pt]) # orbital mode
+    path = simulate_initial(state,T_0)
+    total_frames = len(path)
+    for i in range(frames):
+        print(i, frames)
+        axes[i].set_ylim(-1, 1)
+        axes[i].set_xlim(-1, 1)
+        axes[i].set_aspect(aspect='equal')
+        frame_num = i*(total_frames/5)
+        state_i = path[frame_num]
+        print(frame_num, state_i)
+        frame_gen(state, axes[i])
+    # every4th = path[::4]
+    pyplot.show()
     print('s0=%f_%f_%f_%f_%f_%f.mp4' % tuple(state[1:]))
 
 if __name__=='__main__':
     fig, axes = pyplot.subplots()
 
-    custom_animation()
-    # animatique()
+    # custom_animation()
+    animatique()
 
 '''
 L = pth + 2pt
