@@ -54,7 +54,7 @@ def frame_gen(state, axes):
     colors.append((.1,.5,.1))
     circ_2 = mpatches.Circle(c2, radius=.5, alpha=.1, zorder=.5)
     colors.append((.5,.1,.1,.1))
-    style="Simple,tail_width=0.02,head_width=.0725,head_length=.05"
+    style="Simple,tail_width=0.02,head_width=.1,head_length=.1"
     kw = dict(arrowstyle=style, color="k")
     vel_color = (.1, .1, .1, 1)
     vel_scale = .28
@@ -150,7 +150,7 @@ if __name__=='__main__':
     fig, axes = pyplot.subplots()
 
     # custom_animation()
-    animatique(5)
+    animatique(4)
 
 '''
 L = pth + 2pt
