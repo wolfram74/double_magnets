@@ -58,12 +58,16 @@ def frame_gen(state, axes):
     kw = dict(arrowstyle=style, color="k")
     vel_color = (.1, .1, .1, 1)
     vel_scale = .28
-    wtht_terminus = [cos(tht+wtht)/2., sin(tht+wtht)/2.]
+    del_tht = [-wtht*vel_scale*sin(tht), wtht*vel_scale*cos(tht) ]
 
-    wtht_arrow = mpatches.FancyArrowPatch(
-        c1,
-        wtht_terminus,
-        connectionstyle='arc3,rad=%f'%(vel_scale*wtht), **kw
+    wtht_arrow1 = mpatches.Arrow(
+        c1[0],c1[1], del_tht[0], del_tht[1],
+        width=.2,zorder=1.
+        )
+    colors.append(vel_color)
+    wtht_arrow2 = mpatches.Arrow(
+        c2[0],c2[1], -del_tht[0], -del_tht[1],
+        width=.2,zorder=1.
         )
     colors.append(vel_color)
     w1_arrow = mpatches.FancyArrowPatch(
@@ -80,7 +84,7 @@ def frame_gen(state, axes):
     colors.append(vel_color)
     shapes = PatchCollection(
         [mu1_arrow, circ_1, mu2_arrow, circ_2,
-        wtht_arrow, w1_arrow, w2_arrow
+        wtht_arrow1,wtht_arrow2, w1_arrow, w2_arrow
         ],
         facecolors = colors
         )
