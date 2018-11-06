@@ -25,12 +25,12 @@ def plot_period_vs_energy():
     sig_vals = utils.read_column(data_spinning, 1)
     E_vals = utils.read_column(data_spinning, 2)
     pyplot.plot(E_vals, p_vals,
-        marker='^', markevery=10,
+
         label='Large Amplitude Spinning Mode')
     T_s = numpy.pi*2*(5./3.)**(-.5)
-    E_vals = numpy.linspace(-1./3., 0., 20)
+    E_vals = numpy.linspace(-1./3., -1/6., 20)
     ones = numpy.ones(20)
-    pyplot.plot(E_vals, T_s*ones, marker='p', label='Small Amplitude spinning mode')
+    pyplot.plot(E_vals, T_s*ones, 'b--', label='Small Amplitude spinning mode')
     #plot orbital periods
     data_orbital = parse_file('./clean_orbital_periods.txt')
     p_vals = utils.read_column(data_orbital, 0)
@@ -38,11 +38,9 @@ def plot_period_vs_energy():
     E_vals = utils.read_column(data_orbital, 2)
     p2_vals = map(lambda x: x*2, p_vals)
     pyplot.plot(E_vals, p_vals
-        , marker='s', markevery=10,
+        ,
         label='Large Amplitude Orbital Mode')
     # pyplot.plot(E_vals, p2_vals)
-    # pyplot.errorbar(E_vals, p_vals, yerr= sig_vals)
-    # pyplot.errorbar(E_vals, p_vals, yerr= sig_vals)
 
     # plot pendulum periods
     # E_p_vals_spin = spin_periods()
@@ -52,7 +50,7 @@ def plot_period_vs_energy():
     T_o = numpy.pi*2*(7.)**(-.5)
     E_vals = numpy.linspace(-1./3., 0., 20)
     ones = numpy.ones(20)
-    pyplot.plot(E_vals, T_o*ones, marker='d', label='Small Amplitude orbital mode')
+    pyplot.plot(E_vals, T_o*ones, 'g--',label='Small Amplitude orbital mode')
     pyplot.xlabel('energy')
     pyplot.ylabel('period')
     pyplot.ylim(0, 12)
