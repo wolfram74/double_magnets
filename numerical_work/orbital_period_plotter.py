@@ -1,4 +1,5 @@
 import matplotlib.pyplot as pyplot
+import matplotlib.text as text_drawer
 import utils
 import numpy
 
@@ -51,12 +52,23 @@ def plot_period_vs_energy():
     E_vals = numpy.linspace(-1./3., 0., 20)
     ones = numpy.ones(20)
     pyplot.plot(E_vals, T_o*ones, 'g--',label='Small Amplitude orbital mode')
-    pyplot.xlabel('energy')
-    pyplot.ylabel('period')
+    pyplot.xlabel('Energy', fontsize=16)
+    pyplot.ylabel('Period', fontsize=16)
     pyplot.ylim(0, 12)
     pyplot.xlim(-1./3., 1./6.)
-    pyplot.legend(loc='upper right')
-    pyplot.title('Large Amplitude Period vs System Energy', loc='left')
+    pyplot.text(
+        (-0.3), 8, 'Spinning Mode'
+        )
+    pyplot.text(
+        (.05), 5, 'Orbital Mode'
+        )
+    # pyplot.text(
+    #     x=(-1/3.+.005), y=6.,
+    #     text='S', size=15
+    #     )
+    # pyplot.legend(loc='upper right')
+    # pyplot.legend(handles = legend_elements, loc='upper right')
+    pyplot.title('Large Amplitude Period vs System Energy', loc='left', fontsize=18)
     pyplot.savefig('plot.png')
     pyplot.show()
 

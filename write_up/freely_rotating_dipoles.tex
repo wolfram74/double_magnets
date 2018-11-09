@@ -2,6 +2,9 @@
 \documentclass[prb,preprint]{revtex4-1} 
 %Manuscripts that demonstrate new relations between apparently unrelated areas of physics are appropriate.
 \usepackage{geometry} % see geometry.pdf on how to lay out the page. There's lots.
+\usepackage{graphicx}
+\usepackage{subcaption}
+
 \usepackage{mathtools}
 \geometry{a4paper} % or letter or a5paper or ... etc
 % \geometry{landscape} % rotated page geometry
@@ -24,6 +27,8 @@
 	
 \section{Introduction}
 A system composed of two unrestricted spherical magnetic dipoles presents an interesting and fundamental set of phenomenon as two magnetic dipoles is amongst the simplest non-trivial macroscopic magnetic systems. Understanding their dynamics could prove useful in contexts such as the large dipole field proposed to provide a solar wind umbrella for mars or small magnetic toothless-gears.
+
+\includegraphics[width=.85\linewidth]{./images/coordinates.png}
 
 \section{Describing the System}
 Intrinsic properties of the two dipoles are: their respective radii, which we shall label as $a_1$ and $a_2$, their masses, $m_1$ and $m_2$, and magnitudes of their dipole moments, $\mu_1$ and $\mu_2$.
@@ -359,7 +364,8 @@ For the 0,0 equilibrium we find the perturbation matrix to be
 \end{equation}
 
 Which only has 2 non-zero eigen modes corresponding to when $\omega^2$ is equal to 5/3 and 7. The lower frequency mode has an eigenvector of [1, -1, 0], indicating it has no motion in the orbital angle, $\theta$. For this reason I refer to it as the spinning mode for its sole form of motion. It possesses an interesting isomorphism we shall examine more later. The second, higher, frequency's eigenvector is [5/2, 5/2,-1] indicating it does possess orbital motion and thus earns the moniker of orbital mode. Brief algebra will reveal that both modes have net-0 angular momentum. This likely stems from the result that net angular momentum for the system is constant.
-
+\includegraphics{./images/orbital_animatique.png}
+%fiddle with arrow coloring
 For the 0,1 equilibrium the perturbation matrix is 
 \begin{equation}
 	\left[\begin{matrix}\frac{\omega^{2}}{10} - \frac{1}{6} & - \frac{1}{3} & \frac{1}{2}\\
@@ -518,9 +524,16 @@ Showing that while the contact constraint holds, the orbital state is also isomo
 An adaptive Runge-Kutta 4 method was implemented to calculate the trajectory of the system using two different sized time steps, both made smaller until they agreed within a specified precision. To determine if a trajectory 
 
 \subsubsection{Period vs Energy curves}
+
+\includegraphics[width=0.85\textwidth]{./images/plot.png}
+
 %needed diagrams;
 %numerical values of period vs energy
 %geometry layout/labels
 %animatique of basic modes
 %revtek4.1
+
+\bibliographystyle{plain}
+\bibliography{./double_magnet_bib.bib}
+
 \end{document}
