@@ -521,7 +521,7 @@ Showing that while the contact constraint holds, the orbital state is also isomo
 
 \subsection{Numerical Results}
 \subsubsection{Method}
-An adaptive Runge-Kutta 4 method was implemented to calculate the trajectory of the system using two different sized time steps, both made smaller until they agreed within a specified precision. To determine if a trajectory 
+An adaptive Runge-Kutta 4 method was implemented to calculate the trajectory of the system using two different sized time steps, both made smaller until they agreed within a specified precision. To determine if a trajectory has returned through it's original point $\boldsymbol{\Gamma}(0)=\boldsymbol{\Gamma}_0$ linear interpolation was used between steps $\boldsymbol{\Gamma}_n$ and $\boldsymbol{\Gamma}_{n+1}$ to get an estimated time for when the initial value was revisited. This generated 6 estimated. If all 6 calculated values fell between $t_n$ and $t_{n+1}$ the average was taken and stored. This process was continued until 75 time units had elapsed and then a fit was made to the equation $t_m = t_0*m$, the slope $t_0$ was taken to be the period.
 
 \subsubsection{Period vs Energy curves}
 
