@@ -119,14 +119,20 @@ def custom_animation():
         )
     movie.save('s0=%f_%f_%f_%f_%f_%f.mp4' % tuple(state[1:]))
 
-def animatique(frames=5):
+def animatic(frames=5):
     fig, axes = pyplot.subplots(frames,1)
-    T_0 = 4.0 #orbital period
-    E_0 = .123
-    # frame_gen([0.,0.,.5,-0.25,0.,-.25,.5])
-    # pt = (3./84-.002)**.5
-    pt = ((1./3.+E_0)/14.)**.5
-    state = numpy.array([0.,0.,0.,0.,0.,pt,-2.*pt]) # orbital mode
+    #orbital mode settings
+    # T_0 = 4.0 #orbital period
+    # E_0 = .123 #orbital energy
+    # pt = ((1./3.+E_0)/14.)**.5 #orbital momentum
+    # state = numpy.array([0.,0.,0.,0.,0.,pt,-2.*pt]) # orbital mode
+
+    #spinning mode settings
+    T_0 = 8.0 #spinning period
+    E_0 = .1505 #spinning kinetic energy
+    pd = (E_0/10.)**.5 #spinning momentum
+    state = numpy.array([0.,0.,0.,0.,pd,0.,0.]) # spinning mode
+
     path = simulate_initial(state,T_0)
     total_frames = len(path)
     tique_count = 0
@@ -154,7 +160,7 @@ if __name__=='__main__':
     fig, axes = pyplot.subplots()
 
     # custom_animation()
-    animatique(4)
+    animatic(4)
 
 '''
 L = pth + 2pt

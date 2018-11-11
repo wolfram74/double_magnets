@@ -28,7 +28,14 @@
 \section{Introduction}
 A system composed of two unrestricted spherical magnetic dipoles presents an interesting and fundamental set of phenomenon as two magnetic dipoles is amongst the simplest non-trivial macroscopic magnetic systems. Understanding their dynamics could prove useful in contexts such as the large dipole field proposed to provide a solar wind umbrella for mars or small magnetic toothless-gears.
 
-\includegraphics[width=.85\linewidth]{./images/coordinates.png}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=.85\linewidth]{./images/coordinates.png}
+  \caption{Schematic of labeling system describing two spheres in the plane}
+\end{figure}
+
+
 
 \section{Describing the System}
 Intrinsic properties of the two dipoles are: their respective radii, which we shall label as $a_1$ and $a_2$, their masses, $m_1$ and $m_2$, and magnitudes of their dipole moments, $\mu_1$ and $\mu_2$.
@@ -364,7 +371,27 @@ For the 0,0 equilibrium we find the perturbation matrix to be
 \end{equation}
 
 Which only has 2 non-zero eigen modes corresponding to when $\omega^2$ is equal to 5/3 and 7. The lower frequency mode has an eigenvector of [1, -1, 0], indicating it has no motion in the orbital angle, $\theta$. For this reason I refer to it as the spinning mode for its sole form of motion. It possesses an interesting isomorphism we shall examine more later. The second, higher, frequency's eigenvector is [5/2, 5/2,-1] indicating it does possess orbital motion and thus earns the moniker of orbital mode. Brief algebra will reveal that both modes have net-0 angular momentum. This likely stems from the result that net angular momentum for the system is constant.
-\includegraphics{./images/orbital_animatique.png}
+
+
+\begin{figure}[h]
+	\begin{subfigure}{.3\textwidth}
+	  \centering
+	  \includegraphics[height=0.6\textheight]{./images/orbital_animatic.png}
+	  \caption{Orbital Mode}
+	  \label{fig:ofig1}
+	\end{subfigure}%
+	
+	\begin{subfigure}{.3\textwidth}
+	  \centering
+	  \includegraphics[height=0.6\textheight]{./images/spinning_animatic.png}
+	  \caption{Spinning Mode}
+	  \label{fig:sfig1}
+	\end{subfigure}%
+
+
+  \caption{4 frames of an orbital mode with period 4, and a spinning mode with period 8. Numerical results}
+\end{figure}
+
 %fiddle with arrow coloring
 For the 0,1 equilibrium the perturbation matrix is 
 \begin{equation}
@@ -524,8 +551,14 @@ Showing that while the contact constraint holds, the orbital state is also isomo
 An adaptive Runge-Kutta 4 method was implemented to calculate the trajectory of the system using two different sized time steps, both made smaller until they agreed within a specified precision. To determine if a trajectory has returned through it's original point $\boldsymbol{\Gamma}(0)=\boldsymbol{\Gamma}_0$ linear interpolation was used between steps $\boldsymbol{\Gamma}_n$ and $\boldsymbol{\Gamma}_{n+1}$ to get an estimated time for when the initial value was revisited. This generated 6 estimated. If all 6 calculated values fell between $t_n$ and $t_{n+1}$ the average was taken and stored. This process was continued until 75 time units had elapsed and then a fit was made to the equation $t_m = t_0*m$, the slope $t_0$ was taken to be the period.
 
 \subsubsection{Period vs Energy curves}
+The spinning and orbital modes were examine independently as they are not coupled together when the contact criterion is maintained. 150 equally spaced initial conditions were simulated. In the case of the spinning mode, the max energy was just below the point where the two spheres would start to complete full spins. In the case of the orbital mode, the max energy was just below the point where the contact criterion was broken.
 
-\includegraphics[width=0.85\textwidth]{./images/plot.png}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.85\textwidth]{./images/plot.png}
+	\caption{Solid lines denote numerical results, dashed lines denote asymptotic small amplitude limit}
+\end{figure}
+
 
 %needed diagrams;
 %numerical values of period vs energy

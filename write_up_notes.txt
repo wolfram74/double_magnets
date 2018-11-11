@@ -12,3 +12,4 @@ The manuscript should be arranged in the following order:
   Acknowledgments
   Endnotes
 title, author(s), affiliation(s), abstract, text, acknowledgments, appendixes, and references. Figures, with figure captions, may be embedded within the manuscript to assist the reviewers.
+
