@@ -1,10 +1,10 @@
 %\documentclass[12pt]{amsart}
-\documentclass[prb,preprint]{revtex4-1} 
+\documentclass[prbg,preprint]{revtex4-1} 
 %Manuscripts that demonstrate new relations between apparently unrelated areas of physics are appropriate.
 \usepackage{geometry} % see geometry.pdf on how to lay out the page. There's lots.
 \usepackage{graphicx}
 \usepackage{subcaption}
-
+\usepackage{subfig}
 \usepackage{mathtools}
 \geometry{a4paper} % or letter or a5paper or ... etc
 % \geometry{landscape} % rotated page geometry
@@ -42,7 +42,7 @@ Intrinsic properties of the two dipoles are: their respective radii, which we sh
 \subsection{Coordinates}
 \subsubsection{Cartesian}
 
-Each of the dipoles has a location constrained to the x-y plane $\vec r_1$ and $\vec r_2$ along with an orientation for the dipole $\phi_1$ and $\phi_2$ which we will also constrain to the x-y plane, measured from the x-axis.
+Each of the dipoles has a location constrained to the x-y plane $\boldsymbol r_1$ and $\boldsymbol r_2$ along with an orientation for the dipole $\phi_1$ and $\phi_2$ which we will also constrain to the x-y plane, measured from the x-axis.
 \subsubsection{Center Of Mass}
 We can define a set of composite coordinates and quantities more appropriate for analyzing two-body system using the aforementioned independent coordinates a la Taylor's mechanics. 
 
@@ -56,13 +56,13 @@ m_r = \frac{m_1m_2}{m_1+m_2}
 
 The center of mass 
 \begin{equation}
-\vec R = \frac{m_1 \vec r_1+m_2 \vec r_2}{m_t}
+\boldsymbol R = \frac{m_1 \boldsymbol r_1+m_2 \boldsymbol r_2}{m_t}
 \end{equation}
 
 And the displacement of dipole 2 from dipole 1
 \begin{equation}
-\vec r 
-=  \vec r_2-\vec r_1 
+\boldsymbol r 
+=  \boldsymbol r_2-\boldsymbol r_1 
 = r [\cos(\theta) \hat x+\sin(\theta) \hat y]
 \end{equation}
 
@@ -83,37 +83,37 @@ T = \frac{1}{2}(
 \end{equation}
 The potential energy for dipole 1 is merely its dot product with the local field, which in this case is caused entirely by dipole 2.
 \begin{equation}
-U_1 = -\vec \mu_1 \cdot \vec B_2
+U_1 = -\boldsymbol \mu_1 \cdot \boldsymbol B_2
 \end{equation}
 
-With the magnetic field for a dipole at some point of interest $\vec r_i$ being given by
+With the magnetic field for a dipole at some point of interest $\boldsymbol r_i$ being given by
 
 \begin{equation}
-\vec B_2 = 
+\boldsymbol B_2 = 
 \frac{\mu_0}{4\pi}(
-	3\frac{\vec \mu_2 \cdot (\vec r_i - \vec r_2)}{|\vec r_i - \vec r_2|^5}(
-	\vec r_i - \vec r_2
+	3\frac{\boldsymbol \mu_2 \cdot (\boldsymbol r_i - \boldsymbol r_2)}{|\boldsymbol r_i - \boldsymbol r_2|^5}(
+	\boldsymbol r_i - \boldsymbol r_2
 	)
-	-\frac{\vec \mu_2}{|\vec r_i - \vec r_2|^3}
+	-\frac{\boldsymbol \mu_2}{|\boldsymbol r_i - \boldsymbol r_2|^3}
 )
 \end{equation}
 
-Using our definition for $\vec r$ we can simplify the potential down to
+Using our definition for $\boldsymbol r$ we can simplify the potential down to
 
 \begin{equation}
 U_1 = 
 \frac{\mu_0}{4\pi}
 \frac{1}{r^3}(
-	\vec \mu_1 \cdot \vec \mu_2
+	\boldsymbol \mu_1 \cdot \boldsymbol \mu_2
 	-3(
-		\vec \mu_2 \cdot \hat r
+		\boldsymbol \mu_2 \cdot \hat r
 		)(
-		\vec \mu_1 \cdot \hat r		
+		\boldsymbol \mu_1 \cdot \hat r		
 		)
 )
 \end{equation}
 
-The $\vec \mu_1 \cdot \vec \mu_2$ term accounts for the obvious relation the dipole orientation of the two dipoles has with $U$, and the $\vec \mu_i \cdot \hat r$ term accounts for the less obvious relationship that their geometric orientation with each other has on $U$ .
+The $\boldsymbol \mu_1 \cdot \boldsymbol \mu_2$ term accounts for the obvious relation the dipole orientation of the two dipoles has with $U$, and the $\boldsymbol \mu_i \cdot \hat r$ term accounts for the less obvious relationship that their geometric orientation with each other has on $U$ .
 This is obviously symmetric under substitution of 1 for 2 and vice versa so we have a total interaction potential of
 
 \begin{equation}
@@ -336,7 +336,7 @@ $K_{n,m}= \partial_{q_m}(-\partial_{q_n} H)|_{\Gamma_i}$
 We can rephrase \ref{taylor_force} as 
 
 \begin{equation} \label{matrix_force}
-	\vec{ \dot{ p }} \approx \widehat K \vec q
+	\boldsymbol{ \dot{ p }} \approx \widehat K \boldsymbol q
 \end{equation}
 
 To get this amenable to simple periodic solutions, we would like to recast the momentum vector in terms of a time derivative of our position.
@@ -350,7 +350,7 @@ $M_{n,n}=1/(m_n)$
 then we can rewrite \ref{matrix_force} as 
 
 \begin{equation}
-	\widehat M \vec{ \ddot{ q }} \approx \widehat K \vec q
+	\widehat M \boldsymbol{ \ddot{ q }} \approx \widehat K \boldsymbol q
 \end{equation}
 
 Assuming simple periodic solutions of the form $\vec q = \vec a e^{i\omega t}$ allows us to recast the above as
@@ -374,21 +374,25 @@ Which only has 2 non-zero eigen modes corresponding to when $\omega^2$ is equal 
 
 
 \begin{figure}[h]
-	\begin{subfigure}{.3\textwidth}
-	  \centering
-	  \includegraphics[height=0.6\textheight]{./images/orbital_animatic.png}
-	  \caption{Orbital Mode}
-	  \label{fig:ofig1}
-	\end{subfigure}%
-	
-	\begin{subfigure}{.3\textwidth}
-	  \centering
-	  \includegraphics[height=0.6\textheight]{./images/spinning_animatic.png}
-	  \caption{Spinning Mode}
-	  \label{fig:sfig1}
-	\end{subfigure}%
+	\includegraphics[width=0.4\linewidth ]{./images/orbital_animatic.png} 
+	\includegraphics[width=0.5\linewidth ]{./images/spinning_animatic.png} 
 
+%    \subfloat[label 1]{{\includegraphics[width=5cm]{./images/orbital_animatic.png} }}%
+%    \subfloat[label 1]{{\includegraphics[width=5cm]{./images/spinning_animatic.png} }}%
 
+%	\begin{subfigure}{.3\textwidth}
+%%	  \centering
+%	  \includegraphics[height=0.6\textheight]{./images/orbital_animatic.png}
+%	  \caption{Orbital Mode}
+%	  \label{fig:ofig1}
+%	\end{subfigure}%
+%	
+%	\begin{subfigure}{.3\textwidth}
+%%	  \centering
+%	  \includegraphics[height=0.6\textheight]{./images/spinning_animatic.png}
+%	  \caption{Spinning Mode}
+%	  \label{fig:sfig1}
+%	\end{subfigure}%
   \caption{4 frames of an orbital mode with period 4, and a spinning mode with period 8. Numerical results}
 \end{figure}
 
