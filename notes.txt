@@ -40,3 +40,24 @@ since double system has 6 degrees in phase space, the hamiltonian approach will 
     phys rev a
     american journal of physics
 
+11/13 meeting
+  editing
+    check for follow ups on pollack paper
+    result: Already have other papers that cite it, no one explores theta or r
+  alternatives to ss
+    CS options
+    Course Number: 3430
+    Title: Scientific Computing with Python (3-4:15 t-th)
+    -
+    Course Number: 6890
+    Title: ST: PARALLEL COMP NETWORK TOP (11:30 mwf)
+    -
+    Course Number: 5200
+    Title: Introduction to Distributed Systems (1:30 mwf)
+
+    math options
+    Course Number: 5460
+    Title: Introduction to the Theory and Application of Nonlinear Dynamical Systems (8:30 mwf)
+    -
+    Course Number: 4200
+    Title: Foundations of Analysis (12-1:15 t-th)
