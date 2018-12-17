@@ -61,3 +61,8 @@ since double system has 6 degrees in phase space, the hamiltonian approach will 
     -
     Course Number: 4200
     Title: Foundations of Analysis (12-1:15 t-th)
+
+12/04 meeting
+  edits:
+    go around for any x/n things and decide whether or not to fractionalize
+    increase some of the size on coordinates diagram

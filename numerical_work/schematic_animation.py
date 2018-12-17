@@ -56,7 +56,7 @@ def frame_gen(state, axes):
     colors.append((.5,.1,.1,.1))
     style="Simple,tail_width=0.02,head_width=.1,head_length=.1"
     kw = dict(arrowstyle=style, color="k")
-    vel_color = (.1, .1, .1, 1)
+    vel_color = (.1, .1, .9, 1)
     vel_scale = .28
     del_tht = [-wtht*vel_scale*sin(tht), wtht*vel_scale*cos(tht) ]
 
@@ -120,39 +120,44 @@ def custom_animation():
     movie.save('s0=%f_%f_%f_%f_%f_%f.mp4' % tuple(state[1:]))
 
 def animatic(frames=5):
-    fig, axes = pyplot.subplots(frames,1)
+    fig, axes = pyplot.subplots(2, frames)
     #orbital mode settings
-    # T_0 = 4.0 #orbital period
-    # E_0 = .123 #orbital energy
-    # pt = ((1./3.+E_0)/14.)**.5 #orbital momentum
-    # state = numpy.array([0.,0.,0.,0.,0.,pt,-2.*pt]) # orbital mode
+    T_0 = 4.0 #orbital period
+    E_0 = .123 #orbital energy
+    pt = ((1./3.+E_0)/14.)**.5 #orbital momentum
+    state_orb = numpy.array([0.,0.,0.,0.,0.,pt,-2.*pt]) # orbital mode
 
     #spinning mode settings
     T_0 = 8.0 #spinning period
     E_0 = .1505 #spinning kinetic energy
     pd = (E_0/10.)**.5 #spinning momentum
-    state = numpy.array([0.,0.,0.,0.,pd,0.,0.]) # spinning mode
-
-    path = simulate_initial(state,T_0)
-    total_frames = len(path)
-    tique_count = 0
-    frame_num = 0
-    while tique_count<frames:
-        state_i = path[frame_num]
-        if(state_i[0] < tique_count*(T_0/frames)):
-            frame_num+=1
-            continue
-        i = tique_count
-        axes[i].set_ylim(-1, 1)
-        axes[i].set_xlim(-1, 1)
-        axes[i].get_xaxis().set_visible(False)
-        axes[i].get_yaxis().set_visible(False)
-        axes[i].set_axis_off()
-        axes[i].set_aspect(aspect='equal')
-        print(tique_count, frame_num, state_i)
-        frame_gen(state_i, axes[i])
-        tique_count+=1
-    # every4th = path[::4]
+    state_spn = numpy.array([0.,0.,0.,0.,pd,0.,0.]) # spinning mode
+    times = [4.0, 8.0]
+    states = [state_orb, state_spn]
+    for run in range(2):
+        state = states[run]
+        T_0 = times[run]
+        path = simulate_initial(state,T_0)
+        total_frames = len(path)
+        tique_count = 0
+        frame_num = 0
+        while tique_count<frames:
+            state_i = path[frame_num]
+            if(state_i[0] < tique_count*(T_0/frames)):
+                frame_num+=1
+                continue
+            i = tique_count
+            axes[run][i].set_ylim(-1, 1)
+            axes[run][i].set_xlim(-1, 1)
+            axes[run][i].get_xaxis().set_visible(False)
+            axes[run][i].get_yaxis().set_visible(False)
+            axes[run][i].set_axis_off()
+            axes[run][i].set_aspect(aspect='equal')
+            print(tique_count, frame_num, state_i)
+            frame_gen(state_i, axes[run][i])
+            tique_count+=1
+        # every4th = path[::4]
+    pyplot.savefig('animatic.pdf', format='pdf')
     pyplot.show()
     print('s0=%f_%f_%f_%f_%f_%f.mp4' % tuple(state[1:]))
 

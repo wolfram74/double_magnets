@@ -6,6 +6,7 @@
 \usepackage{subcaption}
 \usepackage{subfig}
 \usepackage{mathtools}
+\usepackage{svg}
 \geometry{a4paper} % or letter or a5paper or ... etc
 % \geometry{landscape} % rotated page geometry
 
@@ -26,15 +27,14 @@
 	The equations of motion for two spherical dipoles moving freely in a plane are arrived at. Special consideration is given to the contact state. Their equilibria are determined, small amplitude motion examined and large amplitude motion investigated to reveal that possible motions are exclusively quasi-periodic.
 	
 \section{Introduction}
-A system composed of two unrestricted spherical magnetic dipoles presents an interesting and fundamental set of phenomenon as two magnetic dipoles is amongst the simplest non-trivial macroscopic magnetic systems. Understanding their dynamics could prove useful in contexts such as the large dipole field proposed to provide a solar wind umbrella for mars or small magnetic toothless-gears\cite{doi:10.1119/1.5029823}.
+A system composed of two unrestricted spherical magnetic dipoles presents an interesting and fundamental set of phenomenon as two magnetic dipoles is amongst the simplest non-trivial macroscopic magnetic systems. Understanding their dynamics could prove useful in contexts such as the large dipole field proposed to provide a solar wind umbrella for mars\cite{2017LPICo1989.8250G} or small magnetic toothless-gears\cite{doi:10.1119/1.5029823}.
 
 
 \begin{figure}[h]
   \centering
-  \includegraphics[width=.85\linewidth]{./images/coordinates.png}
+  \includegraphics[width=.85\linewidth]{./images/coordinates_scalable.pdf}
   \caption{Schematic of labeling system describing two spheres in the plane}
 \end{figure}
-
 
 
 \section{Describing the System}
@@ -86,7 +86,7 @@ The potential energy for dipole 1 is merely its dot product with the local field
 U_1 = -\boldsymbol \mu_1 \cdot \boldsymbol B_2
 \end{equation}
 
-With the magnetic field for a dipole at some point of interest $\boldsymbol r_i$ being given by
+With the magnetic field for a dipole at some point of interest $\boldsymbol r_i$ being given by \cite{griffiths2013introduction}
 
 \begin{equation}
 \boldsymbol B_2 = 
@@ -333,7 +333,7 @@ the changes in momenta will be small we can do a multi-variable Taylor expansion
 If we define elements in a matrix 
 $K_{n,m}= \partial_{q_m}(-\partial_{q_n} H)|_{\Gamma_i}$
 
-We can rephrase \ref{taylor_force} as 
+We can rephrase equation \ref{taylor_force} as 
 
 \begin{equation} \label{matrix_force}
 	\boldsymbol{ \dot{ p }} \approx \widehat K \boldsymbol q
@@ -346,7 +346,7 @@ To get this amenable to simple periodic solutions, we would like to recast the m
 \end{equation}
 
 If we define elements in a diagonal matrix as 
-$M_{n,n}=1/(m_n)$
+$M_{n,n}=1/m_n$
 then we can rewrite \ref{matrix_force} as 
 
 \begin{equation}
@@ -361,7 +361,7 @@ Assuming simple periodic solutions of the form $\boldsymbol q = \boldsymbol a e^
 	)  \boldsymbol{ a}e^{i\omega t} \approx 0
 \end{equation}
 
-If we treat the approximation as an equality, it will only hold for non-trivial motion if the determinant of the matrix $\widehat K - \omega^2 \widehat M$ (referred to here on as the perturbation matrix) is 0. The normal modes are the eigenvectors and values of the previous matrix.
+If we treat the approximation as an equality, it will only hold for non-trivial motion if the determinant of the matrix $\widehat K - \omega^2 \widehat M$ (referred to here on as the perturbation matrix) is 0. The normal modes are the eigenvectors and values of the perturbation matrix.
 
 For the 0,0 equilibrium we find the perturbation matrix to be
 \begin{equation}
@@ -370,30 +370,13 @@ For the 0,0 equilibrium we find the perturbation matrix to be
 	\frac{1}{2} & \frac{1}{2} & \frac{\omega^{2}}{2} - 1\end{matrix}\right]
 \end{equation}
 
-Which only has 2 non-zero eigen modes corresponding to when $\omega^2$ is equal to 5/3 and 7. The lower frequency mode has an eigenvector of [1, -1, 0], indicating it has no motion in the orbital angle, $\theta$. For this reason I refer to it as the spinning mode for its sole form of motion. It possesses an interesting isomorphism we shall examine more later. The second, higher, frequency's eigenvector is [5/2, 5/2,-1] indicating it does possess orbital motion and thus earns the moniker of orbital mode. Brief algebra will reveal that both modes have net-0 angular momentum. This likely stems from the result that net angular momentum for the system is constant.
+Which only has two non-zero eigen modes corresponding to when $\omega^2$ is equal to 5/3 and 7. The lower frequency mode has an eigenvector of [1, -1, 0], indicating it has no motion in the orbital angle, $\theta$. For this reason I refer to it as the spinning mode for its sole form of motion. It possesses an interesting isomorphism we shall examine more later. The second, higher, frequency's eigenvector is [5/2, 5/2,-1] indicating it does possess orbital motion and thus earns the moniker of orbital mode. These modes correspond to the $\alpha$ and $\beta$ modes in Pollack\cite{doi:10.1139/p96-151} respectively. The Spinning mode matching exactly, while the extra give with changing $\theta$ allowing for a higher frequency, implying a stronger restoring force. Brief algebra will reveal that both modes have net-0 angular momentum. This likely stems from the result that net angular momentum for the system is constant.
 
 
 \begin{figure}[h]
-	\includegraphics[width=0.4\linewidth ]{./images/orbital_animatic.png} 
-	\includegraphics[width=0.5\linewidth ]{./images/spinning_animatic.png} 
+	\includegraphics[width=0.9\linewidth ]{./images/animatic.pdf} 
 
-%    \subfloat[label 1]{{\includegraphics[width=5cm]{./images/orbital_animatic.png} }}%
-%    \subfloat[label 1]{{\includegraphics[width=5cm]{./images/spinning_animatic.png} }}%
-
-%	\begin{subfigure}{.3\textwidth}
-%%	  \centering
-%	  \includegraphics[height=0.6\textheight]{./images/orbital_animatic.png}
-%	  \caption{Orbital Mode}
-%	  \label{fig:ofig1}
-%	\end{subfigure}%
-%	
-%	\begin{subfigure}{.3\textwidth}
-%%	  \centering
-%	  \includegraphics[height=0.6\textheight]{./images/spinning_animatic.png}
-%	  \caption{Spinning Mode}
-%	  \label{fig:sfig1}
-%	\end{subfigure}%
-  \caption{4 frames of an orbital mode with period 4, and a spinning mode with period 8. Numerical results}
+  \caption{four frames of an orbital mode with period 4, and a spinning mode with period 8. Numerical results}
 \end{figure}
 
 %fiddle with arrow coloring
@@ -447,7 +430,7 @@ This means $p_{\phi_d}=\dot\phi_d/20$ and $p_{\phi_t}=\dot\phi_t/20$ which leads
   \end{multlined}
 \end{equation}
 
-Considering just the spinning mode where we begin with $\phi_t=\theta=p_{\phi_t}=p_\theta=0$. Using this Hamiltonian it becomes clear they all start at 0 and stay at 0, reducing this phase space from 6 dimensions to 2.
+Considering just the spinning mode where we begin with $\phi_t=\theta=p_{\phi_t}=p_\theta=0$. Using this Hamiltonian it becomes clear when those four variables all start at 0 they stay at 0, reducing this phase space from 6 dimensions to 2.
 
 \begin{equation}
 	H_{\phi_d}=
@@ -466,7 +449,7 @@ Considering now the Hamiltonian for the other two angles we have
 \begin{equation}
 	H_{\phi_t, \theta}=
 	\frac{1}{2}\left (
-	+2 p_\theta^2
+	2 p_\theta^2
 	+20 p_{\phi_t}^2 
         \right )
 	-
@@ -526,14 +509,14 @@ similarly
 	= \theta_{ 0} + \int_0^t  \dot \theta  dt
 	= \theta_{ 0} + \int_0^t  2 p_{\theta} dt
 	\\
-	\int_0^t  p_{\theta} dt = [\theta(t)-\theta_{0}]/2
+	\int_0^t  p_{\theta} dt = \frac{1}{2}[\theta(t)-\theta_{0}]
   \end{multlined}
 \end{equation}
 
 While the integral of $p_\theta$ is not generally analytic, the equality between the two holds which allows us to algebraically rearrange \ref{phi_int} and \ref{tht_int} to get
 
 \begin{equation}
-	\phi_t(t)=  -5[\theta(t)-\theta_{0}-\phi_{t0}/5] + 10L_0 t 
+	\phi_t(t)=  -5[\theta(t)-\theta_{0}-\frac{1}{5}\phi_{t0}] + 10L_0 t 
 \end{equation}
 
 Considering the force on $p_\theta$ from \ref{f_tht} and making this new substitution starting from equilibrium and a zero momentum starting condition we have
@@ -545,14 +528,14 @@ Considering the force on $p_\theta$ from \ref{f_tht} and making this new substit
 And doing the same with $p_{\phi_t}$ from \ref{f_phit} produces
 
 \begin{equation}
-	\ddot \phi_t = -\frac{20}{4}\sin(\phi_t +2/5\phi_t) =  -5\sin\left ( \frac{7}{5}\phi_t \right )\approx -7\phi_t
+	\ddot \phi_t = -\frac{20}{4}\sin(\phi_t +\frac{2}{5}\phi_t) =  -5\sin\left ( \frac{7}{5}\phi_t \right )\approx -7\phi_t
 \end{equation}
 
 Showing that while the contact constraint holds, the orbital state is also isomorphic with the simple pendulum with the same asymptotic behavior as the small amplitude oscillations we found earlier.
 
 \subsection{Numerical Results}
 \subsubsection{Method}
-An adaptive Runge-Kutta 4 method was implemented to calculate the trajectory of the system using two different sized time steps, both made smaller until they agreed within a specified precision. To determine if a trajectory has returned through it's original point in phase space $\boldsymbol{\Gamma}(0)=\boldsymbol{\Gamma}_0$ linear interpolation was used between steps $\boldsymbol{\Gamma}_n$ and $\boldsymbol{\Gamma}_{n+1}$ to get an estimated time for when the initial value was revisited. This generated 6 estimated recurrence times. If all 6 calculated values fell between $t_n$ and $t_{n+1}$ the average was taken and stored. This process was continued until 75 time units had elapsed and then a fit was made to the equation $t_m = t_0*m$, the slope $t_0$ was taken to be the period.
+An adaptive Runge-Kutta 4 method was implemented to calculate the trajectory of the system using two different sized time steps, both made smaller until they agreed within a specified precision. To determine if a trajectory has returned through it's original point in phase space $\boldsymbol{\Gamma}(0)=\boldsymbol{\Gamma}_0$ linear interpolation was used between steps $\boldsymbol{\Gamma}_n$ and $\boldsymbol{\Gamma}_{n+1}$ to get an estimated time for when the initial value was revisited. This generated six estimated recurrence times. If all six calculated values fell between $t_n$ and $t_{n+1}$ the average was taken and stored. This process was continued until 75 time units had elapsed and then a fit was made to the equation $t_m = t_0*m$, the slope $t_0$ was taken to be the period.
 
 \subsubsection{Period vs Energy curves}
 The spinning and orbital modes were examine independently as they are not coupled together when the contact criterion is maintained. 150 equally spaced initial conditions were simulated. In the case of the spinning mode, the max energy was just below the point where the two spheres would start to complete full spins. In the case of the orbital mode, the max energy was just below the point where the contact criterion was broken.

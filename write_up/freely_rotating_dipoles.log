@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  13 NOV 2018 14:01
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  17 DEC 2018 09:39
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -298,12 +298,55 @@ LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
 \l_MT_above_shortintertext_sep=\dimen136
 \l_MT_below_shortintertext_sep=\dimen137
 )
-Class revtex4-1 Info: Patching LaTeX tabular. on input line 17.
-Class revtex4-1 Info: Robustifying \LaTeX's \boldmath command on input line 17.
+(/usr/local/texlive/2014/texmf-dist/tex/latex/svg/svg.sty
+Package: svg 2012/09/05 v1.0 SVG inclusion and extraction
 
-Class revtex4-1 Info: cite was not loaded (OK!) on input line 17.
-Class revtex4-1 Info: mcite was not loaded (OK!) on input line 17.
-Class revtex4-1 Info: multicol was not loaded (OK!) on input line 17.
+(/usr/local/texlive/2014/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+Package: xkeyval 2014/05/09 v2.6d package option processing (HA)
+
+(/usr/local/texlive/2014/texmf-dist/tex/generic/xkeyval/xkeyval.tex
+\XKV@toks=\toks23
+\XKV@tempa@toks=\toks24
+\XKV@depth=\count119
+File: xkeyval.tex 2014/05/09 v2.6d key=value parser (HA)
+))
+(/usr/local/texlive/2014/texmf-dist/tex/latex/import/import.sty
+Package: import 2009/03/23  v 5.1
+)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/oberdiek/transparent.sty
+Package: transparent 2007/01/08 v1.0 Transparency via pdfTeX's color stack (HO)
+
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/oberdiek/auxhook.sty
+Package: auxhook 2011/03/04 v1.3 Hooks for auxiliary files (HO)
+))
+(/usr/local/texlive/2014/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/latexconfig/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1337.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1341.
+Package xcolor Info: Model `RGB' extended on input line 1353.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1355.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1356.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1357.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
+)
+\SVG@out@width=\skip58
+\SVG@out@height=\skip59
+\c@svgfigure=\count120
+)
+Class revtex4-1 Info: Patching LaTeX tabular. on input line 18.
+Class revtex4-1 Info: Robustifying \LaTeX's \boldmath command on input line 18.
+
+Class revtex4-1 Info: cite was not loaded (OK!) on input line 18.
+Class revtex4-1 Info: mcite was not loaded (OK!) on input line 18.
+Class revtex4-1 Info: multicol was not loaded (OK!) on input line 18.
 
 
 LaTeX Warning: Unused global option(s):
@@ -312,18 +355,18 @@ LaTeX Warning: Unused global option(s):
 (./freely_rotating_dipoles.aux)
 \openout1 = `freely_rotating_dipoles.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -361,17 +404,17 @@ LaTeX Font Info:    ... okay on input line 17.
 
 (/usr/local/texlive/2014/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count119
+\scratchcounter=\count121
 \scratchdimen=\dimen138
 \scratchbox=\box43
-\nofMPsegments=\count120
-\nofMParguments=\count121
-\everyMPshowfont=\toks23
-\MPscratchCnt=\count122
+\nofMPsegments=\count122
+\nofMParguments=\count123
+\everyMPshowfont=\toks25
+\MPscratchCnt=\count124
 \MPscratchDim=\dimen139
-\MPnumerator=\count123
-\makeMPintoPDFobject=\count124
-\everyMPtoPDFconversion=\toks24
+\MPnumerator=\count125
+\makeMPintoPDFobject=\count126
+\everyMPtoPDFconversion=\toks26
 ) (/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
 )
@@ -426,75 +469,63 @@ Package caption Info: End \AtBeginDocument code.
 Class revtex4-1 Warning: Assuming \noaffiliation for authors.
 
 [1{/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-<./images/coordinates.png, id=8, 275.3487pt x 169.3527pt>
-File: ./images/coordinates.png Graphic file (type png)
+<./images/coordinates_scalable.pdf, id=8, 2755.29375pt x 1699.34875pt>
+File: ./images/coordinates_scalable.pdf Graphic file (type pdf)
 
-<use ./images/coordinates.png>
-Package pdftex.def Info: ./images/coordinates.png used on input line 34.
-(pdftex.def)             Requested size: 355.51817pt x 218.66228pt.
- [2 <./images/coordinates.png>] [3] [4] [5]
-[6] [7] [8] <./images/orbital_animatic.png, id=44, 325.9377pt x 734.2632pt>
-File: ./images/orbital_animatic.png Graphic file (type png)
+<use ./images/coordinates_scalable.pdf>
+Package pdftex.def Info: ./images/coordinates_scalable.pdf used on input line 3
+5.
+(pdftex.def)             Requested size: 355.51817pt x 219.26358pt.
+ [2 <./images/coordinates_scalable.pdf>] [3] [4] [5] [6] [7] [8] <./images/anim
+atic.pdf, id=49, 578.16pt x 433.62pt>
+File: ./images/animatic.pdf Graphic file (type pdf)
 
-<use ./images/orbital_animatic.png>
-Package pdftex.def Info: ./images/orbital_animatic.png used on input line 377.
-(pdftex.def)             Requested size: 167.2989pt x 376.90053pt.
-
-<./images/spinning_animatic.png, id=45, 328.8285pt x 592.614pt>
-File: ./images/spinning_animatic.png Graphic file (type png)
-
-<use ./images/spinning_animatic.png>
-Package pdftex.def Info: ./images/spinning_animatic.png used on input line 378.
-
-(pdftex.def)             Requested size: 209.12683pt x 376.90251pt.
+<use ./images/animatic.pdf>
+Package pdftex.def Info: ./images/animatic.pdf used on input line 377.
+(pdftex.def)             Requested size: 376.42575pt x 282.31943pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[9] [10 <./images/orbital_animatic.png> <./images/spinning_animatic.png>]
-[11] [12] <./images/plot.png, id=60, 578.16pt x 433.62pt>
+[9] [10 <./images/animatic.pdf>] [11] [12]
+<./images/plot.png, id=78, 578.16pt x 433.62pt>
 File: ./images/plot.png Graphic file (type png)
-
-<use ./images/plot.png>
-Package pdftex.def Info: ./images/plot.png used on input line 562.
+ <use ./images/plot.png>
+Package pdftex.def Info: ./images/plot.png used on input line 545.
 (pdftex.def)             Requested size: 355.51817pt x 266.63832pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 (./freely_rotating_dipoles.bbl [13]) [14 <./images/plot.png>]
-(./freely_rotating_dipoles.aux)
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right .
-
-
- ) 
+(./freely_rotating_dipoles.aux) ) 
 Here is how much of TeX's memory you used:
- 6335 strings out of 493117
- 93226 string characters out of 6135433
- 186697 words of memory out of 5000000
- 9716 multiletter control sequences out of 15000+600000
+ 7138 strings out of 493117
+ 103936 string characters out of 6135433
+ 204361 words of memory out of 5000000
+ 10493 multiletter control sequences out of 15000+600000
  11725 words of font info for 41 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,12n,40p,836b,316s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
-></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
-</usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><
-/usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></
-usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></us
-r/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/
-local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/
-local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/lo
-cal/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/loca
-l/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/t
-exlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texl
-ive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texli
-ve/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive
-/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on freely_rotating_dipoles.pdf (14 pages, 323442 bytes).
+ 42i,12n,75p,979b,400s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2014/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmmib10.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmr10.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmr12.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmr6.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmr8.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmsy10.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmsy8.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmti10.pfb>
+Output written on freely_rotating_dipoles.pdf (14 pages, 246228 bytes).
 PDF statistics:
- 115 PDF objects out of 1000 (max. 8388607)
- 76 compressed objects within 1 object stream
+ 134 PDF objects out of 1000 (max. 8388607)
+ 86 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 21 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 16 words of extra memory for PDF output out of 10000 (max. 10000000)
 

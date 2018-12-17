@@ -4,44 +4,44 @@ The top-level auxiliary file: freely_rotating_dipoles.aux
 The style file: plain.bst
 Database file #1: freely_rotating_dipolesNotes.bib
 Database file #2: ./double_magnet_bib.bib
-You've used 2 entries,
+You've used 5 entries,
             2118 wiz_defined-function locations,
-            511 strings with 4322 characters,
-and the built_in function-call counts, 620 in all, are:
-= -- 55
-> -- 30
-< -- 0
-+ -- 12
-- -- 10
-* -- 44
-:= -- 113
-add.period$ -- 6
-call.type$ -- 2
-change.case$ -- 10
+            534 strings with 4840 characters,
+and the built_in function-call counts, 1717 in all, are:
+= -- 157
+> -- 88
+< -- 2
++ -- 35
+- -- 30
+* -- 124
+:= -- 291
+add.period$ -- 16
+call.type$ -- 5
+change.case$ -- 28
 chr.to.int$ -- 0
-cite$ -- 2
-duplicate$ -- 23
-empty$ -- 50
-format.name$ -- 10
-if$ -- 125
+cite$ -- 5
+duplicate$ -- 70
+empty$ -- 133
+format.name$ -- 30
+if$ -- 360
 int.to.chr$ -- 0
-int.to.str$ -- 2
-missing$ -- 3
-newline$ -- 13
-num.names$ -- 4
-pop$ -- 13
+int.to.str$ -- 5
+missing$ -- 7
+newline$ -- 28
+num.names$ -- 10
+pop$ -- 35
 preamble$ -- 1
-purify$ -- 9
+purify$ -- 25
 quote$ -- 0
-skip$ -- 13
+skip$ -- 46
 stack$ -- 0
-substring$ -- 31
-swap$ -- 2
-text.length$ -- 0
+substring$ -- 75
+swap$ -- 17
+text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 6
+type$ -- 16
 warning$ -- 0
-while$ -- 5
-width$ -- 3
-write$ -- 23
+while$ -- 13
+width$ -- 6
+write$ -- 57
