@@ -4,6 +4,7 @@ import matplotlib.animation as animation
 import matplotlib.pyplot as pyplot
 import matplotlib.patches as mpatches
 from matplotlib.collections import PatchCollection
+import time
 
 cos, sin = numpy.cos, numpy.sin
 
@@ -156,9 +157,12 @@ def animatic(frames=5):
             print(tique_count, frame_num, state_i)
             frame_gen(state_i, axes[run][i])
             tique_count+=1
-        # every4th = path[::4]
-    pyplot.savefig('animatic.pdf', format='pdf')
-    pyplot.show()
+    # https://matplotlib.org/users/customizing.html#using-style-sheets
+    # investigate
+    # pyplot.subplots_adjust(hspace= 0.1, top=.1, bottom=.09)
+    pyplot.tight_layout()
+    pyplot.savefig('animatic_%s.pdf'%time.time(), format='pdf')
+    # pyplot.show()
     print('s0=%f_%f_%f_%f_%f_%f.mp4' % tuple(state[1:]))
 
 if __name__=='__main__':
