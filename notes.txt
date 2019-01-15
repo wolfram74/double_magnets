@@ -66,3 +66,9 @@ since double system has 6 degrees in phase space, the hamiltonian approach will 
   edits:
     go around for any x/n things and decide whether or not to fractionalize
     increase some of the size on coordinates diagram
+
+12/21 meeting
+  broaden references
+    few degrees of freedom
+    more tangential dipole work
+    try for another 5-10

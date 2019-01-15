@@ -32,3 +32,13 @@ targets:
 
 look this up and see how it's citing dr. edwards paper
 https://journals.aps.org/prb/abstract/10.1103/PhysRevB.98.054401
+
+
+schonke_multipole
+  finds a continuous ground state as well
+furlani_optimization
+  summary paper going over axial and radial coupled gears
+furlani_radial
+  torque calculations for radial coupling from magnetization and lorentz force
+stump_damping
+  analysis going over damping associated with radiation, in most cases it is less than can be represented with double floats
