@@ -5,6 +5,13 @@ Stefan Borgers, Simeon V{\"o}lkel, Wolfgang Sch{\"o}pf, and Ingo Rehberg.
 \newblock Exploring cogging free magnetic gears.
 \newblock {\em American Journal of Physics}, 86(6):460--469, 2018.
 
+\bibitem{Furlani:1995aa}
+E.~P. Furlani, R.~Wang, and H.~Kusnadi.
+\newblock A three-dimensional model for computing the torque of radial
+  couplings.
+\newblock {\em IEEE Transactions on Magnetics}, 31(5):2522--2526, 1995.
+\newblock Cited By :37.
+
 \bibitem{2017LPICo1989.8250G}
 J.~L. {Green}, J.~{Hollingsworth}, D.~{Brain}, V.~{Airapetian}, A.~{Pulkkinen},
   C.~{Dong}, and R.~{Bamford}.
@@ -21,6 +28,17 @@ D.J. Griffiths.
 G~L Pollack and D~R Stump.
 \newblock Two magnets oscillating in each other's fields.
 \newblock {\em Canadian Journal of Physics}, 75(5):313--324, 1997.
+
+\bibitem{PhysRevApplied.4.064007}
+Johannes Sch\"onke.
+\newblock Smooth teeth: Why multipoles are perfect gears.
+\newblock {\em Phys. Rev. Applied}, 4:064007, Dec 2015.
+
+\bibitem{Stump:1997aa}
+D.~R. Stump and G.~L. Pollack.
+\newblock Magnetic dipole oscillations and radiation damping.
+\newblock {\em American Journal of Physics}, 65(1):81--87, 1997.
+\newblock Cited By :9.
 
 \bibitem{taylor2005classical}
 John~R Taylor.

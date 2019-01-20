@@ -72,3 +72,12 @@ since double system has 6 degrees in phase space, the hamiltonian approach will 
     few degrees of freedom
     more tangential dipole work
     try for another 5-10
+
+01/15
+  rerender with arrows below threshold gone
+  conclusions
+    future work and over all results
+  acknowledgements
+    jacob ciafre, alice fulton/boardwell/haugen, tyler
+  tweak abstract
+

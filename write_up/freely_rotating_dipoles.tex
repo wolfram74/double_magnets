@@ -4,7 +4,7 @@
 \usepackage{geometry} % see geometry.pdf on how to lay out the page. There's lots.
 \usepackage{graphicx}
 \usepackage{subcaption}
-\usepackage{subfig}
+%\usepackage{subfig}
 \usepackage{mathtools}
 \usepackage{svg}
 \geometry{a4paper} % or letter or a5paper or ... etc
@@ -19,6 +19,7 @@
 
 \title{Dynamics of Two Freely Rotating Dipoles}
 \author{Peter Haugen}
+\author{Boyd Edwards}
 
 \maketitle
 %\tableofcontents
@@ -163,6 +164,8 @@ Having an expression for kinetic and potential energy, the Lagrangian is as foll
   \end{multlined}
 \end{equation}
 
+It might be noted that this Lagrangian takes into account only magneto-static interactions which ignores the resulting damping one would see from accelerating dipoles which would necessarily happen with perturbations near equilibrium. The scale of those corrections will be addressed in their section later.
+
 \subsubsection{Momenta}
 
 The first observation we make is that the Lagrangian is independent of the center of mass position making the corresponding momenta a constant of motion and we will proceed assuming we are in the inertial frame where it is 0 and R is 0. Determining the other momenta we use the relationship $\partial_{\dot q_i} L =p_i$ to arrive at
@@ -306,7 +309,7 @@ Inspecting equation \ref{ftht} we see immediately that the orbital momentum, $p_
 	\end{equation}
 \end{subequations}
 
-all the forces on the three angular momenta are 0. However since our Hamiltonian is periodic over $2\pi$ we're interested in (j,k) permuting through 0 and 1. This leaves us with 4 curves, until we consider the constraint that \ref{fr} must be negative to maintain contact. If j is odd, then we're left with a resulting positive radial force of $1/2$, and we lose contact. So we've narrowed down from an infinite number of equilibrium curves to two, which, using the j-k notation are 0-0 and 0-1.
+all the forces on the three angular momenta are 0. However since our Hamiltonian is periodic over $2\pi$ we're interested in (j,k) permuting through 0 and 1. This leaves us with 4 curves, until we consider the constraint that \ref{fr} must be negative to maintain contact. If j is odd, then we're left with a resulting positive radial force of $1/2$, and we lose contact. So we've narrowed down from an infinite number of equilibrium curves to two, which, using the j-k notation are 0-0 and 0-1. These curves correspond with the continuous ground states Schönke \cite{PhysRevApplied.4.064007} found despite not fixing the dipoles to rotate in place.
 
 
 
@@ -371,6 +374,9 @@ For the 0,0 equilibrium we find the perturbation matrix to be
 \end{equation}
 
 Which only has two non-zero eigen modes corresponding to when $\omega^2$ is equal to 5/3 and 7. The lower frequency mode has an eigenvector of [1, -1, 0], indicating it has no motion in the orbital angle, $\theta$. For this reason I refer to it as the spinning mode for its sole form of motion. It possesses an interesting isomorphism we shall examine more later. The second, higher, frequency's eigenvector is [5/2, 5/2,-1] indicating it does possess orbital motion and thus earns the moniker of orbital mode. These modes correspond to the $\alpha$ and $\beta$ modes in Pollack\cite{doi:10.1139/p96-151} respectively. The Spinning mode matching exactly, while the extra give with changing $\theta$ allowing for a higher frequency, implying a stronger restoring force. Brief algebra will reveal that both modes have net-0 angular momentum. This likely stems from the result that net angular momentum for the system is constant.
+
+Additionally this result along with the work Stump did on radiation damping of oscillating dipoles \cite{Stump:1997aa} let's us estimate the significance of that phenomenon on this system. The time constant when approximating the damping effect as leading to exponential decay leads to a time constant, that when expressed in our units, is 
+$\tau_{decay}=180 c^3 (L_0^2 \omega_0^2\frac{L_0}{T_0})^{-1}T_0$. Which means for reasonably sized dipoles we would observe an enormous amount of oscillations before any significant energy was lost to simple dipole radiation. Other forms of dissipation would certainly dominate.
 
 
 \begin{figure}[h]
@@ -546,6 +552,13 @@ The spinning and orbital modes were examine independently as they are not couple
 	\caption{Solid lines denote numerical results, dashed lines denote asymptotic small amplitude limit}
 \end{figure}
 
+\section{Conclusions}
+
+Somethings were learnt
+
+\section{Acknowledgements}
+
+support structure
 
 %needed diagrams;
 %numerical values of period vs energy
