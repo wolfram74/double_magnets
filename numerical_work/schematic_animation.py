@@ -32,7 +32,7 @@ def frame_gen(state, axes):
     w2 = 10*(state[5]-state[4])
     tht = state[3]
     wtht = 2*state[6]
-    # print(w1, w2, wtht)
+    print(w1, w2, wtht)
     c1 = numpy.array([.5*numpy.cos(tht), .5*numpy.sin(tht)])
     c2 = -c1
     mu1 = c1+numpy.array([numpy.cos(phi1), numpy.sin(phi1)])*.5
@@ -60,33 +60,41 @@ def frame_gen(state, axes):
     vel_color = (.1, .1, .9, 1)
     vel_scale = .28
     del_tht = [-wtht*vel_scale*sin(tht), wtht*vel_scale*cos(tht) ]
-
-    wtht_arrow1 = mpatches.Arrow(
-        c1[0],c1[1], del_tht[0], del_tht[1],
-        width=.2,zorder=1.
-        )
-    colors.append(vel_color)
-    wtht_arrow2 = mpatches.Arrow(
-        c2[0],c2[1], -del_tht[0], -del_tht[1],
-        width=.2,zorder=1.
-        )
-    colors.append(vel_color)
-    w1_arrow = mpatches.FancyArrowPatch(
-        mu1_terminus,
-        w1_terminus,
-        connectionstyle='arc3,rad=%f'%(vel_scale*w1), **kw
-        )
-    colors.append(vel_color)
-    w2_arrow = mpatches.FancyArrowPatch(
-        mu2_terminus,
-        w2_terminus,
-        connectionstyle='arc3,rad=%f'%(vel_scale*w2), **kw
-        )
-    colors.append(vel_color)
+    arrow_patches =[mu1_arrow, circ_1, mu2_arrow, circ_2]
+    threshold = 10.**-1
+    print(abs(wtht), abs(w1), abs(w2), threshold, 'comparison')
+    if abs(wtht) > threshold:
+        wtht_arrow1 = mpatches.Arrow(
+            c1[0],c1[1], del_tht[0], del_tht[1],
+            width=.2,zorder=1.
+            )
+        colors.append(vel_color)
+        arrow_patches.append(wtht_arrow1)
+        wtht_arrow2 = mpatches.Arrow(
+            c2[0],c2[1], -del_tht[0], -del_tht[1],
+            width=.2,zorder=1.
+            )
+        colors.append(vel_color)
+        arrow_patches.append(wtht_arrow2)
+    if abs(w1) > threshold:
+        print('adding arrow')
+        w1_arrow = mpatches.FancyArrowPatch(
+            mu1_terminus,
+            w1_terminus,
+            connectionstyle='arc3,rad=%f'%(vel_scale*w1), **kw
+            )
+        colors.append(vel_color)
+        arrow_patches.append(w1_arrow)
+    if abs(w2) > threshold:
+        w2_arrow = mpatches.FancyArrowPatch(
+            mu2_terminus,
+            w2_terminus,
+            connectionstyle='arc3,rad=%f'%(vel_scale*w2), **kw
+            )
+        colors.append(vel_color)
+        arrow_patches.append(w2_arrow)
     shapes = PatchCollection(
-        [mu1_arrow, circ_1, mu2_arrow, circ_2,
-        wtht_arrow1,wtht_arrow2, w1_arrow, w2_arrow
-        ],
+        arrow_patches,
         facecolors = colors
         )
     axes.add_collection(shapes)
