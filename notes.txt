@@ -81,3 +81,6 @@ since double system has 6 degrees in phase space, the hamiltonian approach will 
     jacob ciafre, alice fulton/boardwell/haugen, tyler
   tweak abstract
 
+01/22 meeting
+  increase caption thoroughness
+
