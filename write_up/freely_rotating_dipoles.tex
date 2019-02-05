@@ -4,10 +4,12 @@
 \usepackage{geometry} % see geometry.pdf on how to lay out the page. There's lots.
 \usepackage{graphicx}
 \usepackage{subcaption}
+\usepackage{bm}
 %\usepackage{subfig}
 \usepackage{mathtools}
 \usepackage{svg}
 \geometry{a4paper} % or letter or a5paper or ... etc
+\newcommand{\cvec}[1]{\rm{\bf{#1}}}
 % \geometry{landscape} % rotated page geometry
 
 % See the ``Article customise'' template for come common customisations
@@ -18,9 +20,10 @@
 \begin{document}
 
 \title{Dynamics of Two Freely Rotating Dipoles}
-\author{Peter Haugen}
-\author{Boyd Edwards}
-
+\author{Peter T. Haugen}
+\author{Boyd F. Edwards}
+%\affil[1]{Utah State University}
+%\setcounter{Maxaffil}{0}
 \maketitle
 %\tableofcontents
 
@@ -36,6 +39,7 @@ While a numerically integrable method exists for calculating torques for radiall
 \begin{figure}[h]
   \centering
   \includegraphics[width=.85\linewidth]{./images/coordinates_scalable.pdf}
+%overlapping hatching just doesn't render, swapped for banded solids  
   \caption{Schematic of labeling system describing two spheres in the plane featuring both the independent coordinates and the center of mass coordinates.}
 \end{figure}
 
@@ -45,7 +49,7 @@ Intrinsic properties of the two dipoles are: their respective radii, which we sh
 \subsection{Coordinates}
 \subsubsection{Cartesian}
 
-Each of the dipoles has a location constrained to the x-y plane $\boldsymbol r_1$ and $\boldsymbol r_2$ along with an orientation for the dipole $\phi_1$ and $\phi_2$ which we will also constrain to the x-y plane, measured from the x-axis.
+Each of the dipoles has a location constrained to the x-y plane $\cvec{r_1}$ and $\cvec r_2$ along with an orientation for the dipole $\phi_1$ and $\phi_2$ which we will also constrain to the x-y plane, measured from the x-axis.
 \subsubsection{Center Of Mass}
 We can define a set of composite coordinates and quantities more appropriate for analyzing two-body system using the aforementioned independent coordinates a la Taylor's mechanics \cite{taylor2005classical}. 
 
@@ -59,19 +63,21 @@ m_r = \frac{m_1m_2}{m_1+m_2}
 
 The center of mass 
 \begin{equation}
-\boldsymbol R = \frac{m_1 \boldsymbol r_1+m_2 \boldsymbol r_2}{m_t}
+\cvec R = \frac{m_1 \cvec r_1+m_2 \cvec r_2}{m_t}
 \end{equation}
 
 And the displacement of dipole 2 from dipole 1
 \begin{equation}
-\boldsymbol r 
-=  \boldsymbol r_2-\boldsymbol r_1 
-= r [\cos(\theta) \hat {\boldsymbol x}+\sin(\theta) \hat {\boldsymbol y}]
+\cvec{r}
+=  \cvec r_2-\cvec r_1 
+= \textrm{r} [\cos(\theta) \hat {\cvec x}+\sin(\theta) \hat {\cvec y}]
 \end{equation}
 
 
 \subsection{Hamiltonian}
 To take advantage of the numerous analytic techniques that can be applied to a system's Hamiltonian, it must first be calculated. Which in turn requires that we find its kinetic and potential energy in terms of its coordinates.
+%BFE:We use the hamiltonian approach to find the equations of motion.
+%PTH: Does this get at why? If the paper is supposed to have pedagogical value being a bit wordier to convey motive for rationale is important. 
 \subsubsection{Energies}
 The kinetic energy, T, in the center of mass coordinates can be found to be
 %citing taylor mechanics for the reduced kinetic
@@ -84,39 +90,42 @@ T = \frac{1}{2}(
 	+ I_2 \dot \phi_2^2
 )
 \end{equation}
+%BFE:rederive kinetic energy 
+%PTH: or cite taylor's result have done the derivation before but this paper is already a bit long of tooth and we want to get to the novelty sooner rather than later
 The potential energy for dipole 1 is merely its dot product with the local field, which in this case is caused entirely by dipole 2.
 \begin{equation}
-U_1 = -\boldsymbol \mu_1 \cdot \boldsymbol B_2
+U_1 = -\boldsymbol \mu_1 \cdot \cvec B_2
 \end{equation}
 
-With the magnetic field for a dipole at some point of interest $\boldsymbol r_i$ being given by \cite{griffiths2013introduction}
+With the magnetic field for a dipole at some point of interest $\cvec r_i$ being given by \cite{griffiths2013introduction}
+%PTH: isn't it a complete sentence if equation 6 is understood to be a noun? The alternative would just be having lots of sentences ending with "the following equation." leading to repetitive text. Possible middle ground, give all equations reference numbers and use that as the noun explicitly, now it isn't redundant and it will be formatting agnostic.
 
 \begin{equation}
-\boldsymbol B_2 = 
-\frac{\mu_0}{4\pi}(
-	3\frac{\boldsymbol \mu_2 \cdot (\boldsymbol r_i - \boldsymbol r_2)}{|\boldsymbol r_i - \boldsymbol r_2|^5}(
-	\boldsymbol r_i - \boldsymbol r_2
+\cvec B_2 = 
+\frac{\mu_0}{4\pi}\left[
+	3\frac{\boldsymbol \mu_2 \cdot (\cvec r_i - \cvec r_2)}{|\cvec r_i - \cvec r_2|^5}(
+	\cvec r_i - \cvec r_2
 	)
-	-\frac{\boldsymbol \mu_2}{|\boldsymbol r_i - \boldsymbol r_2|^3}
-)
+	-\frac{\boldsymbol \mu_2}{|\cvec r_i - \cvec r_2|^3}
+\right]
 \end{equation}
 
-Using our definition for $\boldsymbol r$ we can simplify the potential down to
+Using our definition for $\cvec r$ we can simplify the potential down to
 
 \begin{equation}
 U_1 = 
 \frac{\mu_0}{4\pi}
-\frac{1}{r^3}(
+\frac{1}{r^3}\left[
 	\boldsymbol \mu_1 \cdot \boldsymbol \mu_2
 	-3(
-		\boldsymbol \mu_2 \cdot \hat {\boldsymbol r}
+		\boldsymbol \mu_2 \cdot \hat {\cvec r}
 		)(
-		\boldsymbol \mu_1 \cdot \hat {\boldsymbol r}		
+		\boldsymbol \mu_1 \cdot \hat {\cvec r}		
 		)
-)
+\right]
 \end{equation}
 
-The $\boldsymbol \mu_1 \cdot \boldsymbol \mu_2$ term accounts for the obvious relation the dipole orientation of the two dipoles has with $U$, and the $\boldsymbol \mu_i \cdot \hat r$ term accounts for the less obvious relationship that their geometric orientation with each other has on $U$ .
+The $\boldsymbol \mu_1 \cdot \boldsymbol \mu_2$ term accounts for the obvious relation the dipole orientation of the two dipoles has with $U$, and the $\boldsymbol \mu_i \cdot \hat {\cvec r}$ term accounts for the less obvious relationship that their geometric orientation with each other has on $U$ .
 This is obviously symmetric under substitution of 1 for 2 and vice versa so we have a total interaction potential of
 
 \begin{equation}
@@ -130,16 +139,16 @@ Which when expanding the dot products out in terms of all three respective angle
 
 \begin{equation}
   \begin{multlined}
-\hat {\boldsymbol \mu_i} =  \cos(\phi_i)\hat {\boldsymbol x} + \sin(\phi_i)\hat {\boldsymbol y},
-\hat {\boldsymbol r} =  \cos(\theta)\hat {\boldsymbol x} + \sin(\theta)\hat {\boldsymbol y}
+\hat {\boldsymbol \mu_i} =  \cos(\phi_i)\hat {\cvec x} + \sin(\phi_i)\hat {\cvec y},
+\hat {\cvec r} =  \cos(\theta)\hat {\cvec x} + \sin(\theta)\hat {\cvec y}
 \\
 U(\phi_1, \phi_2, \theta, r) =
 -\frac{\mu_0}{4\pi}
 \frac{\mu_1 \mu_2}{2}
-\frac{1}{r^3}[
+\frac{1}{r^3}\left[
 	\cos(\phi_1-\phi_2)
-	+3\cos(\phi_1+\phi_2 -2\theta]
-)
+	+3\cos(\phi_1+\phi_2 -2\theta)
+\right]
   \end{multlined}
 \end{equation}
 
@@ -159,9 +168,12 @@ Having an expression for kinetic and potential energy, the Lagrangian is as foll
     +
     \frac{\mu_0}{4\pi}
     \frac{\mu_1 \mu_2}{2}
-    \frac{1}{r^3}[
+    \frac{1}{r^3}
+%    \left[
+    [
         \cos(\phi_1-\phi_2)
         +3\cos(\phi_1+\phi_2 -2\theta)
+%    \right]
     ]
   \end{multlined}
 \end{equation}
@@ -192,12 +204,12 @@ Allowing us to find the Hamiltonian with the expression of
 \begin{equation}
 H=\Sigma_i p_i \dot q_i - L
 =
-\frac{1}{2}(
+\frac{1}{2}\left(
 	\frac{p_r^2}{m_r}
 	+\frac{p_\theta^2}{m_r r^2}
 	+\frac{p_{\phi_1}^2}{I_1}
 	+\frac{p_{\phi_2}^2}{I_2}
-)+U(\phi_1,\phi_2,\theta, r)
+\right)+U(\phi_1,\phi_2,\theta, r)
 \end{equation}
 \subsection{Dimensionless coordinates}
 To get at the essentials of the system we will examine it in a natural set of dimensions. First we will characterize the second dipole in terms of the first such that 
@@ -341,7 +353,7 @@ $K_{n,m}= \partial_{q_m}(-\partial_{q_n} H)|_{\Gamma_i}$
 We can rephrase equation \ref{taylor_force} as 
 
 \begin{equation} \label{matrix_force}
-	\boldsymbol{ \dot{ p }} \approx \widehat K \boldsymbol q
+	\cvec{ \dot{ p }} \approx \widehat K \cvec q
 \end{equation}
 
 To get this amenable to simple periodic solutions, we would like to recast the momentum vector in terms of a time derivative of our position.
@@ -355,15 +367,15 @@ $M_{n,n}=1/m_n$
 then we can rewrite \ref{matrix_force} as 
 
 \begin{equation}
-	\widehat M \boldsymbol{ \ddot{ q }} \approx \widehat K \boldsymbol q
+	\widehat M \cvec{ \ddot{ q }} \approx \widehat K \cvec q
 \end{equation}
 
-Assuming simple periodic solutions of the form $\boldsymbol q = \boldsymbol a e^{i\omega t}$ allows us to recast the above as
+Assuming simple periodic solutions of the form $\cvec q = \cvec a e^{i\omega t}$ allows us to recast the above as
 
 \begin{equation}
 	( 
 	\widehat K + \omega^2 \widehat M
-	)  \boldsymbol{ a}e^{i\omega t} \approx 0
+	)  \cvec{ a}e^{i\omega t} \approx 0
 \end{equation}
 
 If we treat the approximation as an equality, it will only hold for non-trivial motion if the determinant of the matrix $\widehat K - \omega^2 \widehat M$ (referred to here on as the perturbation matrix) is 0. The normal modes are the eigenvectors and values of the perturbation matrix.
@@ -524,7 +536,11 @@ similarly
 While the integral of $p_\theta$ is not generally analytic, the equality between the two holds which allows us to algebraically rearrange \ref{phi_int} and \ref{tht_int} to get
 
 \begin{equation}
-	\phi_t(t)=  -5[\theta(t)-\theta_{0}-\frac{1}{5}\phi_{t0}] + 10L_0 t 
+	\phi_t(t)=  -5
+	\left[
+	\theta(t)-\theta_{0}-\frac{1}{5}\phi_{t0}
+	\right] 
+	+ 10L_0 t 
 \end{equation}
 
 Considering the force on $p_\theta$ from \ref{f_tht} and making this new substitution starting from equilibrium and a zero momentum starting condition we have
