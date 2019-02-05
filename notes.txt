@@ -86,7 +86,7 @@ since double system has 6 degrees in phase space, the hamiltonian approach will 
 
 
 01/29 meeting
-  next version of coords
+  √next version of coords
   √de italicize all the vector quantities
   punctuate equations
   look up standards on notation for figures/heading
