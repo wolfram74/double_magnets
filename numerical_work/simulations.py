@@ -189,7 +189,7 @@ def orbital_period_sim():
 
 def spinning_period_sim():
     samples = 150
-    maxT = 2./12.
+    maxT = 6./12.
     data_out = open('./%d.txt' % time.time(), 'w')
     start = time.time()
     for frac in range(1, samples):

@@ -90,4 +90,9 @@ since double system has 6 degrees in phase space, the hamiltonian approach will 
   √de italicize all the vector quantities
   punctuate equations
   look up standards on notation for figures/heading
-  decay time outline
+  √decay time outline
+
+02/11 meeting
+  Q: 16d r> 1 or r=> 1?
+  extend plot of spinning mode period to freely rotating energies
+

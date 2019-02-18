@@ -88,16 +88,17 @@ T = \frac{1}{2}(
 	+m_r r^2 \dot \theta^2
 	+ I_1 \dot \phi_1^2
 	+ I_2 \dot \phi_2^2
-)
+).
 \end{equation}
 %BFE:rederive kinetic energy 
 %PTH: or cite taylor's result have done the derivation before but this paper is already a bit long of tooth and we want to get to the novelty sooner rather than later
-The potential energy for dipole 1 is merely its dot product with the local field, which in this case is caused entirely by dipole 2.
+This kinetic energy is the same expression in Taylor's \cite{taylor2005classical} for center of mass coordinates with the extra addition of rotational kinetic energy accounting for the spinning the spheres can undergo. 
+The potential energy for dipole 1 is merely the dot product of its dipole moment with the local field, which in this case is caused entirely by dipole 2.
 \begin{equation}
-U_1 = -\boldsymbol \mu_1 \cdot \cvec B_2
+U_1 = -\boldsymbol \mu_1 \cdot \cvec B_2.
 \end{equation}
 
-With the magnetic field for a dipole at some point of interest $\cvec r_i$ being given by \cite{griffiths2013introduction}
+The magnetic field for a dipole at some point of interest $\cvec r_i$ being taken from \cite{griffiths2013introduction}
 %PTH: isn't it a complete sentence if equation 6 is understood to be a noun? The alternative would just be having lots of sentences ending with "the following equation." leading to repetitive text. Possible middle ground, give all equations reference numbers and use that as the noun explicitly, now it isn't redundant and it will be formatting agnostic.
 
 \begin{equation}
@@ -107,7 +108,7 @@ With the magnetic field for a dipole at some point of interest $\cvec r_i$ being
 	\cvec r_i - \cvec r_2
 	)
 	-\frac{\boldsymbol \mu_2}{|\cvec r_i - \cvec r_2|^3}
-\right]
+\right].
 \end{equation}
 
 Using our definition for $\cvec r$ we can simplify the potential down to
@@ -122,7 +123,7 @@ U_1 =
 		)(
 		\boldsymbol \mu_1 \cdot \hat {\cvec r}		
 		)
-\right]
+\right].
 \end{equation}
 
 The $\boldsymbol \mu_1 \cdot \boldsymbol \mu_2$ term accounts for the obvious relation the dipole orientation of the two dipoles has with $U$, and the $\boldsymbol \mu_i \cdot \hat {\cvec r}$ term accounts for the less obvious relationship that their geometric orientation with each other has on $U$ .
@@ -132,10 +133,10 @@ This is obviously symmetric under substitution of 1 for 2 and vice versa so we h
 U =
 U_1+U_2
 = 
-2U_1
+2U_1.
 \end{equation}
 
-Which when expanding the dot products out in terms of all three respective angles leaves us with
+This potential when expanding the dot products out in terms of all three respective angles leaves us with
 
 \begin{equation}
   \begin{multlined}
@@ -149,7 +150,7 @@ U(\phi_1, \phi_2, \theta, r) =
 	\cos(\phi_1-\phi_2)
 	+3\cos(\phi_1+\phi_2 -2\theta)
 \right]
-  \end{multlined}
+  \end{multlined}.
 \end{equation}
 
 Having an expression for kinetic and potential energy, the Lagrangian is as follows.
@@ -175,10 +176,10 @@ Having an expression for kinetic and potential energy, the Lagrangian is as foll
         +3\cos(\phi_1+\phi_2 -2\theta)
 %    \right]
     ]
-  \end{multlined}
+  \end{multlined}.
 \end{equation}
 
-It might be noted that this Lagrangian takes into account only magneto-static interactions which ignores the resulting damping one would see from accelerating dipoles which would necessarily happen with perturbations near equilibrium. The scale of those corrections will be addressed in their section later.
+It might be noted that this Lagrangian takes into account only magneto-static interactions which ignores the resulting damping one would see from accelerating dipoles which would necessarily happen anytime the system is away from equilibrium. The scale of those corrections will be addressed in their section later.
 
 \subsubsection{Momenta}
 
@@ -196,7 +197,7 @@ The first observation we make is that the Lagrangian is independent of the cente
     \end{equation}
     \begin{equation}
         \partial_{\dot r} L = m_r \dot r = p_r
-    \end{equation}
+    \end{equation}.
 \end{subequations}
 
 Allowing us to find the Hamiltonian with the expression of 
@@ -239,13 +240,13 @@ $\mu_2=\gamma \mu_1$. This lets us rewrite the energies as
 
 If we go on to define our units as follows: 
 $L_0=2a_1$ for length,
+$\mu_1$ for magnetic moment,
 $F_0=3\mu_0 \mu_1^2/(2\pi L_0^4)$ for force,
 $F_0L_0$ for energy,
 $T_0=\sqrt{m_1L_0/F0}$ for time,
-$\mu_1$ for magnetic moment,
 $T_0^{-1},T_0^{-2}$ for angular velocities and accelerations,
 $m_1L_0/T_0$ for linear momentum and 
-$m_1L_0^2/T_0$ for angular momentum. This lets us rewrite the energies
+$m_1L_0^2/T_0$ for angular momentum. This lets us rewrite the energies as
 
 \begin{subequations}\label{gen_ham}
     \begin{equation}
@@ -263,10 +264,10 @@ $m_1L_0^2/T_0$ for angular momentum. This lets us rewrite the energies
 	        \cos(\phi_1-\phi_2)
 	        +3\cos(\phi_1+\phi_2 -2\theta)
 	    ]
-    \end{equation}
+    \end{equation}.
 \end{subequations}
 
-Let us finally make two more assumptions. First, that the two spheres are identical, $\alpha=\beta=\gamma=1$. Second, that there is some contact potential preventing the two spheres from overlapping that prohibits r from getting less than 1. These two assumptions produce the Hamiltonian we'll be investigating for the remainder of our paper
+Let us finally make two more assumptions. First, that the two spheres are identical, $\alpha=\beta=\gamma=1$. Second, that there is some contact potential preventing the two spheres from overlapping that prohibits r from getting less than 1. These two assumptions produce the Hamiltonian we'll be investigating for the remainder of our discussion
 
 \begin{equation}
   \begin{multlined}
@@ -283,7 +284,7 @@ Let us finally make two more assumptions. First, that the two spheres are identi
 	\frac{1}{r^3}[
 	        \cos(\phi_1-\phi_2)
 	        +3\cos(\phi_1+\phi_2 -2\theta)
-	    ]+U_C
+	    ]+U_C.
   \end{multlined}
 \end{equation}
 
@@ -308,11 +309,11 @@ Let us first examine the equations of motion and see if there exist any equilibr
     \end{equation}
     \begin{equation}\label{fr}
         -\partial_{r} H = 
-        2 p_{\theta}^{2} - \frac{1}{4} \cos{\left (\phi_{1} - \phi_{2} \right )} - \frac{3}{4} \cos{\left (\phi_{1} + \phi_{2} - 2 \theta \right )}
+        2 p_{\theta}^{2} - \frac{1}{4} \cos{\left (\phi_{1} - \phi_{2} \right )} - \frac{3}{4} \cos{\left (\phi_{1} + \phi_{2} - 2 \theta \right )}\; \forall r >1.
     \end{equation}
 \end{subequations}
 
-Inspecting equation \ref{ftht} we see immediately that the orbital momentum, $p_\theta$, is static if $\phi_{1} + \phi_{2} - 2 \theta = j \pi$ where j is any integer. Using that as a constraint we then see that spin momenta are both static if the previous equation holds and $\phi_{1} + \phi_{2} = k\pi$ where k is an integer independent of j. These two constraints produce a set of equilibrium curves where
+Inspecting equation \ref{ftht} we see immediately that the orbital momentum, $p_\theta$, is static if and only if $\phi_{1} + \phi_{2} - 2 \theta = j \pi$ where j is any integer. Using that as a constraint we then see that spin momenta are both static if the previous equation holds and $\phi_{1} + \phi_{2} = k\pi$ where k is an integer independent of j. These two constraints produce a set of equilibrium curves where
 
 \begin{subequations}
 	\begin{equation}
@@ -320,10 +321,10 @@ Inspecting equation \ref{ftht} we see immediately that the orbital momentum, $p_
 	\end{equation}
 	\begin{equation}
 		\phi_2 = \frac{j-k}{2}\pi +\theta
-	\end{equation}
+	\end{equation},
 \end{subequations}
 
-all the forces on the three angular momenta are 0. However since our Hamiltonian is periodic over $2\pi$ we're interested in (j,k) permuting through 0 and 1. This leaves us with 4 curves, until we consider the constraint that \ref{fr} must be negative to maintain contact. If j is odd, then we're left with a resulting positive radial force of $1/2$, and we lose contact. So we've narrowed down from an infinite number of equilibrium curves to two, which, using the j-k notation are 0-0 and 0-1. These curves correspond with the continuous ground states Schönke \cite{PhysRevApplied.4.064007} found despite not fixing the dipoles to rotate in place.
+and all the forces on the three angular momenta are 0. However since our Hamiltonian is periodic over $2\pi$ we're interested in (j,k) permuting through 0 and 1. This leaves us with 4 curves, until we consider the constraint that equation \ref{fr} must be negative to maintain contact. If j is odd, then we're left with a resulting positive radial force of $1/2$, and we lose contact. So we've narrowed down from an infinite number of equilibrium curves to two, which, using the j-k notation are 0-0 and 0-1. These curves correspond with the continuous ground states Schönke \cite{PhysRevApplied.4.064007} found despite not fixing the dipoles to rotate in place.
 
 
 
@@ -361,7 +362,7 @@ To get this amenable to simple periodic solutions, we would like to recast the m
 \begin{equation}
 	\ddot{ q_n } =\frac{d}{dt} \partial_{p_n} H = m_n(r,\theta,\phi_1, \phi_2) \dot p_n
 \end{equation}
-
+% rewrite to emphasise special nature permitting this chain of reasoning and highlight when it would break down
 If we define elements in a diagonal matrix as 
 $M_{n,n}=1/m_n$
 then we can rewrite \ref{matrix_force} as 
@@ -390,7 +391,10 @@ For the 0,0 equilibrium we find the perturbation matrix to be
 Which only has two non-zero eigen modes corresponding to when $\omega^2$ is equal to 5/3 and 7. The lower frequency mode has an eigenvector of [1, -1, 0], indicating it has no motion in the orbital angle, $\theta$. For this reason I refer to it as the spinning mode for its sole form of motion. It possesses an interesting isomorphism we shall examine more later. The second, higher, frequency's eigenvector is [5/2, 5/2,-1] indicating it does possess orbital motion and thus earns the moniker of orbital mode. These modes correspond to the $\alpha$ and $\beta$ modes in Pollack\cite{doi:10.1139/p96-151} respectively. The Spinning mode matching exactly, while the extra give with changing $\theta$ allowing for a higher frequency, implying a stronger restoring force. Brief algebra will reveal that both modes have net-0 angular momentum. This likely stems from the result that net angular momentum for the system is constant.
 
 Additionally this result along with the work Stump did on radiation damping of oscillating dipoles \cite{Stump:1997aa} let's us estimate the significance of that phenomenon on this system. The time constant when approximating the damping effect as leading to exponential decay leads to a time constant, that when expressed in our units, is 
-$\tau_{decay}=180 c^3 (L_0^2 \omega_0^2\frac{L_0}{T_0})^{-1}T_0$. Which means for reasonably sized dipoles we would observe an enormous amount of oscillations before any significant energy was lost to simple dipole radiation. Other forms of dissipation would certainly dominate.
+\begin{equation}
+\tau_{decay}=180 c^3 (L_0^2 \omega_0^2\frac{L_0}{T_0})^{-1}T_0. 
+\end{equation}
+Which means for reasonably sized dipoles we would observe an enormous amount of oscillations before any significant energy was lost to simple dipole radiation. Other forms of dissipation would certainly dominate.
 
 
 \begin{figure}[h]
@@ -407,12 +411,18 @@ For the 0,1 equilibrium the perturbation matrix is
 	\frac{1}{2} & \frac{1}{2} & \frac{\omega^{2}}{2} - 1\end{matrix}\right]\end{equation}
 
 Which merits two points of observation. First, all the same eigenvectors come forth along with 2 non-zero fundamental frequencies. Second, while the orbital mode has the same frequency, the spinning mode's $\omega^2=-5/3$ indicating that it is unstable.
+%spend a bit more time explaining why it's unstable
 
 Both the 0,0 and 0,1 equilibria points have an $\omega^2=0$ mode where all the angles have been translated by some equal amount. With all the translation being the same, there's no restoring force and thus no oscillation.
 
 
 \subsubsection{Isomorphisms} Examining the spinning mode in more depth we present the variable substitution for the difference and sum of the dipole orientations and corresponding velocity
 
+%\begin{align}
+%3 &= 7\\
+%4 &= 2
+%\end{align}
+%\begin{align}
 \begin{subequations}
 	\begin{equation}
 		\phi_d = \phi_1-\phi_2
@@ -428,6 +438,16 @@ Both the 0,0 and 0,1 equilibria points have an $\omega^2=0$ mode where all the a
 	\end{equation}
 \end{subequations}
 
+\begin{subequations}
+	\begin{gather}
+		\phi_d = \phi_1-\phi_2 \\
+		\phi_t = \phi_1+\phi_2 \\
+		\dot\phi_d = \dot\phi_1-\dot\phi_2 \\
+		\dot\phi_t = \dot\phi_1+\dot\phi_2 
+	\end{gather}
+\end{subequations}
+
+%\end{align}
 Squaring and summing these new velocities we find 
 $\frac{1}{2}(\dot\phi_d^2 + \dot\phi_t^2) = \dot\phi_1^2+\dot\phi_2^2$ and similarly $\frac{1}{20}(\dot\phi_d^2 + \dot\phi_t^2) = \frac{1}{10}(\dot\phi_1^2+\dot\phi_2^2)$.
 This means $p_{\phi_d}=\dot\phi_d/20$ and $p_{\phi_t}=\dot\phi_t/20$ which leads the contact Hamiltonian in these coordinates to be
