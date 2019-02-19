@@ -29,7 +29,7 @@ def plot_period_vs_energy():
 
         label='Large Amplitude Spinning Mode')
     T_s = numpy.pi*2*(5./3.)**(-.5)
-    E_vals = numpy.linspace(-1./3., -1/6., 20)
+    E_vals = numpy.linspace(-1./3., -1/5., 20)
     ones = numpy.ones(20)
     pyplot.plot(E_vals, T_s*ones, 'b--', label='Small Amplitude spinning mode')
     #plot orbital periods
@@ -49,7 +49,7 @@ def plot_period_vs_energy():
 
     #plot analytic low-amplitude
     T_o = numpy.pi*2*(7.)**(-.5)
-    E_vals = numpy.linspace(-1./3., 0., 20)
+    E_vals = numpy.linspace(-1./3., 0.2, 20)
     ones = numpy.ones(20)
     pyplot.plot(E_vals, T_o*ones, 'g--',label='Small Amplitude orbital mode')
     pyplot.xlabel('Energy', fontsize=16)

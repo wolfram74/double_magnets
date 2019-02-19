@@ -188,12 +188,19 @@ def orbital_period_sim():
     print('took %d seconds' % (time.time()-start))        # print(len(sim_path), T_0)
 
 def spinning_period_sim():
-    samples = 150
-    maxT = 6./12.
+    samples = 200
+    fine_res = 150
+    fineT = 2.5/12.
+    maxT = 18./12.
     data_out = open('./%d.txt' % time.time(), 'w')
     start = time.time()
+    energies = []
     for frac in range(1, samples):
-        T_0 = (maxT/samples)*frac
+        if frac <=fine_res:
+            T_0 = (fineT/fine_res)*frac
+        else:
+            T_0 = fineT + (frac-fine_res)*(maxT-fineT)/(samples-fine_res)
+        energies.append(T_0)
         # T_0 = .5
         print(T_0)
         Pd = (T_0/10.)**.5
@@ -221,6 +228,9 @@ def spinning_period_sim():
         data_out.write('\n')
         print(' ')
     data_out.close()
+    # periods = utils.read_column(S_0, -2)
+    # matplotlib.plot(energies, periods)
+    # pyplot.show()
     print('took %d seconds' % (time.time()-start))        # print(len(sim_path), T_0)
 
 
@@ -231,11 +241,11 @@ if __name__ == '__main__':
     # random_point_examine()
     # random_point_period()
     # orbital_period_sim()
-    # spinning_period_sim()
-    T_0 = .25
-    P_tht = (2.*T_0/7.)**.5
-    init = [0.0,0.0,0.0,0.0,0.0,-P_tht/2.,P_tht]
-    plot_path_from_point(init)
+    spinning_period_sim()
+    # T_0 = .25
+    # P_tht = (2.*T_0/7.)**.5
+    # init = [0.0,0.0,0.0,0.0,0.0,-P_tht/2.,P_tht]
+    # plot_path_from_point(init)
 
 '''
 choosing a point in phase space:
