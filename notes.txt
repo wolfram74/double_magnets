@@ -96,3 +96,4 @@ since double system has 6 degrees in phase space, the hamiltonian approach will 
   Q: 16d r> 1 or r=> 1?
   extend plot of spinning mode period to freely rotating energies
 
+taylor expand around turn around point for orbital contact barrier

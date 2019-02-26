@@ -152,12 +152,18 @@ def random_point_period():
         print([val/return_times[0] for val in return_times])
 
 def orbital_period_sim():
-    samples = 150
+    samples = 200
+    coarse_res = 50
+    coarseT = 5./12.
     maxT = .5
     data_out = open('./%d.txt' % time.time(), 'w')
     start = time.time()
     for frac in range(1, samples):
-        T_0 = (maxT/samples)*frac
+        if frac <=coarse_res:
+            T_0 = (coarseT/coarse_res)*frac
+        else:
+            T_0 = coarseT + (frac-coarse_res)*(maxT-coarseT)/(samples-coarse_res)
+        # T_0 = (maxT/samples)*frac
         # T_0 = .5
         print(T_0)
         P_tht = (2.*T_0/7.)**.5
@@ -240,8 +246,8 @@ if __name__ == '__main__':
     # mag_oscillation(.001)
     # random_point_examine()
     # random_point_period()
-    # orbital_period_sim()
-    spinning_period_sim()
+    orbital_period_sim()
+    # spinning_period_sim()
     # T_0 = .25
     # P_tht = (2.*T_0/7.)**.5
     # init = [0.0,0.0,0.0,0.0,0.0,-P_tht/2.,P_tht]

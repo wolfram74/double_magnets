@@ -49,11 +49,11 @@ def plot_period_vs_energy():
 
     #plot analytic low-amplitude
     T_o = numpy.pi*2*(7.)**(-.5)
-    E_vals = numpy.linspace(-1./3., 0.2, 20)
+    E_vals = numpy.linspace(-1./3., -0.2, 20)
     ones = numpy.ones(20)
     pyplot.plot(E_vals, T_o*ones, 'g--',label='Small Amplitude orbital mode')
-    pyplot.xlabel('Energy', fontsize=16)
-    pyplot.ylabel('Period', fontsize=16)
+    pyplot.xlabel('Energy $(U_0+T_0)$', fontsize=16)
+    pyplot.ylabel('Period ', fontsize=16)
     pyplot.ylim(0, 12)
     pyplot.xlim(-1./3., 1./6.)
     pyplot.text(

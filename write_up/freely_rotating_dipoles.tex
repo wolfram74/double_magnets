@@ -309,7 +309,12 @@ Let us first examine the equations of motion and see if there exist any equilibr
     \end{equation}
     \begin{equation}\label{fr}
         -\partial_{r} H = 
-        2 p_{\theta}^{2} - \frac{1}{4} \cos{\left (\phi_{1} - \phi_{2} \right )} - \frac{3}{4} \cos{\left (\phi_{1} + \phi_{2} - 2 \theta \right )}\; \forall r >1.
+        2 p_{\theta}^{2}r^{-3}
+        - \left[
+            \frac{1}{4} \cos{\left (\phi_{1}- \phi_{2} \right )} 
+            + \frac{3}{4} \cos{\left (\phi_{1} + \phi_{2} - 2 \theta \right )}
+            \right]r^{-4}
+        \; \forall r >1.
     \end{equation}
 \end{subequations}
 
@@ -494,7 +499,7 @@ Considering now the Hamiltonian for the other two angles we have
         \right )
 	-
 	\frac{1}{12}
-	\frac{1}{r^3}[
+	[
 	        3\cos(\phi_t-2\theta)
 	    ]
 \end{equation}
