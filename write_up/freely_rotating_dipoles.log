@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  21 FEB 2019 18:32
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  3 MAR 2019 11:43
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -480,32 +480,28 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 <./images/animatic.pdf, id=47, 578.16pt x 433.62pt>
 File: ./images/animatic.pdf Graphic file (type pdf)
 <use ./images/animatic.pdf>
-Package pdftex.def Info: ./images/animatic.pdf  used on input line 406.
+Package pdftex.def Info: ./images/animatic.pdf  used on input line 407.
 (pdftex.def)             Requested size: 376.42575pt x 282.31943pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[10] [11 <./images/animatic.pdf>] [12] [13]
+ [10 <./images/animatic.pdf>] [11] [12] [13]
 <./images/plot.png, id=77, 578.16pt x 433.62pt>
 File: ./images/plot.png Graphic file (type png)
 <use ./images/plot.png>
-Package pdftex.def Info: ./images/plot.png  used on input line 594.
+Package pdftex.def Info: ./images/plot.png  used on input line 595.
 (pdftex.def)             Requested size: 355.51817pt x 266.63832pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[14] [15 <./images/plot.png>] (./freely_rotating_dipoles.bbl) [16]
+[14] (./freely_rotating_dipoles.bbl [15 <./images/plot.png>]) [16]
 (./freely_rotating_dipoles.aux) ) 
 Here is how much of TeX's memory you used:
- 7408 strings out of 492649
- 111235 string characters out of 6129622
+ 7409 strings out of 492649
+ 111245 string characters out of 6129622
  234894 words of memory out of 5000000
- 11184 multiletter control sequences out of 15000+600000
+ 11185 multiletter control sequences out of 15000+600000
  11725 words of font info for 41 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 48i,12n,42p,979b,321s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 48i,12n,42p,854b,321s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2018/texmf-dist/fonts/type
 1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1
 /public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/
@@ -522,7 +518,7 @@ nts/cm/cmr6.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts
 /cmsy10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/
 cmsy8.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cm
 ti10.pfb>
-Output written on freely_rotating_dipoles.pdf (16 pages, 255461 bytes).
+Output written on freely_rotating_dipoles.pdf (16 pages, 259039 bytes).
 PDF statistics:
  138 PDF objects out of 1000 (max. 8388607)
  90 compressed objects within 1 object stream

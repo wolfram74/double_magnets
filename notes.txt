@@ -97,3 +97,5 @@ since double system has 6 degrees in phase space, the hamiltonian approach will 
   extend plot of spinning mode period to freely rotating energies
 
 taylor expand around turn around point for orbital contact barrier
+
+david farrelly

@@ -76,7 +76,7 @@ def mag_oscillation(KE = .001):
 def rf_red(state):
     return 2.*state[6]**2-(
         numpy.cos(state[1])
-        +numpy.cos(state[2]-2.*state[3])
+        +3*numpy.cos(state[2]-2.*state[3])
         )/4.
 
 def plot_path_from_point(state0):
@@ -84,7 +84,7 @@ def plot_path_from_point(state0):
     figure, subplots = pyplot.subplots(1,2)
     # print(start[-2:])
     path = utils.RK4_adapt(
-        reduced_double_dipole, start, 20.,
+        reduced_double_dipole, start, 6.,
         max_steps=10**6, precision=10**-7
         )
     t_vals = utils.read_column(path, 0)
@@ -96,11 +96,11 @@ def plot_path_from_point(state0):
     ptht_vals = numpy.array(utils.read_column(path, 6))
     force_r = numpy.array(map(rf_red, path))
     ratio = numpy.array(map(lambda arr: arr[2]/arr[3], path))
-    subplots[0].plot(t_vals ,phid_vals)
-    subplots[0].plot(t_vals ,phit_vals)
-    subplots[0].plot(t_vals ,tht_vals)
-    # subplots[0].plot(t_vals ,force_r)
-    subplots[0].plot(t_vals ,ratio)
+    # subplots[0].plot(t_vals ,phid_vals)
+    # subplots[0].plot(t_vals ,phit_vals)
+    # subplots[0].plot(t_vals ,tht_vals)
+    subplots[0].plot(t_vals ,force_r)
+    # subplots[0].plot(t_vals ,ratio) #between phit and tht
     subplots[1].plot(t_vals ,pphid_vals)
     subplots[1].plot(t_vals ,pphit_vals)
     subplots[1].plot(t_vals ,ptht_vals)
@@ -152,18 +152,18 @@ def random_point_period():
         print([val/return_times[0] for val in return_times])
 
 def orbital_period_sim():
-    samples = 200
-    coarse_res = 50
-    coarseT = 5./12.
-    maxT = .5
+    samples = 100
+    # coarse_res = 50
+    # coarseT = 0./12.
+    maxT = 1./3.
     data_out = open('./%d.txt' % time.time(), 'w')
     start = time.time()
     for frac in range(1, samples):
-        if frac <=coarse_res:
-            T_0 = (coarseT/coarse_res)*frac
-        else:
-            T_0 = coarseT + (frac-coarse_res)*(maxT-coarseT)/(samples-coarse_res)
-        # T_0 = (maxT/samples)*frac
+        # if frac <=coarse_res:
+        #     T_0 = (coarseT/coarse_res)*frac
+        # else:
+        #     T_0 = coarseT + (frac-coarse_res)*(maxT-coarseT)/(samples-coarse_res)
+        T_0 = (maxT/samples)*frac
         # T_0 = .5
         print(T_0)
         P_tht = (2.*T_0/7.)**.5
@@ -248,9 +248,12 @@ if __name__ == '__main__':
     # random_point_period()
     orbital_period_sim()
     # spinning_period_sim()
-    # T_0 = .25
+    # T_0 = 1./3.-.0001
+    # T_0 = 1./2.-.0001 # still maintains contact
+    # # T_0 = 7./4.
     # P_tht = (2.*T_0/7.)**.5
-    # init = [0.0,0.0,0.0,0.0,0.0,-P_tht/2.,P_tht]
+    # # init = [0.0,0.0,0.0,0.0,0.0,-P_tht/2.,P_tht]
+    # init = [0.0,0.0,0.0,0.0,1.1,0.,0.]
     # plot_path_from_point(init)
 
 '''

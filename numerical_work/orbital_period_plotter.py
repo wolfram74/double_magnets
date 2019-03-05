@@ -60,7 +60,7 @@ def plot_period_vs_energy():
         (-0.3), 8, 'Spinning Mode'
         )
     pyplot.text(
-        (.05), 5, 'Orbital Mode'
+        (-0.3), 3.25, 'Orbital Mode'
         )
     # pyplot.text(
     #     x=(-1/3.+.005), y=6.,
