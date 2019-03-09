@@ -99,3 +99,8 @@ since double system has 6 degrees in phase space, the hamiltonian approach will 
 taylor expand around turn around point for orbital contact barrier
 
 david farrelly
+
+03/05
+jazz up intro
+romanize t in L_t
+background research on neutron binaries- magnetic vs angular momentum
