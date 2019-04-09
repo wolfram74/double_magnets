@@ -9,7 +9,7 @@
 \usepackage{mathtools}
 \usepackage{svg}
 \geometry{a4paper} % or letter or a5paper or ... etc
-\newcommand{\cvec}[1]{\rm{\bf{#1}}}
+\newcommand{\cvec}[1]{{\rm{\bf{#1}}}}
 % \geometry{landscape} % rotated page geometry
 
 % See the ``Article customise'' template for come common customisations
@@ -28,13 +28,15 @@
 %\tableofcontents
 
 \section{Abstract}
-	The equations of motion for two spherical dipoles moving freely in a plane are arrived at. Special consideration is given to the contact state. Their equilibria are determined, small amplitude motion examined and large amplitude motion investigated to reveal that possible motions are exclusively quasi-periodic.
-	Two distinct modes are identified one of which is isomorphic with the simple pendulum complete with continual spinning at high enough energy.
+	The equations of motion for two spherical dipoles moving freely in a plane are obtained. Special consideration is given to the contact state. Their equilibria are determined, small amplitude motion examined and large amplitude motion investigated to reveal that possible motions are exclusively quasi-periodic.
+	Two distinct modes are identified one of which is isomorphic with the simple pendulum complete with continual spinning at high energy.
 %	A subset of the motions are isomorphic with the simple pendulum including the transition to freely rotating with arbitrary amounts of kinetic energy.
 	
 \section{Introduction}
-A system composed of two unrestricted spherical magnetic dipoles presents an interesting and fundamental set of phenomenon as two magnetic dipoles is amongst the simplest non-trivial macroscopic magnetic systems. Pollack \cite{doi:10.1139/p96-151} examines two dipoles fixed in place spinning independently, but we relax that constraint and examine their behavior. Understanding their dynamics could prove useful in contexts such as the large dipole field proposed to provide a solar wind umbrella for Mars\cite{2017LPICo1989.8250G} or small magnetic toothless-gears\cite{doi:10.1119/1.5029823} not fixed to axles.
-While a numerically integrable method exists for calculating torques for radially oriented multi-pole cylinders\cite{Furlani:1995aa}  analytic techniques provide a useful check.
+A system composed of two unrestricted spherical magnetic dipoles presents an interesting and fundamental set of phenomena as this system is amongst the simplest non-trivial macroscopic magnetic systems. Pollack \cite{doi:10.1139/p96-151} examines two dipoles fixed in place spinning independently, but we relax that constraint and examine their behavior. 
+%cite prior edwards work on dynamics when a different coordinate is fixed
+Understanding their dynamics could prove useful in contexts such as the large dipole field proposed to provide a solar wind umbrella for Mars \cite{2017LPICo1989.8250G} or small magnetic toothless-gears \cite{doi:10.1119/1.5029823} not fixed to axles.
+While a numerically integrable method exists for calculating torques for radially oriented multi-pole cylinders \cite{Furlani:1995aa}  analytic techniques provide a useful check.
 
 \begin{figure}[h]
   \centering
@@ -51,26 +53,27 @@ Intrinsic properties of the two dipoles are: their respective radii, which we sh
 
 Each of the dipoles has a location constrained to the x-y plane $\cvec{r_1}$ and $\cvec r_2$ along with an orientation for the dipole $\phi_1$ and $\phi_2$ which we will also constrain to the x-y plane, measured from the x-axis.
 \subsubsection{Center Of Mass}
-We can define a set of composite coordinates and quantities more appropriate for analyzing two-body system using the aforementioned independent coordinates a la Taylor's mechanics \cite{taylor2005classical}. 
+We can define a set of composite coordinates and quantities more appropriate for analyzing two-body system using the aforementioned independent coordinates following Taylor's approach \cite{taylor2005classical}. 
 
-The total and reduced mass
+These composite coordinates are as follows: the total and reduced mass,
 
 \begin{equation}
-m_t = m_1+m_2
+m_t = m_1+m_2,
 \qquad
-m_r = \frac{m_1m_2}{m_1+m_2}
+m_r = \frac{m_1m_2}{m_1+m_2},
 \end{equation}
 
-The center of mass 
+the center of mass,
 \begin{equation}
-\cvec R = \frac{m_1 \cvec r_1+m_2 \cvec r_2}{m_t}
+\cvec{R} = \frac{m_1 \cvec{r}_1+m_2 \cvec{r}_2}{m_t},
+% R = \frac{m_1  r_1+m_2 r_2}{m_t},
 \end{equation}
 
-And the displacement of dipole 2 from dipole 1
+and the displacement of dipole 2 from dipole 1,
 \begin{equation}
 \cvec{r}
 =  \cvec r_2-\cvec r_1 
-= \textrm{r} [\cos(\theta) \hat {\cvec x}+\sin(\theta) \hat {\cvec y}]
+= \textrm{r} [\cos(\theta) \hat {\cvec x}+\sin(\theta) \hat {\cvec y}].
 \end{equation}
 
 
@@ -79,21 +82,33 @@ To take advantage of the numerous analytic techniques that can be applied to a s
 %BFE:We use the hamiltonian approach to find the equations of motion.
 %PTH: Does this get at why? If the paper is supposed to have pedagogical value being a bit wordier to convey motive for rationale is important. 
 \subsubsection{Energies}
-The kinetic energy, T, in the center of mass coordinates can be found to be
+The kinetic energy, $T$, is \cite{taylor2005classical}
 %citing taylor mechanics for the reduced kinetic
 \begin{equation}
-T = \frac{1}{2}(
-	m_t \dot R^2
-	+m_r \dot r^2
-	+m_r r^2 \dot \theta^2
-	+ I_1 \dot \phi_1^2
-	+ I_2 \dot \phi_2^2
+	\begin{multlined}
+            T = 
+            \frac{1}{2}(
+            	m_1 \dot {\cvec{r}_1}^2
+            	+m_2 \dot {\cvec{r}_2}^2
+            	+ I_1 \dot \phi_1^2
+            	+ I_2 \dot \phi_2^2
+            )
+            \\
+            =\frac{1}{2}(
+            	m_t \dot R^2
+            	+m_r \dot r^2
+            	+m_r r^2 \dot \theta^2
+            	+ I_1 \dot \phi_1^2
+            	+ I_2 \dot \phi_2^2
 ).
+  \end{multlined}
 \end{equation}
 %BFE:rederive kinetic energy 
 %PTH: or cite taylor's result have done the derivation before but this paper is already a bit long of tooth and we want to get to the novelty sooner rather than later
-This kinetic energy is the same expression in Taylor's \cite{taylor2005classical} for center of mass coordinates with the extra addition of rotational kinetic energy accounting for the spinning the spheres can undergo. 
-The potential energy for dipole 1 is merely the dot product of its dipole moment with the local field, which in this case is caused entirely by dipole 2.
+The first three terms in the second equation are for two bodies in center of mass coordinates with the final two terms accounting for the internal degrees of freedom of the spheres. 
+%cite prior edwards work for energy interaction here
+
+The potential energy for dipole 1 is the dot product of its dipole moment with the local field, which in this case is caused entirely by dipole 2.
 \begin{equation}
 U_1 = -\boldsymbol \mu_1 \cdot \cvec B_2.
 \end{equation}
@@ -111,7 +126,7 @@ The magnetic field for a dipole at some point of interest $\cvec r_i$ being take
 \right].
 \end{equation}
 
-Using our definition for $\cvec r$ we can simplify the potential down to
+Using our definition for $\cvec r$ we can simplify the potential energy to
 
 \begin{equation}
 U_1 = 
@@ -126,8 +141,11 @@ U_1 =
 \right].
 \end{equation}
 
-The $\boldsymbol \mu_1 \cdot \boldsymbol \mu_2$ term accounts for the obvious relation the dipole orientation of the two dipoles has with $U$, and the $\boldsymbol \mu_i \cdot \hat {\cvec r}$ term accounts for the less obvious relationship that their geometric orientation with each other has on $U$ .
-This is obviously symmetric under substitution of 1 for 2 and vice versa so we have a total interaction potential of
+The $\boldsymbol \mu_1 \cdot \boldsymbol \mu_2$ term accounts 
+for the direct contribution of the relative orientation of the two dipole moments on $U$, 
+%for the direct relation of the two dipoles' relative orientation have with $U$, 
+and the $\boldsymbol \mu_i \cdot \hat {\cvec r}$ term accounts for the impact on $U$ due to the orientation of their dipole moments relative to their spatial position.
+This is symmetric under substitution of 1 for 2 and vice versa so we have a total interaction potential of
 
 \begin{equation}
 U =
@@ -140,8 +158,9 @@ This potential when expanding the dot products out in terms of all three respect
 
 \begin{equation}
   \begin{multlined}
-\hat {\boldsymbol \mu_i} =  \cos(\phi_i)\hat {\cvec x} + \sin(\phi_i)\hat {\cvec y},
-\hat {\cvec r} =  \cos(\theta)\hat {\cvec x} + \sin(\theta)\hat {\cvec y}
+\hat {\boldsymbol \mu_i} =  \cos \phi_i \hat {\cvec x} + \sin \phi_i \hat {\cvec y}
+\\
+\hat {\cvec r} =  \cos \theta \hat {\cvec x} + \sin \theta \hat {\cvec y}
 \\
 U(\phi_1, \phi_2, \theta, r) =
 -\frac{\mu_0}{4\pi}
@@ -149,11 +168,11 @@ U(\phi_1, \phi_2, \theta, r) =
 \frac{1}{r^3}\left[
 	\cos(\phi_1-\phi_2)
 	+3\cos(\phi_1+\phi_2 -2\theta)
-\right]
-  \end{multlined}.
+\right].
+  \end{multlined}
 \end{equation}
 
-Having an expression for kinetic and potential energy, the Lagrangian is as follows.
+Having an expression for kinetic and potential energy, the Lagrangian is 
 %good place to talk about why we're neglecting radiation losses in stump_damping
 \begin{equation}
   \begin{multlined}
@@ -175,12 +194,12 @@ Having an expression for kinetic and potential energy, the Lagrangian is as foll
         \cos(\phi_1-\phi_2)
         +3\cos(\phi_1+\phi_2 -2\theta)
 %    \right]
-    ]
-  \end{multlined}.
+    ].
+  \end{multlined}
 \end{equation}
 
-It might be noted that this Lagrangian takes into account only magneto-static interactions which ignores the resulting damping one would see from accelerating dipoles which would necessarily happen anytime the system is away from equilibrium. The scale of those corrections will be addressed in their section later.
-
+It might be noted that this Lagrangian takes into account only magnetostatic interactions which ignores the resulting damping one would see from accelerating dipoles which would necessarily happen anytime the system is away from equilibrium. The scale of those corrections will be addressed in their section later.
+%section labeling
 \subsubsection{Momenta}
 
 The first observation we make is that the Lagrangian is independent of the center of mass position making the corresponding momenta a constant of motion and we will proceed assuming we are in the inertial frame where it is 0 and R is 0. Determining the other momenta we use the relationship $\partial_{\dot q_i} L =p_i$ to arrive at
@@ -392,7 +411,7 @@ For the 0,0 equilibrium we find the perturbation matrix to be
 	\frac{1}{2} & \frac{1}{2} & \frac{\omega^{2}}{2} - 1\end{matrix}\right]
 \end{equation}
 
-Which only has two non-zero eigen modes corresponding to when $\omega^2$ is equal to 5/3 and 7. The lower frequency mode has an eigenvector of [1, -1, 0], indicating it has no motion in the orbital angle, $\theta$. For this reason I refer to it as the spinning mode for its sole form of motion. It possesses an interesting isomorphism we shall examine in more depth later. The second, higher, frequency's eigenvector is [5/2, 5/2,-1] indicating it does possess orbital motion and thus earns the moniker of orbital mode. These modes correspond to the $\alpha$ and $\beta$ modes in Pollack\cite{doi:10.1139/p96-151} respectively. The Spinning mode matches exactly. 
+Which only has two non-zero eigen modes corresponding to when $\omega^2$ is equal to 5/3 and 7. The lower frequency mode has an eigenvector of [1, -1, 0], indicating it has no motion in the orbital angle, $\theta$. For this reason I refer to it as the spinning mode for its sole form of motion. It possesses an interesting isomorphism we shall examine in more depth later. The second, higher, frequency's eigenvector is [5/2, 5/2,-1] indicating it does possess orbital motion and thus earns the moniker of orbital mode. These modes correspond to the $\alpha$ and $\beta$ modes in Pollack \cite{doi:10.1139/p96-151} respectively. The Spinning mode matches exactly. 
 The extra give from dynamic $\theta$ appears to result in a higher restoring force as the frequency is higher.
 Brief algebra will reveal that both modes have net-0 angular momentum.
 
