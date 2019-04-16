@@ -198,7 +198,7 @@ Having an expression for kinetic and potential energy, the Lagrangian is
   \end{multlined}
 \end{equation}
 
-It might be noted that this Lagrangian takes into account only magnetostatic interactions which ignores the resulting damping one would see from accelerating dipoles which would necessarily happen anytime the system is away from equilibrium. The scale of those corrections will be addressed in their section later.
+It might be noted that this Lagrangian takes into account only magnetostatic interactions which ignores the resulting damping one would see from accelerating dipoles which would necessarily happen anytime the system is away from equilibrium. The scale of those corrections will be addressed in  later section.
 %section labeling
 \subsubsection{Momenta}
 
@@ -257,12 +257,12 @@ $\mu_2=\gamma \mu_1$. This lets us rewrite the energies as
     \end{equation}
 \end{subequations}
 
-If we go on to define our units as follows: 
+We go on to define our units as follows: 
 $L_0=2a_1$ for length,
 $\mu_1$ for magnetic moment,
 $F_0=3\mu_0 \mu_1^2/(2\pi L_0^4)$ for force,
 $F_0L_0$ for energy,
-$T_0=\sqrt{m_1L_0/F0}$ for time,
+$T_0=\sqrt{m_1L_0/F_0}$ for time,
 $T_0^{-1},T_0^{-2}$ for angular velocities and accelerations,
 $m_1L_0/T_0$ for linear momentum and 
 $m_1L_0^2/T_0$ for angular momentum. This lets us rewrite the energies as
@@ -286,7 +286,7 @@ $m_1L_0^2/T_0$ for angular momentum. This lets us rewrite the energies as
     \end{equation}
 \end{subequations}
 
-Let us finally make two more assumptions. First, that the two spheres are identical, $\alpha=\beta=\gamma=1$. Second, that there is some contact potential preventing the two spheres from overlapping that prohibits r from getting less than 1. These two assumptions produce the Hamiltonian we'll be investigating for the remainder of our discussion
+Let us finally make two more assumptions. First, that the two spheres are identical, $\alpha=\beta=\gamma=1$. Second, that there is some contact potential energy $U_C$ preventing the two spheres from overlapping that prohibits $r$ from getting less than 1. These two assumptions produce the Hamiltonian we'll be investigating for the remainder of our discussion
 
 \begin{equation}
   \begin{multlined}
@@ -312,7 +312,7 @@ Let us finally make two more assumptions. First, that the two spheres are identi
 
 \subsubsection{Equilibrium Analysis}
 Let us first examine the equations of motion and see if there exist any equilibria between the spheres while they are in contact with each other ($r=1$). The Hamiltonian equations of motion we find are
-
+%04/15 include the p dots in equations, make the contact term on a second line
 \begin{subequations}
     \begin{equation}\label{fphi1}
         -\partial_{\phi_1} H = 
@@ -333,11 +333,12 @@ Let us first examine the equations of motion and see if there exist any equilibr
             \frac{1}{4} \cos{\left (\phi_{1}- \phi_{2} \right )} 
             + \frac{3}{4} \cos{\left (\phi_{1} + \phi_{2} - 2 \theta \right )}
             \right]r^{-4}
-        \; \forall r >1.
+        \;\;\; \forall r >1.
     \end{equation}
 \end{subequations}
-
-Inspecting equation \ref{ftht} we see immediately that the orbital momentum, $p_\theta$, is static if and only if $\phi_{1} + \phi_{2} - 2 \theta = j \pi$ where j is any integer. Using that as a constraint we then see that spin momenta are both static if the previous equation holds and $\phi_{1} + \phi_{2} = k\pi$ where k is an integer independent of j. These two constraints produce a set of equilibrium curves where
+%04/15 static vs constant, edwards leans towards constant
+%American journal of physics reference equations
+Inspecting Eq.~(\ref{ftht}) we see immediately that the orbital momentum, $p_\theta$, is static if and only if $\phi_{1} + \phi_{2} - 2 \theta = j \pi$ where $j$ is any integer. Using that as a constraint we then see that spin momenta are both static if the previous equation holds and $\phi_{1} + \phi_{2} = k\pi$ where $k$ is an integer independent of $j$. These two constraints produce a set of equilibrium curves where
 
 \begin{subequations}
 	\begin{equation}
@@ -347,8 +348,9 @@ Inspecting equation \ref{ftht} we see immediately that the orbital momentum, $p_
 		\phi_2 = \frac{j-k}{2}\pi +\theta,
 	\end{equation}
 \end{subequations}
-
-and all the forces on the three angular momenta are 0. However since our Hamiltonian is periodic over $2\pi$ we're interested in (j,k) permuting through 0 and 1. This leaves us with 4 curves, until we consider the constraint that equation \ref{fr} must be negative to maintain contact. If j is odd, then we're left with a resulting positive radial force of $1/2$, and we lose contact. So we've narrowed down from an infinite number of equilibrium curves to two, which, using the j-k notation are 0-0 and 0-1. These curves correspond with the continuous ground states Schönke \cite{PhysRevApplied.4.064007} found despite not fixing the dipoles to rotate in place.
+%04/15 do a more thorough explanation of symmetry of hamiltonian
+%list out different j,k's, converge on (j,k)
+and all the forces on the three angular momenta are 0. However since our Hamiltonian is periodic over $2\pi$ we're interested in $(j,k)$ permuting through 0 and 1. This leaves us with 4 curves, until we consider the constraint that equation \ref{fr} must be negative to maintain contact. If j is odd, then we're left with a resulting positive radial force of $1/2$, and we lose contact. So we've narrowed down from an infinite number of equilibrium curves to two, which, using the j-k notation are 0-0 and 0-1. These curves correspond with the continuous ground states Schönke \cite{PhysRevApplied.4.064007} found despite not fixing the dipoles to rotate in place.
 
 
 
@@ -362,7 +364,7 @@ p_{\phi_{1i}},p_{\phi_{2i}},p_{\theta_{i}}
 =
 (\phi_{1i},\phi_{2i},\theta_{i},0,0,0)
 $ 
-the changes in momenta will be small we can do a multi-variable Taylor expansion and produce the expression.
+the changes in momenta will be small, we can do a multi-variable Taylor expansion and produce 
 
 \begin{equation}\label{taylor_force}
 	\dot p_n 
@@ -374,7 +376,7 @@ the changes in momenta will be small we can do a multi-variable Taylor expansion
 
 If we define elements in a matrix 
 $K_{n,m}= \partial_{q_m}(-\partial_{q_n} H)|_{\Gamma_i}$
-We can rephrase equation \ref{taylor_force} as 
+We can rephrase Eq.~\ref{taylor_force} as 
 
 \begin{equation} \label{matrix_force}
 	\cvec{ \dot{ p }} \approx \widehat K \cvec q.
@@ -385,10 +387,10 @@ To get this amenable to simple periodic solutions, we would like to recast the m
 \begin{equation}
 	\ddot{ q_n } =\frac{d}{dt} \partial_{p_n} H = m_n \dot p_n.
 \end{equation}
-% rewrite to emphasise special nature permitting this chain of reasoning and highlight when it would break down
-Given our hamiltonian and additional constraint of contact we get a constant effective mass. If we define elements in a diagonal matrix as 
+
+Given our Hamiltonian and additional constraint of contact we get a constant effective mass. If we define elements in a diagonal matrix as 
 $M_{n,n}=1/m_n$
-then we can rewrite \ref{matrix_force} as 
+then we can rewrite Eq.~\ref{matrix_force} as 
 
 \begin{equation}
 	\widehat M \cvec{ \ddot{ q }} \approx \widehat K \cvec q.
@@ -404,64 +406,50 @@ Assuming simple periodic solutions of the form $\cvec q = \cvec a e^{i\omega t}$
 
 If we treat the approximation as an equality, it will only hold for non-trivial motion if the determinant of the matrix $\widehat K - \omega^2 \widehat M$ (referred to here on as the perturbation matrix) is 0. The normal modes are the eigenvectors with frequencies equal to the eigenvalues of the perturbation matrix.
 
-For the 0,0 equilibrium we find the perturbation matrix to be
+For the (0,0) equilibrium we find the perturbation matrix to be
 \begin{equation}
-	\left[\begin{matrix}\frac{\omega^{2}}{10} - \frac{1}{3} & - \frac{1}{6} & \frac{1}{2}\\
+	\left[\begin{matrix}
+	\frac{\omega^{2}}{10} - \frac{1}{3} & - \frac{1}{6} & \frac{1}{2}\\
 	- \frac{1}{6} & \frac{\omega^{2}}{10} - \frac{1}{3} & \frac{1}{2}\\
-	\frac{1}{2} & \frac{1}{2} & \frac{\omega^{2}}{2} - 1\end{matrix}\right]
+	\frac{1}{2} & \frac{1}{2} & \frac{\omega^{2}}{2} - 1
+	\end{matrix}\right]
 \end{equation}
 
-Which only has two non-zero eigen modes corresponding to when $\omega^2$ is equal to 5/3 and 7. The lower frequency mode has an eigenvector of [1, -1, 0], indicating it has no motion in the orbital angle, $\theta$. For this reason I refer to it as the spinning mode for its sole form of motion. It possesses an interesting isomorphism we shall examine in more depth later. The second, higher, frequency's eigenvector is [5/2, 5/2,-1] indicating it does possess orbital motion and thus earns the moniker of orbital mode. These modes correspond to the $\alpha$ and $\beta$ modes in Pollack \cite{doi:10.1139/p96-151} respectively. The Spinning mode matches exactly. 
+Which only has two non-zero eigenmodes corresponding to when $\omega^2$ is equal to 5/3 and 7. The lower frequency mode has an eigenvector of [1, -1, 0], indicating it has no motion in the orbital angle, $\theta$. For this reason we shall refer to it as the spinning mode for its sole form of motion. It possesses an interesting isomorphism we shall examine in more depth later. The second, higher, frequency's eigenvector is [5/2, 5/2,-1] indicating it does possess orbital motion and thus earns the moniker of orbital mode. These modes correspond to the $\alpha$ and $\beta$ modes in Pollack \cite{doi:10.1139/p96-151} respectively. The spinning mode matches exactly. 
+%04/15 edit give
 The extra give from dynamic $\theta$ appears to result in a higher restoring force as the frequency is higher.
 Brief algebra will reveal that both modes have net-0 angular momentum.
 
 Additionally this result along with the work Stump did on radiation damping of oscillating dipoles \cite{Stump:1997aa} let's us estimate the significance of that phenomenon on this system. The time constant when approximating the damping effect as leading to exponential decay leads to a time constant, that when expressed in our units, is 
 \begin{equation}
-\tau_{decay}=180 c^3 (L_0^2 \omega_0^2\frac{L_0}{T_0})^{-1}T_0. 
+\tau_{decay}=180 c^3 \left (L_0^2 \omega_0^2\frac{L_0}{T_0} \right)^{-1}T_0. 
 \end{equation}
 Which means for reasonably sized dipoles we would observe an enormous amount of oscillations before any significant energy was lost to simple dipole radiation. Other forms of dissipation would certainly dominate.
 
 
 \begin{figure}[h]
+%WARNING: orbital mode doesn't go out to period=4, redo	
 	\includegraphics[width=0.9\linewidth ]{./images/animatic.pdf} 
 
-  \caption{The top row features four frames of an orbital mode with period 4, while the bottom row a spinning mode with period 8. Numerical results.}
+%  \caption{The top row features four frames of an orbital mode with period 4, while the bottom row a spinning mode with period 8. Numerical results.}
+  \caption{Numerical results for  four frames of an orbital mode with period 4 (top row), and a spinning mode with period 8 (bottom row).}
+  
 \end{figure}
 
 %fiddle with arrow coloring
-For the 0,1 equilibrium the perturbation matrix is 
+For the (0,1) equilibrium the perturbation matrix is 
 \begin{equation}
 	\left[\begin{matrix}\frac{\omega^{2}}{10} - \frac{1}{6} & - \frac{1}{3} & \frac{1}{2}\\
 	- \frac{1}{3} & \frac{\omega^{2}}{10} - \frac{1}{6} & \frac{1}{2}\\
 	\frac{1}{2} & \frac{1}{2} & \frac{\omega^{2}}{2} - 1\end{matrix}\right]\end{equation}
 
 Which merits two points of observation. First, all the same eigenvectors come forth along with 2 non-zero fundamental frequencies. Second, while the orbital mode has the same frequency, the spinning mode's $\omega^2=-5/3$ indicating that it is unstable.
-%spend a bit more time explaining why it's unstable
+%04/15 spend a bit more time explaining why it's unstable
 
-Both the 0,0 and 0,1 equilibria points have an $\omega^2=0$ mode where all the angles have been translated by some equal amount. With all the translation being the same, there's no restoring force and thus no oscillation.
+Both the (0,0) and (0,1) equilibria points have an $\omega^2=0$ mode where all the angles have been translated by some equal amount. With all the translation being the same, there's no restoring force and thus no oscillation.
 
 
 \subsubsection{Isomorphisms} Examining the spinning mode in more depth we present the variable substitution for the difference and sum of the dipole orientations and corresponding velocity
-
-%\begin{align}
-%3 &= 7\\
-%4 &= 2
-%\end{align}
-%\begin{align}
-%\begin{subequations}
-%	\begin{equation}
-%		\phi_d = \phi_1-\phi_2
-%	\end{equation}
-%	\begin{equation}
-%		\phi_t = \phi_1+\phi_2
-%	\end{equation}
-%	\begin{equation}
-%		\dot\phi_d = \dot\phi_1-\dot\phi_2
-%	\end{equation}
-%	\begin{equation}
-%		\dot\phi_t = \dot\phi_1+\dot\phi_2
-%	\end{equation}
-%\end{subequations}
 
 \begin{subequations}
 	\begin{gather}
@@ -474,6 +462,7 @@ Both the 0,0 and 0,1 equilibria points have an $\omega^2=0$ mode where all the a
 
 %\end{align}
 Squaring and summing these new velocities we find 
+%04/15 rewrite to emphasize going over from the langragnian
 $\frac{1}{2}(\dot\phi_d^2 + \dot\phi_t^2) = \dot\phi_1^2+\dot\phi_2^2$ and similarly $\frac{1}{20}(\dot\phi_d^2 + \dot\phi_t^2) = \frac{1}{10}(\dot\phi_1^2+\dot\phi_2^2)$.
 This means $p_{\phi_d}=\dot\phi_d/20$ and $p_{\phi_t}=\dot\phi_t/20$ which leads the contact Hamiltonian in these coordinates to be
 
@@ -489,23 +478,24 @@ This means $p_{\phi_d}=\dot\phi_d/20$ and $p_{\phi_t}=\dot\phi_t/20$ which leads
 	-
 	\frac{1}{12}
 	[
-	        \cos(\phi_d)
+	        \cos \phi_d
 	        +3\cos(\phi_t-2\theta)
 	    ]
   \end{multlined}
 \end{equation}
 
-Considering just the spinning mode where we begin with $\phi_t=\theta=p_{\phi_t}=p_\theta=0$. Using this Hamiltonian it becomes clear when those four variables all start at 0 they stay at 0, reducing this phase space from 6 dimensions to 2.
+Let us consider just the spinning mode with $\phi_t=\theta=p_{\phi_t}=p_\theta=0$. Using this Hamiltonian it becomes clear that when those four variables all start at 0 they stay at 0, reducing this phase space from 6 dimensions to 2.
 
 \begin{equation}
 	H_{\phi_d}=
 	10 p_{\phi_d}^2 
 	-
 	\frac{1}{12}
-        \cos(\phi_d)
+        \cos \phi_d
 \end{equation}
 
-Which is isomorphic with the Hamiltonian to a simple pendulum. As expected, the Hamilton equations lead us to  a 2nd order differential $\ddot \phi_d = - \frac{5}{3}\sin(\phi_d)$ providing a 2nd check that the frequency is correct.
+%04/15 tweak phrasing
+Which is isomorphic with the Hamiltonian to a simple pendulum. As expected, the Hamilton equations lead us to  a second order differential $\ddot \phi_d = - \frac{5}{3}\sin \phi_d$ providing a 2nd check that the frequency is correct.
 
 \subsubsection{Coupling}
 
@@ -557,7 +547,7 @@ With this we can produce the expression
 	= \phi_{t0} + \int_0^t \kern-.33em 20 p_{ \phi_t } dt
 	= \phi_{t0} + \int_0^t \kern-.33em 10 (\textrm{t}-p_{ \theta }) dt
 	\\
-	= \phi_{t0} + 10L_\textrm{t} t -10 \int_0^t \kern-.33em p_{ \theta } dt
+	= \phi_{t0} + 10L_\textrm{t} t -10 \int_0^t \kern-.33em p_{ \theta } dt.
   \end{multlined}
 \end{equation}
 
@@ -565,7 +555,7 @@ Which we'll rearrange to get
 
 \begin{equation}\label{phi_int}
 	\int_0^t  p_{ \theta } dt
-	= L_\textrm{t} t + (\phi_{t0}  - \phi_t(t))/10
+	= L_\textrm{t} t + (\phi_{t0}  - \phi_t(t))/10,
 \end{equation}
 
 similarly
@@ -576,7 +566,7 @@ similarly
 	= \theta_{ 0} + \int_0^t  \dot \theta  dt
 	= \theta_{ 0} + \int_0^t  2 p_{\theta} dt
 	\\
-	\int_0^t  p_{\theta} dt = \frac{1}{2}[\theta(t)-\theta_{0}]
+	\int_0^t  p_{\theta} dt = \frac{1}{2}[\theta(t)-\theta_{0}].
   \end{multlined}
 \end{equation}
 
@@ -587,13 +577,13 @@ While the integral of $p_\theta$ is not analytic, the equality between the two h
 	\left[
 	\theta(t)-\theta_{0}-\frac{1}{5}\phi_{t0}
 	\right] 
-	+ 10L_t t 
+	+ 10L_t t .
 \end{equation}
 
 Considering the force on $p_\theta$ from \ref{f_tht} and making this new substitution starting from equilibrium and a zero angular momentum starting condition we have
 
 \begin{equation}
-	\ddot \theta = \sin(-5\theta -2\theta) = -\sin(7\theta)\approx -7\theta
+	\ddot \theta = \sin(-5\theta -2\theta) = -\sin 7\theta \approx -7\theta
 \end{equation}
 
 And doing the same with $p_{\phi_t}$ from \ref{f_phit} produces
