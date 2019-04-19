@@ -34,6 +34,7 @@
 	
 \section{Introduction}
 A system composed of two unrestricted spherical magnetic dipoles presents an interesting and fundamental set of phenomena as this system is amongst the simplest non-trivial macroscopic magnetic systems. Pollack \cite{doi:10.1139/p96-151} examines two dipoles fixed in place spinning independently, but we relax that constraint and examine their behavior. 
+%emphasise the value of going through the hamiltonian in a system that's comprehensible /and/ has some unexpected results
 %cite prior edwards work on dynamics when a different coordinate is fixed
 Understanding their dynamics could prove useful in contexts such as the large dipole field proposed to provide a solar wind umbrella for Mars \cite{2017LPICo1989.8250G} or small magnetic toothless-gears \cite{doi:10.1119/1.5029823} not fixed to axles.
 While a numerically integrable method exists for calculating torques for radially oriented multi-pole cylinders \cite{Furlani:1995aa}  analytic techniques provide a useful check.
@@ -315,25 +316,28 @@ Let us first examine the equations of motion and see if there exist any equilibr
 %04/15 include the p dots in equations, make the contact term on a second line
 \begin{subequations}
     \begin{equation}\label{fphi1}
-        -\partial_{\phi_1} H = 
+       \dot p_{\phi_1}= 
+       -\partial_{\phi_1} H = 
 	- \frac{1}{12} \sin{\left (\phi_{1} - \phi_{2} \right )} - \frac{1}{4} \sin{\left (\phi_{1} + \phi_{2} - 2 \theta \right )},
     \end{equation}
     \begin{equation}\label{fphi2}
+        \dot p_{\phi_2}= 
         -\partial_{\phi_2} H =
 	\frac{1}{12} \sin{\left (\phi_{1} - \phi_{2} \right )} - \frac{1}{4} \sin{\left (\phi_{1} + \phi_{2} - 2 \theta \right )},
     \end{equation}
     \begin{equation}\label{ftht}
+        \dot p_{\theta}= 
         -\partial_{\theta} H =
         \frac{1}{2} \sin{\left (\phi_{1} + \phi_{2} - 2 \theta \right )},
     \end{equation}
     \begin{equation}\label{fr}
+        \dot p_{r}= 
         -\partial_{r} H = 
         2 p_{\theta}^{2}r^{-3}
         - \left[
             \frac{1}{4} \cos{\left (\phi_{1}- \phi_{2} \right )} 
             + \frac{3}{4} \cos{\left (\phi_{1} + \phi_{2} - 2 \theta \right )}
-            \right]r^{-4}
-        \;\;\; \forall r >1.
+            \right]r^{-4}+F_C.
     \end{equation}
 \end{subequations}
 %04/15 static vs constant, edwards leans towards constant
@@ -495,7 +499,7 @@ Let us consider just the spinning mode with $\phi_t=\theta=p_{\phi_t}=p_\theta=0
 \end{equation}
 
 %04/15 tweak phrasing
-Which is isomorphic with the Hamiltonian to a simple pendulum. As expected, the Hamilton equations lead us to  a second order differential $\ddot \phi_d = - \frac{5}{3}\sin \phi_d$ providing a 2nd check that the frequency is correct.
+Which is isomorphic with the Hamiltonian to a simple pendulum. As expected, the Hamilton equations lead us to  a second order differential $\ddot \phi_d = - \frac{5}{3}\sin \phi_d$ providing a second check that the frequency is correct.
 
 \subsubsection{Coupling}
 
@@ -511,10 +515,10 @@ Considering now the Hamiltonian for the other two angles we have
 	\frac{1}{12}
 	[
 	        3\cos(\phi_t-2\theta)
-	    ]
+	    ],
 \end{equation}
 
-Which holds while the contact criterion is observed.
+which holds while the contact criterion is observed.
 
 \begin{subequations}
 	\begin{equation}\label{f_phit}
@@ -536,7 +540,7 @@ Which holds while the contact criterion is observed.
 	\end{equation}
 \end{subequations}
 
-The rates of change for the momenta clearly denote a conserved quantity we'll call total angular moment and denote as 
+The rates of change for the momenta clearly denote a conserved quantity we'll call total angular momentum and denote as 
 $L_\textrm{t} = p_\theta + 2p_{\phi_t}$. 
 With this we can produce the expression
 
@@ -548,18 +552,15 @@ With this we can produce the expression
 	= \phi_{t0} + \int_0^t \kern-.33em 10 (\textrm{t}-p_{ \theta }) dt
 	\\
 	= \phi_{t0} + 10L_\textrm{t} t -10 \int_0^t \kern-.33em p_{ \theta } dt.
-  \end{multlined}
+  \end{multlined},
 \end{equation}
-
-Which we'll rearrange to get
-
+which we'll rearrange to get
 \begin{equation}\label{phi_int}
 	\int_0^t  p_{ \theta } dt
-	= L_\textrm{t} t + (\phi_{t0}  - \phi_t(t))/10,
+	= L_\textrm{t} t + (\phi_{t0}  - \phi_t(t))/10.
 \end{equation}
-
+%04/16 rewrite to be more stand alone
 similarly
-
 \begin{equation}\label{tht_int}
   \begin{multlined}
 	\theta(t) 
@@ -569,8 +570,8 @@ similarly
 	\int_0^t  p_{\theta} dt = \frac{1}{2}[\theta(t)-\theta_{0}].
   \end{multlined}
 \end{equation}
-
-While the integral of $p_\theta$ is not analytic, the equality between the two holds while contact is maintained which allows us to algebraically rearrange \ref{phi_int} and \ref{tht_int} to get
+%04/16 sweep through and set up any references with proper equation prefix
+While the integral of $p_\theta$ is not analytic, the equality between the two holds while contact is maintained which allows us to algebraically rearrange Eq.~\ref{phi_int} and Eq.~\ref{tht_int} to get
 
 \begin{equation}
 	\phi_t(t)=  -5
@@ -596,20 +597,20 @@ Showing that while the contact constraint holds, the orbital state is also isomo
 
 \subsection{Numerical Results}
 \subsubsection{Method}
-An adaptive Runge-Kutta 4 method was implemented to calculate the trajectory of the system using two different sized time steps, both made smaller until they agreed within a specified precision. To determine if a trajectory has returned through it's original point in phase space $\boldsymbol{\Gamma}(0)=\boldsymbol{\Gamma}_0$ linear interpolation was used between steps $\boldsymbol{\Gamma}_n$ and $\boldsymbol{\Gamma}_{n+1}$ to get an estimated time for when the initial value was revisited. This generated six estimated recurrence times. If all six calculated values fell between $t_n$ and $t_{n+1}$ the average was taken and stored. This process was continued until 75 time units had elapsed. The stored recurrence times were fit to the equation $t_m = t_0m$, the slope $t_0$ was taken to be the period.
+An adaptive fourth order Runge-Kutta method was implemented to calculate the trajectory of the system using two different sized time steps, both made smaller until they agreed within a specified precision. To determine if a trajectory has returned through it's original point in phase space $\boldsymbol{\Gamma}(0)=\boldsymbol{\Gamma}_0$ linear interpolation was used between steps $\boldsymbol{\Gamma}_n$ and $\boldsymbol{\Gamma}_{n+1}$ to get an estimated time for when the initial value was revisited. This generated six estimated recurrence times. If all six calculated values fell between $t_n$ and $t_{n+1}$ the average was taken and stored. This process was continued until 75 time units had elapsed. The stored recurrence times were fit to the equation $t_m = t_0m$, the slope $t_0$ was taken to be the period.
 
 \subsubsection{Period vs Energy curves}
-The spinning and orbital modes were examined independently as they are not coupled together when the contact criterion is maintained. 200 initial conditions were simulated with closer resolution taken near transition points. In the case of the spinning mode, the max initial kinetic energy was 1/2, taking it well past the point where it begins spinning freely. In the case of the orbital mode, the max energy was just below the point where the contact criterion was broken, 1/3 units of initial kinetic energy.
+The spinning and orbital modes were examined independently as they are not coupled together when the contact criterion is maintained. Two hundred initial conditions were simulated with closer resolution taken near transition points. In the case of the spinning mode, the maximum initial kinetic energy was 1/2, taking it well past the point where it begins spinning freely. In the case of the orbital mode, the maximum energy was just below the point where the contact criterion was broken, 1/3 units of initial kinetic energy.
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.85\textwidth]{./images/plot.png}
-	\caption{Solid lines denote numerical results, dashed lines denote asymptotic small amplitude limit}
+	\caption{Above is a plot of large amplitude period vs total system energy. Solid lines denote numerical results, dashed lines denote asymptotic small amplitude limit}
 \end{figure}
 
 \section{Conclusions}
 
-In the analysis of this system so far we have found an interesting example of coupled non-linear hamiltonian that counter intuitively does not produce chaotic motion. However this is only the first of many questions this system leaves open for discussion. Using equation \ref{gen_ham} we can explore if this splitting of the hamiltonian works for any set of spheres or if there are certain proportionality's that must hold. We can also explore stability of circular orbits that likely exist. With the appropriate numerical techniques we can examine how these spheres interact with bouncing. These questions and more are available for investigation.
+In the analysis of this system so far we have found an interesting example of coupled non-linear hamiltonian that counter intuitively does not produce chaotic motion. However this is only the first of many questions this system leaves open for discussion. Using equation Eq.~\ref{gen_ham} we can explore if this splitting of the Hamiltonian works for any set of spheres or if there are certain proportionalities that must hold. We can also explore stability of circular orbits that likely exist. With the appropriate numerical techniques we can examine how these spheres interact with bouncing. These questions and more are available for investigation.
 
 \section{Acknowledgements}
 
@@ -621,6 +622,7 @@ I'd like to thank my peer Tyler Markham for expressing his opinions on the conve
 %animatique of basic modes
 %revtek4.1
 
+%go through the logs on AJP again incase there's something else to be cited
 \bibliographystyle{plain}
 \bibliography{./double_magnet_bib}
 
