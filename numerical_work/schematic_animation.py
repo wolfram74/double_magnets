@@ -131,9 +131,10 @@ def custom_animation():
 def animatic(frames=5):
     fig, axes = pyplot.subplots(2, frames)
     #orbital mode settings
-    T_0 = 4.0 #orbital period
-    E_0 = .123 #orbital energy
+    T_0 = 3.0 #orbital period
+    E_0 = -.02 #orbital energy
     pt = ((1./3.+E_0)/14.)**.5 #orbital momentum
+    #1/3 is the contribution of the spinning mode potential energy
     state_orb = numpy.array([0.,0.,0.,0.,0.,pt,-2.*pt]) # orbital mode
 
     #spinning mode settings
@@ -141,7 +142,7 @@ def animatic(frames=5):
     E_0 = .1505 #spinning kinetic energy
     pd = (E_0/10.)**.5 #spinning momentum
     state_spn = numpy.array([0.,0.,0.,0.,pd,0.,0.]) # spinning mode
-    times = [4.0, 8.0]
+    times = [3.0, 8.0]
     states = [state_orb, state_spn]
     for run in range(2):
         state = states[run]

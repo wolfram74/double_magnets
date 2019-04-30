@@ -1,9 +1,21 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{doi:10.1119/1.5029823}
 Stefan Borgers, Simeon V{\"o}lkel, Wolfgang Sch{\"o}pf, and Ingo Rehberg.
 \newblock Exploring cogging free magnetic gears.
 \newblock {\em American Journal of Physics}, 86(6):460--469, 2018.
+
+\bibitem{Edwards:2017ab}
+B.~F. Edwards and J.~M. Edwards.
+\newblock Periodic nonlinear sliding modes for two uniformly magnetized
+  spheres.
+\newblock {\em Chaos}, 27(5), 2017.
+
+\bibitem{Edwards:2017aa}
+B.~F. Edwards, D.~M. Riffe, J.~. Ji, and W.~A. Booth.
+\newblock Interactions between uniformly magnetized spheres.
+\newblock {\em American Journal of Physics}, 85(2):130--134, 2017.
+\newblock Cited By :5.
 
 \bibitem{Furlani:1995aa}
 E.~P. Furlani, R.~Wang, and H.~Kusnadi.
