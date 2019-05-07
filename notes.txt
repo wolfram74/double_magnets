@@ -123,3 +123,5 @@ background research on neutron binaries- magnetic vs angular momentum
 
 04/09
   do some more edits (parens and periods)
+
+05/07
