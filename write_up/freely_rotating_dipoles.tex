@@ -22,11 +22,12 @@
 \title{Dynamics of Two Freely Rotating Dipoles}
 \author{Peter T. Haugen}
 \author{Boyd F. Edwards}
+%05/07 fix affilliation
 %\affil[1]{Utah State University}
 %\setcounter{Maxaffil}{0}
 \maketitle
 %\tableofcontents
-
+%05/07 get dipole_driving web page listed in project
 \section{Abstract}
 	The equations of motion for two spherical dipoles moving freely in a plane are obtained. Special consideration is given to the contact state. Their equilibria are determined, small amplitude motion examined and large amplitude motion investigated to reveal that possible motions are exclusively quasi-periodic.
 	Two distinct modes are identified one of which is isomorphic with the simple pendulum complete with continual spinning at high energy.
@@ -35,6 +36,10 @@
 \section{Introduction}
 A system composed of two unrestricted spherical magnetic dipoles presents an interesting and fundamental set of phenomena as this system is amongst the simplest non-trivial macroscopic magnetic systems. Pollack \cite{doi:10.1139/p96-151} examines two dipoles fixed in place spinning independently, but we relax that constraint and examine their behavior. Edwards et. al \cite{Edwards:2017aa} show that a uniformly magnetized sphere can be treated as a point dipole. Edwards et. al  \cite{Edwards:2017ab} also go onto to examine one dipole at a fixed orientation with the second free to spin and slide along the fixed one's surface identifying a rich mode structure. Our system's degrees of freedom are the superset of those two systems.
 
+%05/07 make a bit more direct, try to get to the motiviation/rationale faster, consider rearranging in depth description of the system vs techniques used to treat it
+%05/07 hamiltonian, iffy, the fact that it's physically easily imagined
+%05/07 why do people care: instance of more complicated phase space leads to less complicated dynamics
+%05/07 why do people care: instance of more complicated phase space leads to less complicated dynamics
 Starting with the interaction potential between two dipoles we can build up a Lagrangian and then Hamiltonian for two spherical dipoles and then tune how many degrees of freedom we desire by constraining it's movement. This system proves complicated enough that treating it with the Newtonian formulation is not more straightforward than Hamiltonian formulation and provides a good opportunity for introducing the techniques to those less familiar.
 Understanding their dynamics could prove useful in contexts such as the large dipole field proposed to provide a solar wind umbrella for Mars \cite{2017LPICo1989.8250G} or small magnetic toothless-gears \cite{doi:10.1119/1.5029823} not fixed to axles.
 While a numerically integrable method exists for calculating torques for radially oriented multi-pole cylinders \cite{Furlani:1995aa}  analytic techniques provide a useful check.
@@ -588,6 +593,7 @@ And doing the same with $p_{\phi_t}$ from Eq.~(\ref{f_phit}) produces
 \end{equation}
 
 Showing that while the contact constraint holds, the orbital state is also isomorphic with the simple pendulum with the same asymptotic behavior as the small amplitude oscillations we found earlier.
+%05/07 explain how these pendulum results imply quasi-periodicity at the most complex
 
 \subsection{Numerical Results}
 \subsubsection{Method}
@@ -618,6 +624,9 @@ I'd like to thank my peer Tyler Markham for expressing his opinions on the conve
 
 %go through the logs on AJP again incase there's something else to be cited
 \bibliographystyle{plain}
+%05/07 cited by is currently auto generated, figure out how to stop that
+%05/07 go through edwards ajp chaos paper and grab all the AJP that might be pertinent  (12,13 18, 24, 25, 26, 27, 33, 34)
+
 \bibliography{./double_magnet_bib}
 
 
