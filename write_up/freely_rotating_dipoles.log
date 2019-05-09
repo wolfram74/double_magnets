@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  9 MAY 2019 13:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  9 MAY 2019 13:46
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -350,12 +350,12 @@ Package: transparent 2016/05/16 v1.1 Transparency via pdfTeX's color stack (HO)
 (/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/auxhook.sty
 Package: auxhook 2016/05/16 v1.4 Hooks for auxiliary files (HO)
 ))
-Class revtex4-1 Info: Patching LaTeX tabular. on input line 20.
-Class revtex4-1 Info: Robustifying \LaTeX's \boldmath command on input line 20.
+Class revtex4-1 Info: Patching LaTeX tabular. on input line 21.
+Class revtex4-1 Info: Robustifying \LaTeX's \boldmath command on input line 21.
 
-Class revtex4-1 Info: cite was not loaded (OK!) on input line 20.
-Class revtex4-1 Info: mcite was not loaded (OK!) on input line 20.
-Class revtex4-1 Info: multicol was not loaded (OK!) on input line 20.
+Class revtex4-1 Info: cite was not loaded (OK!) on input line 21.
+Class revtex4-1 Info: mcite was not loaded (OK!) on input line 21.
+Class revtex4-1 Info: multicol was not loaded (OK!) on input line 21.
 
 
 LaTeX Warning: Unused global option(s):
@@ -364,18 +364,18 @@ LaTeX Warning: Unused global option(s):
 (./freely_rotating_dipoles.aux)
 \openout1 = `freely_rotating_dipoles.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -462,67 +462,168 @@ Package caption Info: End \AtBeginDocument code.
 \openout3 = `freely_rotating_dipolesNotes.bib'.
 
 
-
-Class revtex4-1 Warning: Assuming \noaffiliation for authors.
-
 [1{/usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+
+Package natbib Warning: Citation `doi:10.1139/p96-151' on page 2 undefined on i
+nput line 39.
+
+
+Package natbib Warning: Citation `Edwards:2017aa' on page 2 undefined on input 
+line 39.
+
+
+Package natbib Warning: Citation `Edwards:2017ab' on page 2 undefined on input 
+line 39.
+
+
+Package natbib Warning: Citation `2017LPICo1989.8250G' on page 2 undefined on i
+nput line 46.
+
+
+Package natbib Warning: Citation `doi:10.1119/1.5029823' on page 2 undefined on
+ input line 46.
+
+
+Package natbib Warning: Citation `Furlani:1995aa' on page 2 undefined on input 
+line 47.
+
 [2]
-<./images/coordinates_scalable_2.pdf, id=12, 2755.29375pt x 1699.34875pt>
+<./images/coordinates_scalable_2.pdf, id=13, 2755.29375pt x 1699.34875pt>
 File: ./images/coordinates_scalable_2.pdf Graphic file (type pdf)
 <use ./images/coordinates_scalable_2.pdf>
 Package pdftex.def Info: ./images/coordinates_scalable_2.pdf  used on input lin
-e 49.
+e 51.
 (pdftex.def)             Requested size: 355.51817pt x 219.26358pt.
- [3 <./images/coordinates_scalable_2.pdf>] [4] [5] [6] [7] [8] [9]
-<./images/animatic.pdf, id=47, 578.16pt x 433.62pt>
+ [3 <./images/coordinates_scalable_2.pdf>]
+
+Package natbib Warning: Citation `taylor2005classical' on page 4 undefined on i
+nput line 63.
+
+
+Package natbib Warning: Citation `taylor2005classical' on page 4 undefined on i
+nput line 92.
+
+[4]
+
+Package natbib Warning: Citation `Edwards:2017aa' on page 5 undefined on input 
+line 118.
+
+
+Package natbib Warning: Citation `griffiths2013introduction' on page 5 undefine
+d on input line 123.
+
+[5] [6] [7]
+
+LaTeX Warning: Reference `ftht' on page 8 undefined on input line 350.
+
+
+LaTeX Warning: Reference `fr' on page 8 undefined on input line 362.
+
+
+Package natbib Warning: Citation `PhysRevApplied.4.064007' on page 8 undefined 
+on input line 362.
+
+[8]
+
+LaTeX Warning: Reference `taylor_force' on page 9 undefined on input line 388.
+
+
+LaTeX Warning: Reference `matrix_force' on page 9 undefined on input line 402.
+
+[9]
+
+Package natbib Warning: Citation `doi:10.1139/p96-151' on page 10 undefined on 
+input line 427.
+
+
+Package natbib Warning: Citation `Stump:1997aa' on page 10 undefined on input l
+ine 431.
+
+<./images/animatic.pdf, id=48, 578.16pt x 433.62pt>
 File: ./images/animatic.pdf Graphic file (type pdf)
 <use ./images/animatic.pdf>
-Package pdftex.def Info: ./images/animatic.pdf  used on input line 437.
+Package pdftex.def Info: ./images/animatic.pdf  used on input line 439.
 (pdftex.def)             Requested size: 376.42575pt x 282.31943pt.
-
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[10] [11 <./images/animatic.pdf>] [12] [13] [14]
-<./images/plot.png, id=81, 578.16pt x 433.62pt>
+[10] [11 <./images/animatic.pdf>] [12]
+
+LaTeX Warning: Reference `phi_int' on page 13 undefined on input line 575.
+
+
+LaTeX Warning: Reference `tht_int' on page 13 undefined on input line 575.
+
+[13]
+
+LaTeX Warning: Reference `f_tht' on page 14 undefined on input line 585.
+
+
+LaTeX Warning: Reference `f_phit' on page 14 undefined on input line 591.
+
+[14]
+<./images/plot.png, id=82, 578.16pt x 433.62pt>
 File: ./images/plot.png Graphic file (type png)
 <use ./images/plot.png>
-Package pdftex.def Info: ./images/plot.png  used on input line 607.
+Package pdftex.def Info: ./images/plot.png  used on input line 609.
 (pdftex.def)             Requested size: 355.51817pt x 266.63832pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-(./freely_rotating_dipoles.bbl [15] [16 <./images/plot.png>]) [17]
-(./freely_rotating_dipoles.aux) ) 
+
+LaTeX Warning: Reference `gen_ham' on page 15 undefined on input line 615.
+
+(./freely_rotating_dipoles.bbl [15]
+
+LaTeX Warning: Reference `LastBibItem' on page 16 undefined on input line 1.
+
+[16 <./images/plot.png>])
+
+Package natbib Warning: There were undefined citations.
+
+[17] (./freely_rotating_dipoles.aux
+
+Package natbib Warning: Citation(s) may have changed.
+(natbib)                Rerun to get citations correct.
+
+)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right .
+
+
+ ) 
 Here is how much of TeX's memory you used:
  7417 strings out of 492649
  111397 string characters out of 6129622
- 234928 words of memory out of 5000000
+ 234559 words of memory out of 5000000
  11193 multiletter control sequences out of 15000+600000
  11725 words of font info for 41 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  48i,12n,42p,864b,321s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2018/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmbx8.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmex10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmmib10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmr10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmr12.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmr6.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmr8.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmsy10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmsy8.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-ti10.pfb>
-Output written on freely_rotating_dipoles.pdf (17 pages, 261155 bytes).
+</usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
+></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
+</usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></
+usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></u
+sr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></us
+r/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/
+local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/lo
+cal/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/lo
+cal/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/loca
+l/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/
+texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/tex
+live/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texliv
+e/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive
+/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2
+018/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/20
+18/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
+Output written on freely_rotating_dipoles.pdf (17 pages, 271266 bytes).
 PDF statistics:
- 142 PDF objects out of 1000 (max. 8388607)
- 92 compressed objects within 1 object stream
+ 146 PDF objects out of 1000 (max. 8388607)
+ 95 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  16 words of extra memory for PDF output out of 10000 (max. 10000000)
 
