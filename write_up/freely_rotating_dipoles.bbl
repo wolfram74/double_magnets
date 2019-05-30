@@ -1,38 +1,45 @@
 \begin{thebibliography}{10}
 
-\bibitem{doi:10.1119/1.5029823}
-Stefan Borgers, Simeon V{\"o}lkel, Wolfgang Sch{\"o}pf, and Ingo Rehberg.
-\newblock Exploring cogging free magnetic gears.
-\newblock {\em American Journal of Physics}, 86(6):460--469, 2018.
+\bibitem{Boyer:1988aa}
+T.~H. Boyer.
+\newblock The force on a magnetic dipole.
+\newblock {\em Am.J.Phys.}, 56(8):688--692, 1988.
+\newblock Cited By :94.
 
-\bibitem{Edwards:2017ab}
-B.~F. Edwards and J.~M. Edwards.
-\newblock Periodic nonlinear sliding modes for two uniformly magnetized
-  spheres.
-\newblock {\em Chaos}, 27(5), 2017.
+\bibitem{Brownstein:1993aa}
+K.~R. Brownstein.
+\newblock Force exerted on a magnetic dipole.
+\newblock {\em Am.J.Phys}, 61:940--941, 1993.
+\newblock Cited By :6.
 
 \bibitem{Edwards:2017aa}
 B.~F. Edwards, D.~M. Riffe, J.~. Ji, and W.~A. Booth.
 \newblock Interactions between uniformly magnetized spheres.
 \newblock {\em American Journal of Physics}, 85(2):130--134, 2017.
 
-\bibitem{Furlani:1995aa}
-E.~P. Furlani, R.~Wang, and H.~Kusnadi.
-\newblock A three-dimensional model for computing the torque of radial
-  couplings.
-\newblock {\em IEEE Transactions on Magnetics}, 31(5):2522--2526, 1995.
+\bibitem{Greene:1971aa}
+J.~B. Greene and F.~G. Karioris.
+\newblock Force on a magnetic dipole.
+\newblock {\em American Journal of Physics}, 39(2):172--175, 1971.
+\newblock Cited By :9.
 
-\bibitem{2017LPICo1989.8250G}
-J.~L. {Green}, J.~{Hollingsworth}, D.~{Brain}, V.~{Airapetian}, A.~{Pulkkinen},
-  C.~{Dong}, and R.~{Bamford}.
-\newblock {A Future Mars Environment for Science and Exploration}.
-\newblock In {\em Planetary Science Vision 2050 Workshop}, volume 1989 of {\em
-  LPI Contributions}, page 8250, February 2017.
+\bibitem{Griffiths:1992aa}
+D.~J. Griffiths.
+\newblock Dipoles at rest.
+\newblock {\em Am.J.Phys.}, 60:979--987, 1992.
+\newblock Cited By :34.
 
 \bibitem{griffiths2013introduction}
 D.J. Griffiths.
 \newblock {\em Introduction to Electrodynamics}.
 \newblock Always Learning. Pearson, 2013.
+
+\bibitem{Hnizdo:1997aa}
+V.~Hnizdo.
+\newblock Hidden mechanical momentum and the field momentum in stationary
+  electromagnetic and gravitational systems.
+\newblock {\em American Journal of Physics}, 65(6):515--518, 1997.
+\newblock Cited By :12.
 
 \bibitem{doi:10.1139/p96-151}
 G~L Pollack and D~R Stump.
@@ -53,5 +60,11 @@ D.~R. Stump and G.~L. Pollack.
 John~R. Taylor.
 \newblock {\em Classical Mechanics}.
 \newblock University Science Books, 2005.
+
+\bibitem{Vaidman:1990aa}
+L.~Vaidman.
+\newblock Torque and force on a magnetic dipole.
+\newblock {\em Am.J.Phys.}, 58(10):978--983, 1990.
+\newblock Cited By :100.
 
 \end{thebibliography}

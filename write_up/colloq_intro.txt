@@ -1,0 +1,30 @@
+goal: explain interest in contents of following paper
+
+points of interest:
+	1: counter-intuitive result
+	2: toothless gears
+	3: previous research into simple cases
+	4: numerical methods for complex cases
+	5: good demo of usefulness of Hamiltonian approach
+
+
+In looking at a pair of unrestrained magnetized spheres we've taken a simpler system and increased it's degrees of freedom.
+mk1:: While it's quite common to maintain the same level of predictability or decrease it, here we see making the phase space more complex actually increases the predictability.
+mk2:: While it's quite common to maintain the same level of complexity of the motion or increase it, here we see making the phase space more complex can actually decrease the complexity of the motion.
+---discuss complexity of phase space vs complexity of motion
+Examining the interactions between rotating magnets has interesting applications when we consider how toothless gears and magnets are being used in engineering contexts.
+Several simple cases have been examined analytically.
+One group has looked at simplified point dipoles fixed in space but free to rotate and how they interact.
+Another group has taken advantage of some work that shows magnetized spheres produce magnetic fields identical to point dipoles to look at how one sphere can freely slide around on the surface of another sphere fixed in space and discovering it leads to chaotic movement.
+We extend both of these by allowing both to freely rotate and slide along each other.
+Numerical work has been done on more complicated arrangements and by examining this simple case analytically we can provide an additional check on their results.
+Finally this is a system where the magnetic interaction can make accounting for all the forces a point of contention, but little disagreement exists on the energy for a dipole in a magnetic field, which when used with the Hamiltonian approach makes finding equations of motion very straightforward.
+
+Edwards et al's fixed sphere constraint breaks the symmetry of space in one of the coordinates.
+---discuss the symmetry a bit more
+
+----narration exercise
+We are interested in these two spheres and their interactions because they have a more complicated phase space than before but have a less complicated motion.  Interactions between magnets have been examined before primarily due to the interest in toothless gears, which is a behavior of magnets that can be exhibited where twisting one magnet will change the orientation of the other to try to minimize the total energy of the system.  Previous work has been examined where two magnets have been fixed in place and spin – produces predictable motion.  Other groups have taken the approach fixing one in space and the other free to slide.  This produces chaotic motion.  Taking the union of these two phase spaces, we can examine and find new motions.  Other groups have taken more complicated magnetic structures and analyzed them numerically.  Treating these systems analytically using a Newtonian approach is sometimes troublesome in taking all of the momenta into accout when fields are involved.  However, the energies involved are much easier to account for.  So we use the Hamiltonian approach with conserved quantities.
+It is interesting that in the present problem, compared with the fixed-axis problem, there is momentum exchange between orbital momentum and spin momentum.  This exchange might seem to favor more complicated motions, yet we see simple motions.
+
+
