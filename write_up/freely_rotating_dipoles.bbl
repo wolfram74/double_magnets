@@ -1,5 +1,10 @@
 \begin{thebibliography}{10}
 
+\bibitem{doi:10.1119/1.5029823}
+Stefan Borgers, Simeon V{\"o}lkel, Wolfgang Sch{\"o}pf, and Ingo Rehberg.
+\newblock Exploring cogging free magnetic gears.
+\newblock {\em American Journal of Physics}, 86(6):460--469, 2018.
+
 \bibitem{Boyer:1988aa}
 T.~H. Boyer.
 \newblock The force on a magnetic dipole.
@@ -12,10 +17,22 @@ K.~R. Brownstein.
 \newblock {\em Am.J.Phys}, 61:940--941, 1993.
 \newblock Cited By :6.
 
+\bibitem{Edwards:2017ab}
+B.~F. Edwards and J.~M. Edwards.
+\newblock Periodic nonlinear sliding modes for two uniformly magnetized
+  spheres.
+\newblock {\em Chaos}, 27(5), 2017.
+
 \bibitem{Edwards:2017aa}
 B.~F. Edwards, D.~M. Riffe, J.~. Ji, and W.~A. Booth.
 \newblock Interactions between uniformly magnetized spheres.
 \newblock {\em American Journal of Physics}, 85(2):130--134, 2017.
+
+\bibitem{Furlani:1995aa}
+E.~P. Furlani, R.~Wang, and H.~Kusnadi.
+\newblock A three-dimensional model for computing the torque of radial
+  couplings.
+\newblock {\em IEEE Transactions on Magnetics}, 31(5):2522--2526, 1995.
 
 \bibitem{Greene:1971aa}
 J.~B. Greene and F.~G. Karioris.

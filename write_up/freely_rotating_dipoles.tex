@@ -35,12 +35,31 @@
 	
 
 \section{Introduction}
-It is very common that the more degrees of freedom a system has, the more difficult it is to describe its motion. A standard example is the double pendulum, a small addition to the system takes its motion from predictable enough to make clocks to the textbook example of chaotic and unpredictable motion.
-With this in mind we take note of making a system more complicated by relaxing a constraint and its resulting motion becoming more predictable rather than less. Boyd et al have examined the behavior of two spherical dipoles where one is fixed in place and the other is free to spin and slide, finding its large amplitude behavior chaotic. We relax this constraint to find the system can be split up into two separate periodic motions.
 
-This system also proves a good introduction to using the Hamiltonian formulation for finding equations of motion. 
-The Newtonian approach would begin with determining the forces and torques on the system and accounting for those exhaustively in magnetic systems can be troublesome \cite{Boyer:1988aa} \cite{Vaidman:1990aa} \cite{Griffiths:1992aa} \cite{Brownstein:1993aa}  \cite{Hnizdo:1997aa}. 
-The energy of a given configuration of dipoles \cite{Greene:1971aa} however is straightforward. Proceeding from there many interesting results can be found. Equations of motion can be derived and used to find equilibria points as well as small amplitude oscillatory modes. Suitable coordinate transformations suggest themselves. We can also use numerical methods to examine large amplitude behavior.
+In looking at a pair of unrestrained magnetized spheres we've taken a simpler system and increased its degrees of freedom.
+While it's quite common to maintain the same level of complexity of the motion or increase it, here we see making the phase space more complex can actually decrease the complexity of the motion.
+Examining the interactions between rotating magnets has interesting applications when we consider how toothless gears \cite{doi:10.1119/1.5029823} and magnets are being used in engineering contexts.
+Toothless gears are appealing as you can transmit rotational motion without the teeth to experience wear and tear.
+This can be achieved with magnetic components as a small rotation in one element will prompt a rotation in nearby elements to maintain a minimal energy state.
+
+Several simple cases have been examined analytically.
+Pollack \cite{doi:10.1139/p96-151} has looked at simplified point dipoles fixed in space but free to rotate and how they interact, finding quasi periodic motion.
+Edwards et al has taken advantage of some work that shows magnetized spheres produce magnetic fields identical to point dipoles \cite{Edwards:2017aa} to look at how one sphere can freely slide around on the surface of another sphere fixed in space and discovering it leads to chaotic movement \cite{Edwards:2017ab}.
+Fixing one sphere causes a breaking of symmetry in the space.
+We take a union of these by allowing both to freely rotate and slide along each other.
+Numerical work has been done on more complicated arrangements \cite{Furlani:1995aa} and by examining this simple case analytically we can provide an additional check on their results.
+As this is a system where the magnetic interaction, it can make accounting for all the forces a point of contention\cite{Boyer:1988aa} \cite{Vaidman:1990aa} \cite{Griffiths:1992aa} \cite{Brownstein:1993aa}  \cite{Hnizdo:1997aa}.
+There is little disagreement on the energy for a dipole in a magnetic field \cite{Greene:1971aa} \cite{Griffiths:1992aa}, however.
+Starting from the potential and kinetic energies of the sphere and using the Hamiltonian approach we find equations of motion and conserve quantities.
+This makes examining the dynamics of these two spheres an excellent opportunity for using or introducing the Hamiltonian approach in a non-trivial context.
+
+%
+%It is very common that the more degrees of freedom a system has, the more difficult it is to describe its motion. A standard example is the double pendulum, a small addition to the system takes its motion from predictable enough to make clocks to the textbook example of chaotic and unpredictable motion.
+%With this in mind we take note of making a system more complicated by relaxing a constraint and its resulting motion becoming more predictable rather than less. Boyd et al have examined the behavior of two spherical dipoles where one is fixed in place and the other is free to spin and slide, finding its large amplitude behavior chaotic. We relax this constraint to find the system can be split up into two separate periodic motions.
+%
+%This system also proves a good introduction to using the Hamiltonian formulation for finding equations of motion. 
+%The Newtonian approach would begin with determining the forces and torques on the system and accounting for those exhaustively in magnetic systems can be troublesome \cite{Boyer:1988aa} \cite{Vaidman:1990aa} \cite{Griffiths:1992aa} \cite{Brownstein:1993aa}  \cite{Hnizdo:1997aa}. 
+%The energy of a given configuration of dipoles \cite{Greene:1971aa} however is straightforward. Proceeding from there many interesting results can be found. Equations of motion can be derived and used to find equilibria points as well as small amplitude oscillatory modes. Suitable coordinate transformations suggest themselves. We can also use numerical methods to examine large amplitude behavior.
 
 %some magnetic interactions are complicated \cite{Boyer:1988aa} \cite{Brownstein:1993aa}
 %Potential energy of dipole \cite{Greene:1971aa} √
