@@ -1,47 +1,47 @@
 This is BibTeX, Version 0.99d (TeX Live 2018)
 Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: freely_rotating_dipoles.aux
-The style file: plain.bst
+The style file: unsrt.bst
 Database file #1: freely_rotating_dipolesNotes.bib
-Database file #2: ./double_magnet_bib.bib
+Database file #2: double_magnet_bib.bib
 You've used 16 entries,
-            2118 wiz_defined-function locations,
-            617 strings with 6184 characters,
-and the built_in function-call counts, 4864 in all, are:
-= -- 477
-> -- 190
+            1791 wiz_defined-function locations,
+            566 strings with 5708 characters,
+and the built_in function-call counts, 3420 in all, are:
+= -- 309
+> -- 114
 < -- 0
-+ -- 78
-- -- 60
-* -- 344
-:= -- 840
++ -- 46
+- -- 30
+* -- 236
+:= -- 558
 add.period$ -- 55
 call.type$ -- 16
-change.case$ -- 76
+change.case$ -- 14
 chr.to.int$ -- 0
 cite$ -- 16
-duplicate$ -- 180
-empty$ -- 411
-format.name$ -- 60
-if$ -- 1015
+duplicate$ -- 148
+empty$ -- 363
+format.name$ -- 30
+if$ -- 769
 int.to.chr$ -- 0
 int.to.str$ -- 16
 missing$ -- 18
 newline$ -- 89
-num.names$ -- 32
-pop$ -- 56
+num.names$ -- 16
+pop$ -- 26
 preamble$ -- 1
-purify$ -- 62
+purify$ -- 0
 quote$ -- 0
-skip$ -- 114
+skip$ -- 50
 stack$ -- 0
-substring$ -- 331
+substring$ -- 249
 swap$ -- 17
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 60
+type$ -- 0
 warning$ -- 0
-while$ -- 44
+while$ -- 28
 width$ -- 18
 write$ -- 188

@@ -1,3 +1,5 @@
+% !TEX TS-program = pdflatexmk
+
 %\documentclass[12pt]{amsart}
 \documentclass[prbg,preprint]{revtex4-1} 
 %Manuscripts that demonstrate new relations between apparently unrelated areas of physics are appropriate.
@@ -28,7 +30,7 @@
 \maketitle
 %05/07 get dipole_driving web page listed in project
 \section{Abstract}
-	The equations of motion for two spherical dipoles moving freely in a plane are obtained. Special consideration is given to the contact state. Investigations of equilibria, small amplitude motion, and large amplitude motion reveal that possible motions are exclusively quasi-periodic.
+	The equations of motion for two spherical dipoles moving freely in a plane are obtained. Special consideration is given to when the two spheres are in contact. Investigations of equilibria, small amplitude motion, and large amplitude motion reveal that possible motions are exclusively quasi-periodic.
 	Two distinct modes are identified, one of which is isomorphic with the simple pendulum complete with continual spinning at high energy.
 	
 %Increasing the degrees of freedom of a simpler system we find the equations of motion for two spherical dipoles and discover more predictable motion rather than less. The equilibria are found and distinct modes of motion are described. One mode is shown to be equivalent to the simple pendulum including continual spinning at high energy.	
@@ -38,19 +40,27 @@
 
 In looking at a pair of unrestrained magnetized spheres we've taken a simpler system and increased its degrees of freedom.
 While it's common to maintain the same level of complexity of the motion or increase it, here we find that making the phase space more complex decreases the complexity of the motion.
+
 Examining the interactions between rotating magnets has interesting applications when we consider how magnetic gears \cite{doi:10.1119/1.5029823} are being used in engineering contexts where friction or operational life span are the dominant considerations \cite{Modaresahmadi:2019aa}.
 Magnetic gears are appealing as you can transmit rotational motion without the teeth that experience wear and tear.
 This can be achieved with magnetic components, as a small rotation in one element will prompt a rotation in nearby elements to maintain a minimal energy state.
 
 Several simple cases have been examined analytically.
 Pollack \cite{doi:10.1139/p96-151} has investigated interactions between point dipoles fixed in space but which are free to rotate, and finds quasi periodic motion.
-Edwards et al.\ has taken advantage of some work that shows magnetized spheres experience magnetic fields as though they were point dipoles \cite{Edwards:2017aa} to discover how one sphere freely sliding around on the surface of another sphere fixed in space and orientation leads to chaotic motion \cite{Edwards:2017ab}.
-Fixing one sphere breaks the symmetry in space and prevents a conserved quantity from arising.
-We take a union of Pollack and Edwards systems by allowing both to freely rotate and slide along each other.
+Edwards et al.\ has taken advantage of some work that shows magnetized spheres experience magnetic fields as though those spheres were point dipoles \cite{Edwards:2017aa} to discover how one sphere freely sliding around on the surface of another sphere that is fixed in space and orientation leads to chaotic motion \cite{Edwards:2017ab}.
+Fixing one sphere breaks the symmetry in space equivalent to an external torque and prevents conserved total angular momentum from arising.
+
+We take a union of the Pollack and Edwards systems by allowing both spheres to freely rotate and slide along each other.
+While each of these systems has two degrees of freedom, they are different pairs chosen from the more general case and thus not immediately comparable.
+Our combined system has three degrees of freedom.
+%making it distinctly more complicated than either of the earlier two.
+While Edwards' system exhibited chaos, this new system does not, even at large amplitudes.
 
 Numerical methods have been developed for arbitrarily complicated arrangements \cite{Furlani:1995aa} and by examining this simple case analytically we can provide an additional check on their results.
-As this is a system where magnetic interactions and fields dominate, it can make accounting for all the forces a point of contention\cite{Boyer:1988aa} \cite{Vaidman:1990aa} \cite{Griffiths:1992aa} \cite{Brownstein:1993aa}  \cite{Hnizdo:1997aa}.
-However, there is little disagreement on the energy for a dipole in a magnetic field \cite{Greene:1971aa} \cite{Griffiths:1992aa}. 
+As this is a system where magnetic interactions and fields dominate, it can make accounting for all the forces a point of contention 
+\cite{Boyer:1988aa, Vaidman:1990aa, Griffiths:1992aa, Brownstein:1993aa, Hnizdo:1997aa}
+.
+However, there is little disagreement on the energy for a dipole in a magnetic field \cite{Greene:1971aa, Griffiths:1992aa}. 
 Starting from the potential and kinetic energies of the sphere and using the Hamiltonian approach we find equations of motion and conserved quantities.
 This makes examining the dynamics of these two spheres an excellent pedagogical opportunity for using the Hamiltonian approach.
 
@@ -550,6 +560,7 @@ which holds while the contact criterion is observed.
 
 The rates of change for the momenta clearly denote a conserved quantity we'll call total angular momentum and denote as 
 $L_\textrm{t} = p_\theta + 2p_{\phi_t}$. 
+%06/11 compare with conventional total angular momentum
 With this we can produce the expression
 
 \begin{equation}
@@ -625,6 +636,7 @@ In the analysis of this system so far we have found an interesting example of co
 
 I'd like to thank my peer Tyler Markham for expressing his opinions on the conveyance of various illustrations in this paper, my peer Jacob Ciafre for listening to me speculate in our kitchen, Alice Haugen for prose editing and most importantly Amy Whillock for her patience and support.
 
+
 %needed diagrams;
 %numerical values of period vs energy
 %geometry layout/labels
@@ -632,11 +644,11 @@ I'd like to thank my peer Tyler Markham for expressing his opinions on the conve
 %revtek4.1
 
 %go through the logs on AJP again incase there's something else to be cited
-\bibliographystyle{plain}
+\bibliographystyle{unsrt}
 
 %05/07 go through edwards ajp chaos paper and grab all the AJP that might be pertinent  (12~,13~ 18~, 24, 25, 26, 27, 33, 34)
 
-\bibliography{./double_magnet_bib}
+\bibliography{double_magnet_bib}
 
 
 \end{document}

@@ -5,59 +5,6 @@ Stefan Borgers, Simeon V{\"o}lkel, Wolfgang Sch{\"o}pf, and Ingo Rehberg.
 \newblock Exploring cogging free magnetic gears.
 \newblock {\em American Journal of Physics}, 86(6):460--469, 2018.
 
-\bibitem{Boyer:1988aa}
-T.~H. Boyer.
-\newblock The force on a magnetic dipole.
-\newblock {\em Am.J.Phys.}, 56(8):688--692, 1988.
-\newblock Cited By :94.
-
-\bibitem{Brownstein:1993aa}
-K.~R. Brownstein.
-\newblock Force exerted on a magnetic dipole.
-\newblock {\em Am.J.Phys}, 61:940--941, 1993.
-\newblock Cited By :6.
-
-\bibitem{Edwards:2017ab}
-B.~F. Edwards and J.~M. Edwards.
-\newblock Periodic nonlinear sliding modes for two uniformly magnetized
-  spheres.
-\newblock {\em Chaos}, 27(5), 2017.
-
-\bibitem{Edwards:2017aa}
-B.~F. Edwards, D.~M. Riffe, J.~. Ji, and W.~A. Booth.
-\newblock Interactions between uniformly magnetized spheres.
-\newblock {\em American Journal of Physics}, 85(2):130--134, 2017.
-
-\bibitem{Furlani:1995aa}
-E.~P. Furlani, R.~Wang, and H.~Kusnadi.
-\newblock A three-dimensional model for computing the torque of radial
-  couplings.
-\newblock {\em IEEE Transactions on Magnetics}, 31(5):2522--2526, 1995.
-
-\bibitem{Greene:1971aa}
-J.~B. Greene and F.~G. Karioris.
-\newblock Force on a magnetic dipole.
-\newblock {\em American Journal of Physics}, 39(2):172--175, 1971.
-\newblock Cited By :9.
-
-\bibitem{Griffiths:1992aa}
-D.~J. Griffiths.
-\newblock Dipoles at rest.
-\newblock {\em Am.J.Phys.}, 60:979--987, 1992.
-\newblock Cited By :34.
-
-\bibitem{griffiths2013introduction}
-D.J. Griffiths.
-\newblock {\em Introduction to Electrodynamics}.
-\newblock Always Learning. Pearson, 2013.
-
-\bibitem{Hnizdo:1997aa}
-V.~Hnizdo.
-\newblock Hidden mechanical momentum and the field momentum in stationary
-  electromagnetic and gravitational systems.
-\newblock {\em American Journal of Physics}, 65(6):515--518, 1997.
-\newblock Cited By :12.
-
 \bibitem{Modaresahmadi:2019aa}
 S.~Modaresahmadi, A.~Hosseinpour, and W.~B. Williams.
 \newblock Fatigue life prediction of a coaxial multi-stage magnetic gear.
@@ -69,6 +16,70 @@ G~L Pollack and D~R Stump.
 \newblock Two magnets oscillating in each other's fields.
 \newblock {\em Canadian Journal of Physics}, 75(5):313--324, 1997.
 
+\bibitem{Edwards:2017aa}
+B.~F. Edwards, D.~M. Riffe, J.~. Ji, and W.~A. Booth.
+\newblock Interactions between uniformly magnetized spheres.
+\newblock {\em American Journal of Physics}, 85(2):130--134, 2017.
+
+\bibitem{Edwards:2017ab}
+B.~F. Edwards and J.~M. Edwards.
+\newblock Periodic nonlinear sliding modes for two uniformly magnetized
+  spheres.
+\newblock {\em Chaos}, 27(5), 2017.
+
+\bibitem{Furlani:1995aa}
+E.~P. Furlani, R.~Wang, and H.~Kusnadi.
+\newblock A three-dimensional model for computing the torque of radial
+  couplings.
+\newblock {\em IEEE Transactions on Magnetics}, 31(5):2522--2526, 1995.
+
+\bibitem{Boyer:1988aa}
+T.~H. Boyer.
+\newblock The force on a magnetic dipole.
+\newblock {\em Am.J.Phys.}, 56(8):688--692, 1988.
+\newblock Cited By :94.
+
+\bibitem{Vaidman:1990aa}
+L.~Vaidman.
+\newblock Torque and force on a magnetic dipole.
+\newblock {\em Am.J.Phys.}, 58(10):978--983, 1990.
+\newblock Cited By :100.
+
+\bibitem{Griffiths:1992aa}
+D.~J. Griffiths.
+\newblock Dipoles at rest.
+\newblock {\em Am.J.Phys.}, 60:979--987, 1992.
+\newblock Cited By :34.
+
+\bibitem{Brownstein:1993aa}
+K.~R. Brownstein.
+\newblock Force exerted on a magnetic dipole.
+\newblock {\em Am.J.Phys}, 61:940--941, 1993.
+\newblock Cited By :6.
+
+\bibitem{Hnizdo:1997aa}
+V.~Hnizdo.
+\newblock Hidden mechanical momentum and the field momentum in stationary
+  electromagnetic and gravitational systems.
+\newblock {\em American Journal of Physics}, 65(6):515--518, 1997.
+\newblock Cited By :12.
+
+\bibitem{Greene:1971aa}
+J.~B. Greene and F.~G. Karioris.
+\newblock Force on a magnetic dipole.
+\newblock {\em American Journal of Physics}, 39(2):172--175, 1971.
+\newblock Cited By :9.
+
+\bibitem{taylor2005classical}
+John~R. Taylor.
+\newblock {\em Classical Mechanics}.
+\newblock University Science Books, 2005.
+
+\bibitem{griffiths2013introduction}
+D.J. Griffiths.
+\newblock {\em Introduction to Electrodynamics}.
+\newblock Always Learning. Pearson, 2013.
+
 \bibitem{PhysRevApplied.4.064007}
 Johannes Sch\"onke.
 \newblock Smooth teeth: Why multipoles are perfect gears.
@@ -78,16 +89,5 @@ Johannes Sch\"onke.
 D.~R. Stump and G.~L. Pollack.
 \newblock Magnetic dipole oscillations and radiation damping.
 \newblock {\em American Journal of Physics}, 65(1):81--87, 1997.
-
-\bibitem{taylor2005classical}
-John~R. Taylor.
-\newblock {\em Classical Mechanics}.
-\newblock University Science Books, 2005.
-
-\bibitem{Vaidman:1990aa}
-L.~Vaidman.
-\newblock Torque and force on a magnetic dipole.
-\newblock {\em Am.J.Phys.}, 58(10):978--983, 1990.
-\newblock Cited By :100.
 
 \end{thebibliography}

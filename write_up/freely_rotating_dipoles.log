@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  11 JUN 2019 10:01
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  4 JUL 2019 13:32
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -350,12 +350,12 @@ Package: transparent 2016/05/16 v1.1 Transparency via pdfTeX's color stack (HO)
 (/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/auxhook.sty
 Package: auxhook 2016/05/16 v1.4 Hooks for auxiliary files (HO)
 ))
-Class revtex4-1 Info: Patching LaTeX tabular. on input line 21.
-Class revtex4-1 Info: Robustifying \LaTeX's \boldmath command on input line 21.
+Class revtex4-1 Info: Patching LaTeX tabular. on input line 22.
+Class revtex4-1 Info: Robustifying \LaTeX's \boldmath command on input line 22.
 
-Class revtex4-1 Info: cite was not loaded (OK!) on input line 21.
-Class revtex4-1 Info: mcite was not loaded (OK!) on input line 21.
-Class revtex4-1 Info: multicol was not loaded (OK!) on input line 21.
+Class revtex4-1 Info: cite was not loaded (OK!) on input line 22.
+Class revtex4-1 Info: mcite was not loaded (OK!) on input line 22.
+Class revtex4-1 Info: multicol was not loaded (OK!) on input line 22.
 
 
 LaTeX Warning: Unused global option(s):
@@ -364,18 +364,18 @@ LaTeX Warning: Unused global option(s):
 (./freely_rotating_dipoles.aux)
 \openout1 = `freely_rotating_dipoles.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -468,20 +468,23 @@ Package caption Info: End \AtBeginDocument code.
 File: ./images/coordinates_scalable_2.pdf Graphic file (type pdf)
 <use ./images/coordinates_scalable_2.pdf>
 Package pdftex.def Info: ./images/coordinates_scalable_2.pdf  used on input lin
-e 60.
+e 69.
 (pdftex.def)             Requested size: 355.51817pt x 219.26358pt.
- [3 <./images/coordinates_scalable_2.pdf>] [4] [5] [6] [7] [8] [9] [10]
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[3] [4 <./images/coordinates_scalable_2.pdf>] [5] [6] [7] [8] [9] [10]
 <./images/animatic.pdf, id=51, 578.16pt x 433.62pt>
 File: ./images/animatic.pdf Graphic file (type pdf)
 <use ./images/animatic.pdf>
-Package pdftex.def Info: ./images/animatic.pdf  used on input line 446.
+Package pdftex.def Info: ./images/animatic.pdf  used on input line 455.
 (pdftex.def)             Requested size: 376.42575pt x 282.31943pt.
-
-[11 <./images/animatic.pdf>] [12] [13] [14]
+ [11 <./images/animatic.pdf>] [12] [13] [14]
 <./images/plot.png, id=82, 578.16pt x 433.62pt>
 File: ./images/plot.png Graphic file (type png)
 <use ./images/plot.png>
-Package pdftex.def Info: ./images/plot.png  used on input line 616.
+Package pdftex.def Info: ./images/plot.png  used on input line 626.
 (pdftex.def)             Requested size: 355.51817pt x 266.63832pt.
 
 
@@ -490,10 +493,10 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 [15] [16 <./images/plot.png>] (./freely_rotating_dipoles.bbl [17]) [18]
 (./freely_rotating_dipoles.aux) ) 
 Here is how much of TeX's memory you used:
- 7433 strings out of 492649
- 111779 string characters out of 6129622
+ 7434 strings out of 492649
+ 111789 string characters out of 6129622
  236024 words of memory out of 5000000
- 11209 multiletter control sequences out of 15000+600000
+ 11210 multiletter control sequences out of 15000+600000
  11725 words of font info for 41 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  48i,12n,42p,864b,321s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -514,7 +517,7 @@ nts/cm/cmr6.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts
 cmsy8.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cm
 ti10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmt
 i12.pfb>
-Output written on freely_rotating_dipoles.pdf (18 pages, 271860 bytes).
+Output written on freely_rotating_dipoles.pdf (18 pages, 272269 bytes).
 PDF statistics:
  149 PDF objects out of 1000 (max. 8388607)
  97 compressed objects within 1 object stream
