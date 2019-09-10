@@ -1,13 +1,13 @@
 # Fdb version 3
-["bibtex freely_rotating_dipoles"] 1562265158 "freely_rotating_dipoles.aux" "freely_rotating_dipoles.bbl" "freely_rotating_dipoles" 1562265159
-  "/Users/apprentice/Library/texmf/bibtex/bib/double_magnet_bib.bib" 1560013284 23310 113503d53263184efec77a16b8e311c1 ""
+["bibtex freely_rotating_dipoles"] 1568141854 "freely_rotating_dipoles.aux" "freely_rotating_dipoles.bbl" "freely_rotating_dipoles" 1568141855
+  "/Users/apprentice/Library/texmf/bibtex/bib/double_magnet_bib.bib" 1562292007 23310 a4ca7cfc36b3784a0b06f192ca6ea8b1 ""
   "/usr/local/texlive/2018/texmf-dist/bibtex/bst/base/unsrt.bst" 1480098433 18030 1376b4b231b50c66211e47e42eda2875 ""
-  "freely_rotating_dipoles.aux" 1562265159 4427 dd9c2598dcf46c37874caa02b89b4490 ""
-  "freely_rotating_dipolesNotes.bib" 1562265159 0 d41d8cd98f00b204e9800998ecf8427e ""
+  "freely_rotating_dipoles.aux" 1568141855 4459 2234eb75b75f7af0f42d00d651cfc922 ""
+  "freely_rotating_dipolesNotes.bib" 1568141855 0 d41d8cd98f00b204e9800998ecf8427e ""
   (generated)
-  "freely_rotating_dipoles.blg"
   "freely_rotating_dipoles.bbl"
-["pdflatex"] 1562265159 "freely_rotating_dipoles.tex" "freely_rotating_dipoles.pdf" "freely_rotating_dipoles" 1562265159
+  "freely_rotating_dipoles.blg"
+["pdflatex"] 1568141854 "freely_rotating_dipoles.tex" "freely_rotating_dipoles.pdf" "freely_rotating_dipoles" 1568141855
   "/usr/local/texlive/2018/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
   "/usr/local/texlive/2018/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy6.tfm" 1480098698 1124 14ccf5552bc7f77ca02a8a402bea8bfb ""
   "/usr/local/texlive/2018/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy8.tfm" 1480098698 1120 200be8b775682cdf80acad4be5ef57e4 ""
@@ -103,15 +103,15 @@
   "/usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1523934492 2717033 f61a5287d9c22a39a74f1979fe3f905c ""
   "/usr/local/texlive/2018/texmf-var/web2c/pdftex/pdflatex.fmt" 1523934516 4220280 10cab8fbd7c5a7c52aba9917e190d018 ""
   "/usr/local/texlive/2018/texmf.cnf" 1523934483 577 0b39adfd7c93507ff20c9c14c2f1a33f ""
-  "freely_rotating_dipoles.aux" 1562265159 4427 dd9c2598dcf46c37874caa02b89b4490 ""
-  "freely_rotating_dipoles.bbl" 1562265159 2982 e817999c0c4895671d74928b7de39e05 "bibtex freely_rotating_dipoles"
-  "freely_rotating_dipoles.tex" 1562265156 30077 be9cf55c1364e2f2e28a896d4b35e123 ""
+  "freely_rotating_dipoles.aux" 1568141855 4459 2234eb75b75f7af0f42d00d651cfc922 ""
+  "freely_rotating_dipoles.bbl" 1568141854 2982 e817999c0c4895671d74928b7de39e05 "bibtex freely_rotating_dipoles"
+  "freely_rotating_dipoles.tex" 1568141853 31263 7251533169cdf7c0cba9dcd1e1920b16 ""
   "images/animatic.pdf" 1556489860 13094 150ccb670c9297e6c49aaceb7b3b7cd5 ""
   "images/coordinates_scalable_2.pdf" 1549394049 8277 0eb131c0ee47a1fe2531819ed49b9e91 ""
   "images/plot.png" 1556660114 38400 466e180338d9c7e80ba44abbca85c19a ""
   (generated)
-  "freely_rotating_dipoles.toc"
-  "freely_rotating_dipoles.aux"
-  "freely_rotating_dipolesNotes.bib"
   "freely_rotating_dipoles.pdf"
+  "freely_rotating_dipoles.aux"
+  "freely_rotating_dipoles.toc"
   "freely_rotating_dipoles.log"
+  "freely_rotating_dipolesNotes.bib"

@@ -40,16 +40,19 @@ However, the energies involved are much easier to account for.
 So we use the Hamiltonian approach with conserved quantities.
 It is interesting that in the present problem, compared with the fixed-axis problem, there is momentum exchange between orbital momentum and spin momentum.  This exchange might seem to favor more complicated motions, yet we see simple motions.
 
-1 3 5 2 4
+pendulums goldstein
+265
+14
+267
+270 hysterisis
+453
+533
+234
+83
+428
 
-00x00
-0000x
-0x000
-000x0
-x0000
+strogatz
+96, 168, 192
 
-000X0
-X0X00
-00000
-0X000
-0000X
+landau
+33, 61, 70, 95, 102, 129

@@ -31,8 +31,8 @@
 %05/07 get dipole_driving web page listed in project
 \section{Abstract}
 	The equations of motion for two spherical dipoles moving freely in a plane are obtained. Special consideration is given to when the two spheres are in contact. Investigations of equilibria, small amplitude motion, and large amplitude motion reveal that possible motions are exclusively quasi-periodic.
-	Two distinct modes are identified, one of which is isomorphic with the simple pendulum complete with continual spinning at high energy.
-	
+	Two distinct modes are identified, one of which is isomorphic with the simple pendulum complete with a regime where it ceases to be periodic and angular displacement grows continuously at high energy.
+%r2i rephrasing high energy behavior of spinning mode	
 %Increasing the degrees of freedom of a simpler system we find the equations of motion for two spherical dipoles and discover more predictable motion rather than less. The equilibria are found and distinct modes of motion are described. One mode is shown to be equivalent to the simple pendulum including continual spinning at high energy.	
 	
 
@@ -40,6 +40,7 @@
 
 In looking at a pair of unrestrained magnetized spheres we've taken a simpler system and increased its degrees of freedom.
 While it's common to maintain the same level of complexity of the motion or increase it, here we find that making the phase space more complex decreases the complexity of the motion.
+%r2ii the first paragraph problem, how dense do we make it and avoid burrying the lede? proposes taking 4th paragraph and making part or most of it in the 1st paragraph. 09/10 After consideration, reviewer 2's 2nd recommendation is not obviously enough an improvement considering audience and expositional pacing needs.
 
 Examining the interactions between rotating magnets has interesting applications when we consider how magnetic gears \cite{doi:10.1119/1.5029823} are being used in engineering contexts where friction or operational life span are the dominant considerations \cite{Modaresahmadi:2019aa}.
 Magnetic gears are appealing as you can transmit rotational motion without the teeth that experience wear and tear.
@@ -54,7 +55,8 @@ We take a union of the Pollack and Edwards systems by allowing both spheres to f
 While each of these systems has two degrees of freedom, they are different pairs chosen from the more general case and thus not immediately comparable.
 Our combined system has three degrees of freedom.
 %making it distinctly more complicated than either of the earlier two.
-While Edwards' system exhibited chaos, this new system does not, even at large amplitudes.
+While Edwards' system exhibited chaos, this new system does not, even at large amplitudes. It is shown to exhibit separate pieces of movement with irrational frequencies, resulting in quasi-periodic behavior, rather than chaos.
+%r2iii explain what is not chaotic about it. V
 
 Numerical methods have been developed for arbitrarily complicated arrangements \cite{Furlani:1995aa} and by examining this simple case analytically we can provide an additional check on their results.
 As this is a system where magnetic interactions and fields dominate, it can make accounting for all the forces a point of contention 
@@ -132,9 +134,9 @@ The kinetic energy, $T$, is \cite{taylor2005classical}
 The first three terms in the second equation are for two bodies in center of mass coordinates with the final two terms accounting for the internal degrees of freedom of the spheres. 
 %cite prior edwards work for energy interaction here
 
-The potential energy for dipole 1 is the dot product of its dipole moment with the local field \cite{Edwards:2017aa}, which in this case is caused entirely by dipole 2.
+The potential energy for dipole 1 in the presence of dipole 2 is the dot product of its dipole moment with the local field \cite{Edwards:2017aa} caused by dipole 2.
 \begin{equation}
-U_1 = -\boldsymbol \mu_1 \cdot \cvec B_2.
+U_{1,2} = -\boldsymbol \mu_1 \cdot \cvec B_2.
 \end{equation}
 
 The magnetic field for a dipole at some point of interest $\cvec r_i$ being taken from \cite{griffiths2013introduction}
@@ -152,7 +154,7 @@ The magnetic field for a dipole at some point of interest $\cvec r_i$ being take
 Using our definition for $\cvec r$ we can simplify the potential energy to
 
 \begin{equation}
-U_1 = 
+U_{1,2} = 
 \frac{\mu_0}{4\pi}
 \frac{1}{r^3}\left[
 	\boldsymbol \mu_1 \cdot \boldsymbol \mu_2
@@ -172,9 +174,11 @@ This is symmetric under substitution of 1 for 2 and vice versa so we have a tota
 
 \begin{equation}
 U =
-U_1+U_2
+\frac{1}{2} \Sigma_{i\neq j }^N U_{i,j}
 = 
-2U_1.
+\frac{1}{2}(2U_{1,2})
+= 
+U_{1,2}.
 \end{equation}
 
 This potential when expanding the dot products out in terms of all three respective angles leaves us with
@@ -390,7 +394,12 @@ p_{\phi_{1i}},p_{\phi_{2i}},p_{\theta_{i}}
 =
 (\phi_{1i},\phi_{2i},\theta_{i},0,0,0)
 $ 
-the changes in momenta will be small, we can do a multi-variable Taylor expansion and produce 
+the changes in momenta will be small. 
+%r2iv extra sentence, maybe include citation to common explanation
+% butkov 1st ed tensors 16.6 pg 690
+% just use taylor :/ 09/10 not sure how much more detail can be done.
+Doing a Taylor approximation around these equilibria points will produce equivalent equations of motion starting with a linear term, and no quadratic term. 
+Ignoring the cubic terms and higher we can do a multi-variable Taylor expansion (analogous to the process done in section 11.4 \cite{taylor2005classical})  and produce 
 
 \begin{equation}\label{taylor_force}
 	\dot p_n 
@@ -609,10 +618,10 @@ Considering the force on $p_\theta$ from Eq.~(\ref{f_tht}) and making this new s
 And doing the same with $p_{\phi_t}$ from Eq.~(\ref{f_phit}) produces
 
 \begin{equation}
-	\ddot \phi_t = -\frac{20}{4}\sin(\phi_t +\frac{2}{5}\phi_t) =  -5\sin\left ( \frac{7}{5}\phi_t \right )\approx -7\phi_t
+	\ddot \phi_t = -\frac{20}{4}\sin(\phi_t +\frac{2}{5}\phi_t) =  -5\sin\left ( \frac{7}{5}\phi_t \right )\approx -7\phi_t,
 \end{equation}
-
-Showing that while the contact constraint holds, the orbital state is also isomorphic with the simple pendulum with the same asymptotic behavior as the small amplitude oscillations we found earlier. With this we see that when $L_\textrm{t}=0$ and contact maintained we have reduced the problem to two independent pendula. While the periods are independent of each other and unlikely to form a rational fraction, both are periodic. This fact makes the system as a whole no more complicated than quasi-periodic.
+%r2v: punctuation, treating equations as nouns
+showing that while the contact constraint holds, the orbital state is also isomorphic with the simple pendulum with the same asymptotic behavior as the small amplitude oscillations we found earlier. With this we see that when $L_\textrm{t}=0$ and contact maintained we have reduced the problem to two independent pendula. While the periods are independent of each other and unlikely to form a rational fraction, both are periodic. This fact makes the system as a whole no more complicated than quasi-periodic.
 %05/07 explain how these pendulum results imply quasi-periodicity at the most complex
 
 \subsection{Numerical Results}
@@ -621,7 +630,7 @@ An adaptive fourth order Runge-Kutta method was implemented to calculate the tra
 
 \subsubsection{Period vs Energy curves}
 The spinning and orbital modes were examined independently as they are not coupled together when the contact criterion is maintained. Two hundred initial conditions were simulated with closer resolution taken near transition points. In the case of the spinning mode, the maximum initial kinetic energy was 1/2, taking it well past the point where it begins spinning freely. In the case of the orbital mode, the maximum energy was just below the point where the contact criterion was broken, 1/3 units of initial kinetic energy.
-
+% r2vi: flesh out the analysis and reference previous work on critical transition for spinning mode
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.85\textwidth]{./images/plot.png}
