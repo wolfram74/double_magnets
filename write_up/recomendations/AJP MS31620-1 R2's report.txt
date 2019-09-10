@@ -1,0 +1,39 @@
+Reviewer report -- #MS 31620, entitled ``Dynamics of Two Freely Rotating Dipoles''
+
+
+
+In this manuscript, the authors derive the equations of motion for two spherical dipoles moving on a plane. Their main (unexpected) result is that both small and large amplitude motions are exclusively quasi-periodic. Indeed, one of the modes obtained is isomorphic to the simple pendulum (moving in the regime of continual spinning at high energy).
+
+
+
+After checking that their Lagrangian in Eq.(10) and their Hamiltonian in Eq.(15) are both correct, I've spent a lot of time checking the normal modes obtained in Sec.IV.A.2 and building a routine to compute Period X energy curves, the only way to rigorously check the numerical results presented in their Fig.3, at page 16.
+
+
+
+Since this kind of work is very interesting for those teachers (like me) who are engaged with analysis of oscillations in classical mechanics classes, I strongly recommend acceptance for publication in AJP, as long as some changes/corrections are implemented in the final version. See list below.
+
+
+
+i) Page 2, end of Abstract: the characterization of the pendular regime of motion as ``simple pendulum complete with continual spinning at high energy'' could be rewritten in a more clear and specific form. Maybe something like ``simple pendulum in the non-oscillatory, high energy regime of motion in which it does not reverse its angular velocity.''
+
+
+
+ii) Page 2, beginning of Introduction:  It seems to me that this section would be better initiated with the second paragraph. In this case, the first paragraph could be moved to the beginning of the paragraph ``We take a union of the Pollack and Edwards systems by allowing both spheres...''
+
+
+
+iii) Page 3, 6th line (from the top):  The phrase ``While Edwards' system exhibited chaos, this new system does not, even
+
+at large amplitudes'', though correct, should be complemented with a brief explanation (maybe a footnote) on why this system does not present chaotic behavior.
+
+192.168.0.8
+
+iv) Page 9, Eq.(18): [important for students and other non-specialists] The authors should clarify in which sense Eq.(18) is an approximation.  Hint: it is a Taylor series truncation, but it could be better explained mathematically, maybe using a footnote or a reference.
+
+
+
+v) Page 14, Eq.(36):  Though I know that AJP assistants are very rigorous in their revisions/edditing, in some parts the text accompanying equations is problematic. For instance, Eq.(36) should end with a comma, and the phrase below it is not a new paragraph, but its continuation.
+
+
+
+vi) Page 15, Sec.IV.B.2:  [important to enrich the analysis of the numerical result presented in Fig.3] The result in Fig.3 appears to have an analogy with that presented for a simple pendulum in Fig.2 of  ``Analytical study of the critical behavior of the nonlinear pendulum,'' Am. J. Phys. Vol. 78(11), 1146 (2010).  There, the curve is interpreted as a critical phenomenon with a phase transition. It would be nice if the authors could explore this analogy.
