@@ -134,7 +134,7 @@ The kinetic energy, $T$, is \cite{taylor2005classical}
 The first three terms in the second equation are for two bodies in center of mass coordinates with the final two terms accounting for the internal degrees of freedom of the spheres. 
 %cite prior edwards work for energy interaction here
 
-The potential energy for dipole 1 in the presence of dipole 2 is the dot product of its dipole moment with the local field \cite{Edwards:2017aa} caused by dipole 2.
+The potential energy for dipole 1 in the presence of dipole 2 is the dot product of its dipole moment with the local field \cite{Edwards:2017aa} caused by dipole 2,
 \begin{equation}
 U_{1,2} = -\boldsymbol \mu_1 \cdot \cvec B_2.
 \end{equation}
@@ -629,7 +629,7 @@ showing that while the contact constraint holds, the orbital state is also isomo
 An adaptive fourth order Runge-Kutta method was implemented to calculate the trajectory of the system using two different sized time steps, both made smaller until they agreed within a specified precision. To determine if a trajectory has returned through it's original point in phase space $\boldsymbol{\Gamma}(0)=\boldsymbol{\Gamma}_0$ linear interpolation was used between steps $\boldsymbol{\Gamma}_n$ and $\boldsymbol{\Gamma}_{n+1}$ to get an estimated time for when the initial value was revisited. This generated six estimated recurrence times. If all six calculated values fell between $t_n$ and $t_{n+1}$ the average was taken and stored. This process was continued until 75 time units had elapsed. The stored recurrence times were fit to the equation $t_m = t_0m$, the slope $t_0$ was taken to be the period.
 
 \subsubsection{Period vs Energy curves}
-The spinning and orbital modes were examined independently as they are not coupled together when the contact criterion is maintained. Two hundred initial conditions were simulated with closer resolution taken near transition points. In the case of the spinning mode, the maximum initial kinetic energy was 1/2, taking it well past the point where it begins spinning freely. In the case of the orbital mode, the maximum energy was just below the point where the contact criterion was broken, 1/3 units of initial kinetic energy.
+The spinning and orbital modes were examined independently as they are not coupled together when the contact criterion is maintained. Two hundred initial conditions were simulated with closer resolution taken near transition points. In the case of the spinning mode, the maximum initial kinetic energy was 1/2, taking it well past the point where it begins spinning freely. We see that it's period as a function of energy reproduces the curve described in a detailed analysis of the basic pendulum \cite{doi:10.1119/1.3442472}. In the case of the orbital mode, the maximum energy was just below the point where the contact criterion was broken, 1/3 units of initial kinetic energy.
 % r2vi: flesh out the analysis and reference previous work on critical transition for spinning mode
 \begin{figure}[h]
 	\centering
